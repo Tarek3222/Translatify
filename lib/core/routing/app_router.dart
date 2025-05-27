@@ -7,7 +7,7 @@ class AppRouter {
     switch (settings.name) {
       case Routes.onBoarding:
         return MaterialPageRoute(
-          builder: (context) => OnBoardingView(),
+          builder: (context) => const OnBoardingView(),
         );
       default:
         return null;
