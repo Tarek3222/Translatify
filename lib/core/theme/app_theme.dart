@@ -16,6 +16,12 @@ abstract class ThemeManager {
       surfaceContainer: AppColors.white,
       background: AppColors.lighterLighterGrey,
     ),
+    pageTransitionsTheme: const PageTransitionsTheme(
+      builders: {
+        TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+        TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+      },
+    ),
   );
   static ThemeData darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
     scaffoldBackgroundColor: AppColors.black,
@@ -28,6 +34,12 @@ abstract class ThemeManager {
       onSurface: AppColors.white,
       surfaceContainer: AppColors.black,
       background: AppColors.black,
+    ),
+    pageTransitionsTheme: const PageTransitionsTheme(
+      builders: {
+        TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+        TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+      },
     ),
   );
 }
