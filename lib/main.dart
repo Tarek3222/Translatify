@@ -1,11 +1,34 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translator/core/routing/app_router.dart';
+import 'package:translator/features/settings/logic/cubit/change_theme_cubit.dart';
 import 'package:translator/translators_app.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Future.wait([
+    ScreenUtil.ensureScreenSize(),
+    EasyLocalization.ensureInitialized(),
+  ]);
   runApp(
-    TranslatorsApp(
-      appRouter: AppRouter(),
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ar'),
+        Locale('fr'),
+        Locale('es'),
+        Locale('de'),
+        Locale('zh'),
+      ],
+      path: 'assets/translations',
+      child: BlocProvider(
+        create: (context) => ChangeThemeCubit()..loadTheme(),
+        child: TranslatorsApp(
+          appRouter: AppRouter(),
+        ),
+      ),
     ),
   );
 }

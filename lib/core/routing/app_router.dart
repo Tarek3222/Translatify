@@ -5,7 +5,7 @@ import 'package:translator/features/on_boarding/ui/views/on_boarding_view.dart';
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.onBoarding:
+      case Routes.onBoardingScreen:
         return MaterialPageRoute(
           builder: (context) => const OnBoardingView(),
         );
