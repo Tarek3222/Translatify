@@ -3,18 +3,22 @@
 import 'package:flutter/material.dart';
 import 'package:translator/core/theme/app_colors.dart';
 
+/// ThemeManager is an abstract class that provides light and dark themes
 abstract class ThemeManager {
+  //! Light Theme
   static ThemeData lightTheme = ThemeData.light(useMaterial3: true).copyWith(
     scaffoldBackgroundColor: AppColors.white,
     colorScheme: const ColorScheme.light(
       primary: AppColors.mainBlue,
-      secondary: AppColors.lightBlue,
+      secondary: AppColors.darkBlue,
       onPrimary: AppColors.mainBlue,
       onSecondary: AppColors.mainDarkBlue,
       surface: AppColors.mainBlue,
-      onSurface: AppColors.black,
+      onSurface: AppColors.lightBlue,
       surfaceContainer: AppColors.white,
       background: AppColors.lighterLighterGrey,
+      onBackground: AppColors.grey,
+      error: AppColors.mainRed,
     ),
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
@@ -23,17 +27,20 @@ abstract class ThemeManager {
       },
     ),
   );
+  //! Dark Theme
   static ThemeData darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
-    scaffoldBackgroundColor: AppColors.black,
+    scaffoldBackgroundColor: AppColors.mainDarkBlue,
     colorScheme: const ColorScheme.dark(
       primary: AppColors.mainBlue,
-      secondary: AppColors.lightBlue,
+      secondary: AppColors.white,
       onPrimary: AppColors.white,
       onSecondary: AppColors.mainBlue,
-      surface: AppColors.darkBlue,
-      onSurface: AppColors.white,
-      surfaceContainer: AppColors.black,
-      background: AppColors.black,
+      surface: AppColors.mainDarkBlue,
+      onSurface: AppColors.lightBlue,
+      surfaceContainer: AppColors.mainDarkBlue,
+      background: AppColors.mainDarkBlue,
+      onBackground: AppColors.white,
+      error: AppColors.mainRed,
     ),
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
