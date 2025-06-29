@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:translator/core/theme/app_colors.dart';
 import 'package:translator/core/theme/app_styles.dart';
@@ -56,8 +58,8 @@ class AppTextFormField extends StatelessWidget {
       textAlign: textAlign ?? TextAlign.start,
       style: inputTextStyle ??
           getLightStyle(
-            fontSize: 14,
-            color: AppColors.darkBlue,
+            fontSize: 15,
+            color: Theme.of(context).colorScheme.secondary,
           ),
       autofillHints: autofillHints ?? autofillHints,
       maxLength: maxLength,
@@ -66,15 +68,15 @@ class AppTextFormField extends StatelessWidget {
       autovalidateMode: autovalidateMode ?? AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         counterText: "",
-        fillColor: backgroundColor ?? AppColors.white,
+        fillColor: backgroundColor ?? Theme.of(context).colorScheme.background,
         filled: true,
         isDense: true,
         enabledBorder: enabledBorder ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
-              borderSide: const BorderSide(
-                color: AppColors.mainBlue,
-                width: 0.5,
+              borderSide: BorderSide(
+                color: Theme.of(context).colorScheme.onPrimary,
+                width: 0.8,
               ),
             ),
         focusedBorder: foundedBorder ??
@@ -82,27 +84,27 @@ class AppTextFormField extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               borderSide: const BorderSide(
                 color: AppColors.mainBlue,
-                width: 0.5,
+                width: 0.8,
               ),
             ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: const BorderSide(
             color: Colors.red,
-            width: 0.5,
+            width: 0.9,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: const BorderSide(
             color: Colors.red,
-            width: 0.5,
+            width: 0.9,
           ),
         ),
         hintStyle: hintStyle ??
             getLightStyle(
-              fontSize: 14,
-              color: AppColors.darkBlue,
+              fontSize: 15,
+              color: Theme.of(context).colorScheme.secondary,
             ),
         hintText: hintText,
         suffixIcon: suffixIcon,
