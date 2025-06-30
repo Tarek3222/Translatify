@@ -1,25 +1,19 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translator/core/validators/app_validator.dart';
 import 'package:translator/core/widgets/app_text_form_field.dart';
+import 'package:translator/features/sign_up/logic/sign_up_cubit/sign_up_cubit.dart';
 import 'package:translator/features/sign_up/ui/widgets/build_date_of_birth_picker.dart';
 import 'package:translator/features/sign_up/ui/widgets/email_field.dart';
 import 'package:translator/features/sign_up/ui/widgets/label_form.dart';
 import 'package:translator/features/sign_up/ui/widgets/password_field.dart';
 import 'package:translator/features/sign_up/ui/widgets/selected_gender.dart';
 
-class SignUpForm extends StatefulWidget {
+class SignUpForm extends StatelessWidget {
   const SignUpForm({super.key});
 
-  @override
-  State<SignUpForm> createState() => _SignUpFormState();
-}
-
-class _SignUpFormState extends State<SignUpForm> {
-  TextEditingController dayController = TextEditingController();
-  TextEditingController monthController = TextEditingController();
-  TextEditingController yearController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,7 +26,7 @@ class _SignUpFormState extends State<SignUpForm> {
         AppTextFormField(
           hintText: "enterYourName".tr(),
           autofillHints: const [AutofillHints.name],
-          // controller: context.read<SignupCubit>().firstNameController,
+          controller: context.read<SignupCubit>().nameController,
           keyboardType: TextInputType.name,
           validator: (value) {
             if (value == null || value.isEmpty) {
@@ -44,16 +38,20 @@ class _SignUpFormState extends State<SignUpForm> {
         LabelForm(
           labelText: "email".tr(),
         ),
-        const EmailField(),
+        EmailField(
+          emailController: context.read<SignupCubit>().emailController,
+        ),
         LabelForm(
           labelText: "password".tr(),
         ),
-        const PasswordField(),
+        PasswordField(
+          passwordController: context.read<SignupCubit>().passwordController,
+        ),
         LabelForm(labelText: "phoneNumber".tr()),
         AppTextFormField(
           hintText: context.tr("enterYourPhone"),
           autofillHints: const [AutofillHints.telephoneNumber],
-          // controller: context.read<SignupCubit>().phoneController,
+          controller: context.read<SignupCubit>().phoneController,
           keyboardType: TextInputType.phone,
           validator: (value) {
             return AppValidators.validatePhoneNumber(value);

@@ -1,9 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translator/core/helpers/spacing.dart';
 import 'package:translator/core/theme/app_colors.dart';
 import 'package:translator/core/theme/app_styles.dart';
+import 'package:translator/features/sign_up/logic/confirm_email_cubit/confirm_email_cubit.dart';
 import 'package:translator/features/sign_up/ui/widgets/otp_field_and_confirm_button.dart';
 
 class VerificationEmailCodeView extends StatefulWidget {
@@ -18,7 +20,7 @@ class VerificationEmailCodeView extends StatefulWidget {
 class _VerificationEmailCodeViewState extends State<VerificationEmailCodeView> {
   @override
   void initState() {
-    // context.read<ConfirmEmailCubit>().email = widget.email;
+    context.read<ConfirmEmailCubit>().email = widget.email;
     super.initState();
   }
 
@@ -27,7 +29,7 @@ class _VerificationEmailCodeViewState extends State<VerificationEmailCodeView> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

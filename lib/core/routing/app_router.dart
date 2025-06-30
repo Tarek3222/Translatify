@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:translator/core/di/depandecy_injection.dart';
 import 'package:translator/core/routing/routes.dart';
+import 'package:translator/features/home/ui/home_view.dart';
 import 'package:translator/features/on_boarding/ui/views/on_boarding_view.dart';
+import 'package:translator/features/sign_in/data/repos/reset_password_repo.dart';
+import 'package:translator/features/sign_in/data/repos/sign_in_repo.dart';
+import 'package:translator/features/sign_in/logic/forget_password_cubit/forget_password_cubit.dart';
+import 'package:translator/features/sign_in/logic/reset_password_cubit/reset_password_cubit.dart';
+import 'package:translator/features/sign_in/logic/sign_in_cubit/sign_in_cubit.dart';
 import 'package:translator/features/sign_in/ui/views/forget_password_view.dart';
+import 'package:translator/features/sign_in/ui/views/reset_password_view.dart';
 import 'package:translator/features/sign_in/ui/views/sign_in_view.dart';
+import 'package:translator/features/sign_up/data/repos/sign_up_repo.dart';
+import 'package:translator/features/sign_up/logic/confirm_email_cubit/confirm_email_cubit.dart';
+import 'package:translator/features/sign_up/logic/sign_up_cubit/sign_up_cubit.dart';
 import 'package:translator/features/sign_up/ui/views/sign_up_view.dart';
 import 'package:translator/features/sign_up/ui/views/verification_code_email_view.dart';
+
+import '../../features/sign_in/data/repos/forget_password_repo.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -13,23 +27,46 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const OnBoardingView(),
         );
-      case Routes.signInScreen:
+      case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (context) => const SignInView(),
+          builder: (context) => const HomeView(),
         );
       case Routes.signUpScreen:
         return MaterialPageRoute(
-          builder: (context) => const SignUpView(),
+          builder: (context) => BlocProvider(
+            create: (context) => SignupCubit(getIt<SignUpRepo>()),
+            child: const SignUpView(),
+          ),
+        );
+      case Routes.signInScreen:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+              create: (context) => SignInCubit(getIt<SignInRepo>()),
+              child: const SignInView()),
         );
       case Routes.forgetPassword:
         return MaterialPageRoute(
-          builder: (context) => const ForgetPasswordView(),
+          builder: (context) => BlocProvider(
+              create: (context) =>
+                  ForgetPasswordCubit(getIt<ForgetPasswordRepo>()),
+              child: const ForgetPasswordView()),
         );
       case Routes.verifyCodeEmail:
-        //todo: pass email to the view
         return MaterialPageRoute(
-          builder: (context) => const VerificationEmailCodeView(
-            email: "",
+          builder: (context) => BlocProvider(
+            create: (context) => ConfirmEmailCubit(getIt<SignUpRepo>()),
+            child: VerificationEmailCodeView(
+              email: settings.arguments as String? ?? '',
+            ),
+          ),
+        );
+      case Routes.resetPassword:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => ResetPasswordCubit(getIt<ResetPasswordRepo>()),
+            child: ResetPasswordView(
+              email: settings.arguments as String? ?? '',
+            ),
           ),
         );
       default:

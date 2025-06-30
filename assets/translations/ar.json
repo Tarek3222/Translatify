@@ -48,5 +48,21 @@
   "dontHaveAccount": "ليس لديك حساب؟",
   "forgetPassword": "نسيت كلمة المرور",
   "securityMessage": "في تطبيقنا، نأخذ أمان معلوماتك على محمل الجد.",
-  "resetPassword": "إعادة تعيين كلمة المرور"
+  "resetPassword": "إعادة تعيين كلمة المرور",
+  "Signup Successful": "تم إنشاء الحساب بنجاح",
+  "Got it": "حسنا",
+  "Email Verified": "تم التحقق من البريد الإلكتروني",
+  "pleaseAcceptTermsAndPrivacyPolicy": "يرجى قبول شروط الاستخدام وسياسة الخصوصية",
+  "pleaseSelectDateOfBirth": "يرجى اختيار تاريخ الميلاد",
+  "success": "نجاح",
+  "OTP sent to your email, now go to reset your password": "تم إرسال OTP إلى بريدك الإلكتروني، الآن انتقل لإعادة تعيين كلمة المرور",
+  "Email confirmed successfully, go to login": "تم تأكيد البريد الإلكتروني بنجاح، انتقل إلى تسجيل الدخول",
+  "User Registered Successfully , please check your email to verify your account": "تم تسجيل المستخدم بنجاح، يرجى التحقق من بريدك الإلكتروني للتحقق من حسابك",
+  "Reset Password": "إعادة تعيين كلمة المرور",
+  "Password reset successfully, now go to login": "تم إعادة تعيين كلمة المرور بنجاح، الآن انتقل إلى تسجيل الدخول",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "pleaseEnterConfirmPassword": "يرجى إدخال تأكيد كلمة المرور",
+  "passwordNotMatch": "كلمة المرور وتأكيد كلمة المرور غير متطابقتين",
+  "Otp Code": "رمز OTP",
+  "pleaseEnterOtpCode": "يرجى إدخال رمز OTP"
 }

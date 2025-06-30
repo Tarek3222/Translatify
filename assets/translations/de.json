@@ -48,5 +48,21 @@
     "dontHaveAccount": "Haben Sie kein Konto?",
     "forgetPassword": "Passwort vergessen",
     "securityMessage": "In unserer App nehmen wir die Sicherheit Ihrer Informationen sehr ernst.",
-    "resetPassword": "Passwort zurücksetzen"
+    "resetPassword": "Passwort zurücksetzen",
+    "Signup Successful": "Registrierung erfolgreich",
+    "Got it": "Verstanden",
+    "Email Verified": "E-Mail verifiziert",
+    "pleaseAcceptTermsAndPrivacyPolicy": "Bitte akzeptieren Sie die Nutzungsbedingungen und die Datenschutzrichtlinie",
+    "pleaseSelectDateOfBirth": "Bitte wählen Sie das Geburtsdatum aus",
+    "success": "Erfolg",
+    "OTP sent to your email, now go to reset your password": "OTP an Ihre E-Mail gesendet, gehen Sie jetzt zum Zurücksetzen Ihres Passworts",
+    "Email confirmed successfully, go to login": "E-Mail erfolgreich bestätigt, gehen Sie zur Anmeldung",
+    "User Registered Successfully , please check your email to verify your account": "Benutzer erfolgreich registriert, bitte überprüfen Sie Ihre E-Mail, um Ihr Konto zu verifizieren",
+    "Reset Password": "Passwort zurücksetzen",
+    "Password reset successfully, now go to login": "Passwort erfolgreich zurückgesetzt, gehen Sie jetzt zur Anmeldung",
+    "confirmPassword": "Passwort bestätigen",
+    "pleaseEnterConfirmPassword": "Bitte bestätigen Sie Ihr Passwort",
+    "passwordNotMatch": "Das Passwort und das Bestätigungspasswort stimmen nicht ueberein",
+    "Otp Code": "OTP-Code",
+    "pleaseEnterOtpCode": "Bitte geben Sie den OTP-Code ein"
 }

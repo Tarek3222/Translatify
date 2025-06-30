@@ -4,8 +4,9 @@ import 'package:translator/core/validators/app_validator.dart';
 import 'package:translator/core/widgets/app_text_form_field.dart';
 
 class PasswordField extends StatefulWidget {
-  const PasswordField({super.key, this.passwordController});
+  const PasswordField({super.key, this.passwordController, this.validator});
   final TextEditingController? passwordController;
+  final String? Function(String?)? validator;
   @override
   State<PasswordField> createState() => _PasswordFieldState();
 }
@@ -28,11 +29,13 @@ class _PasswordFieldState extends State<PasswordField> {
         },
         child: Icon(
           isPasswordObscureText ? Icons.visibility_off : Icons.visibility,
+          color: Colors.grey,
         ),
       ),
-      validator: (value) {
-        return AppValidators.validatePassword(value);
-      },
+      validator: widget.validator ??
+          (value) {
+            return AppValidators.validatePassword(value);
+          },
     );
   }
 }

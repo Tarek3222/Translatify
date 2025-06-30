@@ -48,5 +48,21 @@
     "dontHaveAccount": "¿No tienes una cuenta?",
     "forgetPassword": "¿Olvidaste tu contraseña?",
     "securityMessage": "En nuestra aplicación, nos tomamos muy en serio la seguridad de tu información.",
-    "resetPassword": "Restablecer contraseña"
+    "resetPassword": "Restablecer contraseña",
+    "Signup Successful": "Registro exitoso",
+    "Got it": "Entendido",
+    "Email Verified": "Correo electrónico verificado",
+    "pleaseAcceptTermsAndPrivacyPolicy": "Por favor, acepta los términos de uso y la política de privacidad",
+    "pleaseSelectDateOfBirth": "Por favor, selecciona la fecha de nacimiento",
+    "success": "Éxito",
+    "OTP sent to your email, now go to reset your password": "OTP enviado a tu correo electrónico, ahora ve a restablecer tu contraseña",
+    "Email confirmed successfully, go to login": "Correo electrónico confirmado con éxito, ve a iniciar sesión",
+    "User Registered Successfully , please check your email to verify your account": "Usuario registrado con éxito, por favor revisa tu correo electrónico para verificar tu cuenta",
+    "Reset Password": "Restablecer contraseña",
+    "Password reset successfully, now go to login": "Contraseña restablecida con éxito, ahora ve a iniciar sesión",
+    "confirmPassword": "Confirmar contraseña",
+    "pleaseEnterConfirmPassword": "Por favor, introduce la confirmación de la contraseña",
+    "passwordNotMatch": "La contraseña y la confirmación de la contraseña no coinciden",
+    "Otp Code": "Código OTP",
+    "pleaseEnterOtpCode": "Por favor, introduce el código OTP"
 }
