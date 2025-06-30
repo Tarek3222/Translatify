@@ -2,9 +2,11 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translator/core/theme/app_colors.dart';
 import 'package:translator/core/theme/app_styles.dart';
+import 'package:translator/features/sign_up/logic/sign_up_cubit/sign_up_cubit.dart';
 
 class BuildDateOfBirthPicker extends StatefulWidget {
   const BuildDateOfBirthPicker({
@@ -47,6 +49,7 @@ class _BuildDateOfBirthPickerState extends State<BuildDateOfBirthPicker> {
     if (picked != null && picked != _selectedDate) {
       setState(() {
         _selectedDate = picked;
+        context.read<SignupCubit>().dateOfBirth = picked;
       });
     }
   }

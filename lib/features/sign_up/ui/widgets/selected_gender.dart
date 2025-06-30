@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:translator/core/theme/app_colors.dart';
+import 'package:translator/features/sign_up/logic/sign_up_cubit/sign_up_cubit.dart';
 import 'package:translator/features/sign_up/ui/widgets/custom_gender_container.dart';
 
 class SelectedGender extends StatefulWidget {
@@ -32,7 +34,7 @@ class _SelectedGenderState extends State<SelectedGender> {
               isSelected: selectedIndex == 0,
               onTap: () {
                 if (selectedIndex != 0) {
-                  // context.read<SignupCubit>().gender = "male";
+                  context.read<SignupCubit>().gender = "male";
                   setState(() {
                     selectedIndex = 0;
                   });
@@ -46,7 +48,7 @@ class _SelectedGenderState extends State<SelectedGender> {
               isSelected: selectedIndex == 1,
               onTap: () {
                 if (selectedIndex != 1) {
-                  // context.read<SignupCubit>().gender = "female";
+                  context.read<SignupCubit>().gender = "female";
                   setState(() {
                     selectedIndex = 1;
                   });

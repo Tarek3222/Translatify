@@ -48,5 +48,21 @@
     "dontHaveAccount": "没有账户？",
     "forgetPassword": "忘记密码",
     "securityMessage": "在我们的应用中，我们非常重视您的信息安全。",
-    "resetPassword": "重置密码"
+    "resetPassword": "重置密码",
+    "Signup Successful": "注册成功",
+    "Got it": "知道了",
+    "Email Verified": "电子邮件已验证",
+    "pleaseAcceptTermsAndPrivacyPolicy": "请接受使用条款和隐私政策",
+    "pleaseSelectDateOfBirth": "请选择出生日期",
+    "success": "成功",
+    "OTP sent to your email, now go to reset your password": "验证码已发送到您的电子邮件，请前往重置您的密码",
+    "Email confirmed successfully, go to login": "电子邮件确认成功，请登录",
+    "User Registered Successfully , please check your email to verify your account": "用户注册成功，请检查您的电子邮件以验证您的账户",
+    "Reset Password": "重置密码",
+    "Password reset successfully, now go to login": "密码重置成功，请登录",
+    "confirmPassword": "确认密码",
+    "pleaseEnterConfirmPassword": "请输入确认密码",
+    "passwordNotMatch": "密码和确认密码不匹配",
+    "Otp Code": "验证码",
+    "pleaseEnterOtpCode": "请输入验证码"
 }
