@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:translator/features/home/ui/widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Text(
-            'Home View',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
+        child: Padding(
+          padding:
+              const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0).w,
+          child: const HomeViewBody(),
         ),
       ),
     );

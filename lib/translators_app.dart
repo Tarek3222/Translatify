@@ -28,7 +28,7 @@ class TranslatorsApp extends StatelessWidget {
             locale: context.locale,
             title: 'Translators App',
             initialRoute:
-                isLoggedIn ? Routes.homeScreen : Routes.onBoardingScreen,
+                isLoggedIn ? Routes.mainScreen : Routes.onBoardingScreen,
           );
         },
       ),

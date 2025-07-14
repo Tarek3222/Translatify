@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:translator/features/home/ui/widgets/home_view_body.dart';
+import 'package:translator/features/main/logic/bottom_nav_bar_cubit/bottom_nav_bar_index_cubit.dart';
+import 'package:translator/features/main/ui/widgets/custom_bottom_nav_bar.dart';
+import 'package:translator/features/user_profile/ui/widgets/user_profile_tab_body.dart';
+
+class MainView extends StatelessWidget {
+  const MainView({super.key});
+  final List<Widget> pages = const [
+    HomeViewBody(),
+    Center(child: Text("Chats")),
+    UserProfileTabBody(),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: BlocBuilder<BottomNavBarIndexCubit, BottomNavBarIndexState>(
+          builder: (context, state) {
+            return IndexedStack(
+              index: (state is BottomNavBarIndexChanged) ? state.index : 0,
+              children: pages,
+            );
+          },
+        ),
+      ),
+      bottomNavigationBar: const CustomBottomNavBar(),
+    );
+  }
+}

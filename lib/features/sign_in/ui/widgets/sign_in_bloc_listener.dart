@@ -45,7 +45,7 @@ class SignInBlocListener extends StatelessWidget {
   }
 
   void signInSuccessState(BuildContext context) {
-    context.pushNamedAndRemoveUntil(Routes.homeScreen, predicate: (_) => false);
+    context.pushNamedAndRemoveUntil(Routes.mainScreen, predicate: (_) => false);
   }
 
   void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {

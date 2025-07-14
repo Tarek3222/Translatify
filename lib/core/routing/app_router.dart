@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:translator/core/di/depandecy_injection.dart';
 import 'package:translator/core/routing/routes.dart';
-import 'package:translator/features/home/ui/home_view.dart';
+import 'package:translator/features/main/logic/bottom_nav_bar_cubit/bottom_nav_bar_index_cubit.dart';
+import 'package:translator/features/main/ui/main_view.dart';
 import 'package:translator/features/on_boarding/ui/views/on_boarding_view.dart';
 import 'package:translator/features/sign_in/data/repos/reset_password_repo.dart';
 import 'package:translator/features/sign_in/data/repos/sign_in_repo.dart';
@@ -17,6 +18,7 @@ import 'package:translator/features/sign_up/logic/confirm_email_cubit/confirm_em
 import 'package:translator/features/sign_up/logic/sign_up_cubit/sign_up_cubit.dart';
 import 'package:translator/features/sign_up/ui/views/sign_up_view.dart';
 import 'package:translator/features/sign_up/ui/views/verification_code_email_view.dart';
+import 'package:translator/features/translator_profile/ui/translator_profile_view.dart';
 
 import '../../features/sign_in/data/repos/forget_password_repo.dart';
 
@@ -27,9 +29,16 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const OnBoardingView(),
         );
-      case Routes.homeScreen:
+      case Routes.mainScreen:
         return MaterialPageRoute(
-          builder: (context) => const HomeView(),
+          builder: (context) => BlocProvider(
+            create: (context) => BottomNavBarIndexCubit(),
+            child: const MainView(),
+          ),
+        );
+      case Routes.translatorProfileScreen:
+        return MaterialPageRoute(
+          builder: (context) => const TranslatorProfileView(),
         );
       case Routes.signUpScreen:
         return MaterialPageRoute(
