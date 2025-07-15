@@ -5,6 +5,7 @@ import 'package:translator/core/routing/routes.dart';
 import 'package:translator/features/main/logic/bottom_nav_bar_cubit/bottom_nav_bar_index_cubit.dart';
 import 'package:translator/features/main/ui/main_view.dart';
 import 'package:translator/features/on_boarding/ui/views/on_boarding_view.dart';
+import 'package:translator/features/settings/ui/settings_view.dart';
 import 'package:translator/features/sign_in/data/repos/reset_password_repo.dart';
 import 'package:translator/features/sign_in/data/repos/sign_in_repo.dart';
 import 'package:translator/features/sign_in/logic/forget_password_cubit/forget_password_cubit.dart';
@@ -68,6 +69,10 @@ class AppRouter {
               email: settings.arguments as String? ?? '',
             ),
           ),
+        );
+      case Routes.settingsScreen:
+        return MaterialPageRoute(
+          builder: (context) => const SettingsView(),
         );
       case Routes.resetPassword:
         return MaterialPageRoute(

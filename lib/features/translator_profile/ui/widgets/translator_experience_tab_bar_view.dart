@@ -13,9 +13,10 @@ class TranslatorExperienceTabBarView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          buildTitleAndSubtitleText("Experience Years", "6"),
+          buildTitleAndSubtitleText(context, "Experience Years", "6"),
           verticalSpacing(12),
-          buildTitleAndSubtitleText("Languages", "English, Arabic, French"),
+          buildTitleAndSubtitleText(
+              context, "Languages", "English, Arabic, French"),
           // cv
           buildTextButton('CV Link', () {}),
           // certificates
@@ -38,14 +39,15 @@ class TranslatorExperienceTabBarView extends StatelessWidget {
     );
   }
 
-  Widget buildTitleAndSubtitleText(String title, String subtitle) {
+  Widget buildTitleAndSubtitleText(
+      BuildContext context, String title, String subtitle) {
     return Row(
       children: [
         Text(
           "$title : ",
           style: getSemiBoldStyle(
             fontSize: 16,
-            color: AppColors.darkBlue,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
         Text(

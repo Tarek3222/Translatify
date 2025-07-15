@@ -15,23 +15,28 @@ class TranslatorAboutMeTabView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           buildTitleAndSubtitleText(
+            context,
             "type of translator",
             "Interpreter",
           ),
           buildTitleAndSubtitleText(
+            context,
             "Mobile Number",
             "0123456789",
           ),
           buildTitleAndSubtitleText(
+            context,
             "Date of Birth",
             "01/01/2000",
           ),
-          buildTitleAndSubtitleText("Age", "21"),
+          buildTitleAndSubtitleText(context, "Age", "21"),
           buildTitleAndSubtitleText(
+            context,
             "Gender",
             "Male",
           ),
           buildTitleAndSubtitleText(
+            context,
             "Location",
             "London, UK",
           ),
@@ -40,14 +45,15 @@ class TranslatorAboutMeTabView extends StatelessWidget {
     );
   }
 
-  Widget buildTitleAndSubtitleText(String title, String subtitle) {
+  Widget buildTitleAndSubtitleText(
+      BuildContext context, String title, String subtitle) {
     return Row(
       children: [
         Text(
           "$title : ",
           style: getSemiBoldStyle(
             fontSize: 16,
-            color: AppColors.darkBlue,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
         verticalSpacing(12),

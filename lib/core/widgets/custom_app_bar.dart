@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/theme/app_colors.dart';
 import 'package:translator/core/theme/app_styles.dart';
 import 'package:translator/core/widgets/custom_app_icon.dart';
 
@@ -20,7 +19,7 @@ class CustomAppBar extends StatelessWidget {
             title,
             style: getSemiBoldStyle(
               fontSize: 20,
-              color: AppColors.darkBlue,
+              color: Theme.of(context).colorScheme.secondary,
             ),
           ),
           const Spacer(flex: 2),

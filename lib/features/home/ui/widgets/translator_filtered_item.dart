@@ -23,10 +23,12 @@ class TranslatorFilteredItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(12.r),
         ),
         child: const CustomListTitle(
-            imageUrl:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ1pXeIU3NM8AbIOKZIacRtTRUC3SgtlQQd8XredDWWAu_lfT84bXTE-pjxWndTbqQlB8&usqp=CAU",
-            title: "Tarek Ahmed",
-            subtitle: "3.5 ⭐  years ex: 3"),
+          imageUrl:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ1pXeIU3NM8AbIOKZIacRtTRUC3SgtlQQd8XredDWWAu_lfT84bXTE-pjxWndTbqQlB8&usqp=CAU",
+          title: "Tarek Ahmed",
+          subtitle: "3.5 ⭐  years ex: 3",
+          textColor: AppColors.darkBlue,
+        ),
       ),
     );
   }

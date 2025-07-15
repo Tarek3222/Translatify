@@ -31,7 +31,7 @@ class SingleReviewItem extends StatelessWidget {
                     "Jane Cooper",
                     style: getSemiBoldStyle(
                       fontSize: 16,
-                      color: AppColors.darkBlue,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                   const Spacer(),

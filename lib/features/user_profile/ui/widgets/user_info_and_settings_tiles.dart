@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:translator/core/helpers/extensions.dart';
 import 'package:translator/core/helpers/spacing.dart';
+import 'package:translator/core/routing/routes.dart';
 import 'package:translator/core/theme/app_colors.dart';
 import 'package:translator/core/theme/app_styles.dart';
 import 'package:translator/core/widgets/app_elevated_button.dart';
 import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/user_profile/ui/widgets/list_tile_tabs_profile.dart';
+import 'package:translator/features/user_profile/ui/widgets/list_tile_tabs_profile_and_settings.dart';
 
 class UserInfoAndSettingsTiles extends StatelessWidget {
   const UserInfoAndSettingsTiles({
@@ -55,22 +57,24 @@ class UserInfoAndSettingsTiles extends StatelessWidget {
           indent: 15.w,
           endIndent: 15.w,
         ),
-        ListTileTabsProfile(
+        ListTileTabsProfileAndSettings(
           icon: Icons.person,
           title: "Personal Information",
           onTap: () {},
         ),
-        ListTileTabsProfile(
+        ListTileTabsProfileAndSettings(
           icon: Icons.payment,
           title: "Payments",
           onTap: () {},
         ),
-        ListTileTabsProfile(
+        ListTileTabsProfileAndSettings(
           icon: Icons.settings,
           title: "Settings",
-          onTap: () {},
+          onTap: () {
+            context.pushNamed(Routes.settingsScreen);
+          },
         ),
-        ListTileTabsProfile(
+        ListTileTabsProfileAndSettings(
           icon: Icons.logout,
           title: "Logout",
           color: AppColors.mainRed,

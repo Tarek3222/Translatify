@@ -33,7 +33,7 @@ class FilterWidgetTranslatorItem extends StatelessWidget {
       child: Text(
         title,
         style: getSemiBoldStyle(
-          color: index == selectedIndex ? Colors.white : AppColors.darkBlue,
+          color: index == selectedIndex ? Colors.white : AppColors.mainBlue,
           fontSize: 18,
         ),
       ),

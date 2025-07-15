@@ -6,18 +6,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ChangeLanguageWidget extends StatelessWidget {
   const ChangeLanguageWidget({
     super.key,
+    this.icon,
+    this.padding,
   });
+  final Widget? icon;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
     return ZoomIn(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+        padding:
+            padding ?? EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.surfaceContainer,
           borderRadius: BorderRadius.circular(8.r),
         ),
         child: DropdownButton<String>(
+          icon: icon,
           value: context.locale.languageCode == 'en'
               ? context.tr("English")
               : context.locale.languageCode == 'ar'

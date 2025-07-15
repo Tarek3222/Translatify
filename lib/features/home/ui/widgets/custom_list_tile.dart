@@ -10,11 +10,13 @@ class CustomListTitle extends StatelessWidget {
     required this.imageUrl,
     required this.title,
     required this.subtitle,
+    this.textColor,
   });
 
   final String imageUrl;
   final String title;
   final String subtitle;
+  final Color? textColor;
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -25,7 +27,10 @@ class CustomListTitle extends StatelessWidget {
           imageUrl,
         ),
       ),
-      title: TitleTextWidet(title: title),
+      title: TitleTextWidet(
+        title: title,
+        textColor: textColor,
+      ),
       subtitle: Text(
         subtitle,
         style: getRegularStyle(

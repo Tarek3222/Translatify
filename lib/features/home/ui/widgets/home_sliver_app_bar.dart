@@ -1,7 +1,8 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:translator/core/theme/app_colors.dart';
 import 'package:translator/features/home/ui/widgets/custom_list_tile.dart';
 
 class HomeSliverAppBar extends StatelessWidget {
@@ -12,7 +13,7 @@ class HomeSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.background,
       pinned: true,
       scrolledUnderElevation: 0,
       automaticallyImplyLeading: false,
@@ -21,7 +22,7 @@ class HomeSliverAppBar extends StatelessWidget {
       actions: [
         FaIcon(
           FontAwesomeIcons.magnifyingGlass,
-          color: AppColors.darkBlue,
+          color: Theme.of(context).colorScheme.secondary,
           size: 20.sp,
         ),
       ],

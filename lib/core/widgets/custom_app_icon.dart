@@ -1,7 +1,8 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/theme/app_colors.dart';
 
 class CustomAppIcon extends StatelessWidget {
   const CustomAppIcon({
@@ -17,7 +18,7 @@ class CustomAppIcon extends StatelessWidget {
         context.pop();
       },
       style: IconButton.styleFrom(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.background,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10).r,
           side: const BorderSide(
@@ -28,7 +29,7 @@ class CustomAppIcon extends StatelessWidget {
       ),
       icon: Icon(
         icon ?? Icons.arrow_back_ios_new_rounded,
-        color: AppColors.mainBlue,
+        color: Theme.of(context).colorScheme.secondary,
       ),
     );
   }

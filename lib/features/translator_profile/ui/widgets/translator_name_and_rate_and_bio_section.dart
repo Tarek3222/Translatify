@@ -21,7 +21,7 @@ class TranslatorNameAndRateAndBioSection extends StatelessWidget {
                 "Tarek Ahmed",
                 style: getSemiBoldStyle(
                   fontSize: 24,
-                  color: AppColors.darkBlue,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
               const Spacer(),
@@ -63,7 +63,7 @@ class TranslatorNameAndRateAndBioSection extends StatelessWidget {
               Expanded(
                 child: AppElevatedButton(
                   onPressed: () {},
-                  text: "payNow",
+                  text: "pay Now",
                   height: 40.h,
                   elevation: 0,
                 ),
