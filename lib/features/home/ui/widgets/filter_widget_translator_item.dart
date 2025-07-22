@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:translator/core/helpers/spacing.dart';
 import 'package:translator/core/theme/app_colors.dart';
 import 'package:translator/core/theme/app_styles.dart';
 
@@ -10,11 +11,12 @@ class FilterWidgetTranslatorItem extends StatelessWidget {
       {super.key,
       required this.title,
       required this.index,
-      required this.selectedIndex});
+      required this.selectedIndex,
+      this.icon});
   final String title;
   final int index;
   final int selectedIndex;
-
+  final IconData? icon;
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
@@ -30,12 +32,22 @@ class FilterWidgetTranslatorItem extends StatelessWidget {
             : Colors.blueAccent.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12.r),
       ),
-      child: Text(
-        title,
-        style: getSemiBoldStyle(
-          color: index == selectedIndex ? Colors.white : AppColors.mainBlue,
-          fontSize: 18,
-        ),
+      child: Row(
+        children: [
+          if (icon != null)
+            Icon(
+              icon,
+              color: index == selectedIndex ? Colors.white : AppColors.mainBlue,
+            ),
+          if (icon != null) horizontalSpacing(5),
+          Text(
+            title,
+            style: getSemiBoldStyle(
+              color: index == selectedIndex ? Colors.white : AppColors.mainBlue,
+              fontSize: 18,
+            ),
+          ),
+        ],
       ),
     );
   }

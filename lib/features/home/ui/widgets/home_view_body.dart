@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:translator/core/helpers/extensions.dart';
 import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/features/home/ui/widgets/find_translator_by_type_section.dart';
-import 'package:translator/features/home/ui/widgets/find_translators_by_language_section.dart';
+import 'package:translator/core/routing/routes.dart';
+import 'package:translator/core/theme/app_colors.dart';
+import 'package:translator/core/theme/app_styles.dart';
+import 'package:translator/features/home/logic/get_translators_list_cubit/get_translators_list_cubit.dart';
+import 'package:translator/features/home/ui/widgets/filter_widgets_by_type.dart/find_translator_by_type_section.dart';
+import 'package:translator/features/home/ui/widgets/filter_widgets_by_language/find_translators_by_language_section.dart';
 import 'package:translator/features/home/ui/widgets/home_sliver_app_bar.dart';
-import 'package:translator/features/home/ui/widgets/recommended_translators_sliver_list.dart';
+import 'package:translator/features/home/ui/widgets/recommended_translators_widgets/recommended_translators_bloc_builder.dart';
 import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
 
 class HomeViewBody extends StatefulWidget {
@@ -25,27 +31,58 @@ class _HomeViewBodyState extends State<HomeViewBody>
       padding:
           const EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0, bottom: 5)
               .w,
-      child: CustomScrollView(
-        slivers: [
-          const HomeSliverAppBar(),
-          const SliverToBoxAdapter(
-            child: FindTranslatorsByLanguageSection(),
-          ),
-          const SliverToBoxAdapter(
-            child: FindTranslatorByTypeSection(),
-          ),
-          SliverToBoxAdapter(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                verticalSpacing(15),
-                const TitleTextWidet(title: "Recommended Translators"),
-                verticalSpacing(10),
-              ],
+      child: RefreshIndicator(
+        onRefresh: () async {
+          await context
+              .read<GetTranslatorsListCubit>()
+              .getTranslatorsList(forceRefresh: true);
+        },
+        child: CustomScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          slivers: [
+            const HomeSliverAppBar(),
+            const SliverToBoxAdapter(
+              child: FindTranslatorsByLanguageSection(),
             ),
-          ),
-          const RecommendedTranslatorsSliverList(),
-        ],
+            const SliverToBoxAdapter(
+              child: FindTranslatorByTypeSection(),
+            ),
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  verticalSpacing(15),
+                  Row(
+                    children: [
+                      const TitleTextWidet(title: "Recommended Translators"),
+                      const Spacer(),
+                      TextButton(
+                        onPressed: () {
+                          context.pushNamed(Routes.recommendedTranslatorsView,
+                              arguments: {
+                                'title': 'Recommended Translators',
+                                'translatorsList': context
+                                    .read<GetTranslatorsListCubit>()
+                                    .translatorsList,
+                              });
+                        },
+                        child: Text(
+                          "See All",
+                          style: getMediumStyle(
+                            color: AppColors.mainBlue,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  verticalSpacing(10),
+                ],
+              ),
+            ),
+            const RecommendedTranslatorsBlocBuilder(),
+          ],
+        ),
       ),
     );
   }

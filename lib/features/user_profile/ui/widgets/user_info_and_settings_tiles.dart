@@ -1,13 +1,21 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:translator/core/di/depandecy_injection.dart';
 import 'package:translator/core/helpers/extensions.dart';
+import 'package:translator/core/helpers/shared_preference_helper.dart';
 import 'package:translator/core/helpers/spacing.dart';
 import 'package:translator/core/routing/routes.dart';
 import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
+import 'package:translator/core/utils/app_constants.dart';
 import 'package:translator/core/widgets/app_elevated_button.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translator/features/settings/ui/widgets/sign_out_tile_and_bloc_listener.dart';
+import 'package:translator/features/user_profile/data/models/user_profile_model.dart';
+import 'package:translator/features/user_profile/logic/user_profile_cubit/user_profile_cubit.dart';
 import 'package:translator/features/user_profile/ui/widgets/list_tile_tabs_profile_and_settings.dart';
+import 'package:translator/features/user_profile/ui/widgets/user_name_and_email_text_bloc_builder.dart';
 
 class UserInfoAndSettingsTiles extends StatelessWidget {
   const UserInfoAndSettingsTiles({
@@ -19,23 +27,15 @@ class UserInfoAndSettingsTiles extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const TitleTextWidet(
-          title: "Tarek Ahmed",
-          fontSize: 24,
-        ),
-        Text(
-          "tarekahmed@gmail.com",
-          style: getRegularStyle(
-            color: AppColors.grey,
-            fontSize: 15,
-          ),
-        ),
+        const UserNameAndEmailTextBlocBuilder(),
         verticalSpacing(10),
         Row(
           children: [
             Expanded(
               child: AppElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.pushNamed(Routes.translatorsFavoritesView);
+                },
                 text: "Favorites",
                 elevation: 0,
               ),
@@ -43,7 +43,9 @@ class UserInfoAndSettingsTiles extends StatelessWidget {
             horizontalSpacing(10),
             Expanded(
               child: AppElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.pushNamed(Routes.orderTranslatorsView);
+                },
                 elevation: 0,
                 text: "Orders",
               ),
@@ -60,7 +62,15 @@ class UserInfoAndSettingsTiles extends StatelessWidget {
         ListTileTabsProfileAndSettings(
           icon: Icons.person,
           title: "Personal Information",
-          onTap: () {},
+          onTap: () {
+            context.pushNamed(
+              Routes.personalInformationView,
+              arguments: {
+                "userProfileModel": getUserProfileModel(),
+                'userProfileCubit': context.read<UserProfileCubit>(),
+              },
+            );
+          },
         ),
         ListTileTabsProfileAndSettings(
           icon: Icons.payment,
@@ -74,13 +84,18 @@ class UserInfoAndSettingsTiles extends StatelessWidget {
             context.pushNamed(Routes.settingsScreen);
           },
         ),
-        ListTileTabsProfileAndSettings(
-          icon: Icons.logout,
-          title: "Logout",
-          color: AppColors.mainRed,
-          onTap: () {},
-        ),
+        const SignOutTileAndBlocListener(),
       ],
+    );
+  }
+
+  UserProfileModel getUserProfileModel() {
+    return UserProfileModel.fromJson(
+      jsonDecode(
+        getIt<SharedPrefHelper>().getString(
+          SharedPrefKeys.kUserProfileKey,
+        )!,
+      ),
     );
   }
 }

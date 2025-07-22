@@ -5,9 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translator/core/routing/app_router.dart';
 import 'package:translator/core/routing/routes.dart';
 import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/features/settings/logic/cubit/change_theme_state.dart';
+import 'package:translator/features/settings/logic/change_theme_cubit/change_theme_state.dart';
 
-import 'features/settings/logic/cubit/change_theme_cubit.dart';
+import 'features/settings/logic/change_theme_cubit/change_theme_cubit.dart';
 
 class TranslatorsApp extends StatelessWidget {
   const TranslatorsApp({super.key, required this.appRouter});

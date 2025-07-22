@@ -8,4 +8,14 @@ abstract class Routes {
   static const String mainScreen = '/main';
   static const String translatorProfileScreen = '/translatorProfile';
   static const String settingsScreen = '/settings';
+  static const String imageViewerScreen = '/imageViewer';
+  static const String personalInformationView = '/personalInformation';
+  static const String changePasswordView = '/changePassword';
+  static const String faqVeiw = '/faq';
+  static const String supportView = '/support';
+  static const String cvViewerView = '/cvViewer';
+  static const String recommendedTranslatorsView = '/recommendedTranslators';
+  static const String translatorsFavoritesView = '/translatorsFavorites';
+  static const String paymentProccessView = '/paymentProccessView';
+  static const String orderTranslatorsView = '/orderTranslators';
 }

@@ -7,12 +7,13 @@ import 'package:translator/core/theme/app_colors.dart';
 class CustomCameraIcon extends StatelessWidget {
   const CustomCameraIcon({
     super.key,
+    this.onTap,
   });
-
+  final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Icon(
         Icons.camera_alt,
         size: 40.sp,

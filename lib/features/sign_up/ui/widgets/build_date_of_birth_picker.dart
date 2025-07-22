@@ -2,16 +2,20 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translator/core/theme/app_colors.dart';
 import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/features/sign_up/logic/sign_up_cubit/sign_up_cubit.dart';
 
 class BuildDateOfBirthPicker extends StatefulWidget {
   const BuildDateOfBirthPicker({
     super.key,
+    required this.onDateSelected,
+    this.initialDate,
+    this.title,
   });
+  final void Function(DateTime) onDateSelected;
+  final String? initialDate;
+  final String? title;
 
   @override
   State<BuildDateOfBirthPicker> createState() => _BuildDateOfBirthPickerState();
@@ -20,14 +24,22 @@ class BuildDateOfBirthPicker extends StatefulWidget {
 class _BuildDateOfBirthPickerState extends State<BuildDateOfBirthPicker> {
   DateTime? _selectedDate;
 
+  @override
+  void initState() {
+    super.initState();
+    if (widget.initialDate != null) {
+      _selectedDate = DateTime.parse(widget.initialDate!);
+    }
+  }
+
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: _selectedDate ?? DateTime(2003, 10, 9),
-      helpText: 'selectDOB'.tr(),
+      helpText: widget.title ?? 'selectDOB'.tr(),
       cancelText: 'Cancel'.tr(),
       confirmText: 'Confirm'.tr(),
-      fieldLabelText: 'dateOfBirth'.tr(),
+      fieldLabelText: widget.title ?? 'dateOfBirth'.tr(),
       errorFormatText: 'Invalid date format'.tr(),
       errorInvalidText: 'Date is out of range'.tr(),
       locale: context.locale,
@@ -49,7 +61,7 @@ class _BuildDateOfBirthPickerState extends State<BuildDateOfBirthPicker> {
     if (picked != null && picked != _selectedDate) {
       setState(() {
         _selectedDate = picked;
-        context.read<SignupCubit>().dateOfBirth = picked;
+        widget.onDateSelected(picked);
       });
     }
   }
@@ -57,7 +69,7 @@ class _BuildDateOfBirthPickerState extends State<BuildDateOfBirthPicker> {
   @override
   Widget build(BuildContext context) {
     String dobText = _selectedDate == null
-        ? 'selectDOB'.tr()
+        ? widget.title ?? 'selectDOB'.tr()
         : DateFormat('yyyy-MM-dd').format(_selectedDate!);
     return GestureDetector(
       onTap: () => _selectDate(context),

@@ -8,15 +8,18 @@ class CustomAppIcon extends StatelessWidget {
   const CustomAppIcon({
     super.key,
     this.icon,
+    this.onPressed,
   });
   final IconData? icon;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {
-        context.pop();
-      },
+      onPressed: onPressed ??
+          () {
+            context.pop();
+          },
       style: IconButton.styleFrom(
         backgroundColor: Theme.of(context).colorScheme.background,
         shape: RoundedRectangleBorder(

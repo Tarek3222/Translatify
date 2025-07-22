@@ -10,7 +10,7 @@ import 'package:translator/core/helpers/shared_preference_helper.dart';
 import 'package:translator/core/routing/app_router.dart';
 import 'package:translator/core/utils/app_constants.dart';
 import 'package:translator/core/utils/user_model.dart';
-import 'package:translator/features/settings/logic/cubit/change_theme_cubit.dart';
+import 'package:translator/features/settings/logic/change_theme_cubit/change_theme_cubit.dart';
 import 'package:translator/translators_app.dart';
 
 void main() async {

@@ -78,6 +78,14 @@ class SharedPrefHelper {
     await setData(key, json.encode(value));
   }
 
+  Future<void> setList(String key, List<String> value) async {
+    await _sharedPreferences.setStringList(key, value);
+  }
+
+  List<String>? getList(String key) {
+    return containsKey(key) ? _sharedPreferences.getStringList(key) : null;
+  }
+
   /// Saves a [value] with a [key] in the FlutterSecureStorage.
   setSecuredString(String key, String value) async {
     const flutterSecureStorage = FlutterSecureStorage();

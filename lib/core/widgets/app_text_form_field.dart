@@ -20,6 +20,7 @@ class AppTextFormField extends StatelessWidget {
   final Iterable<String>? autofillHints;
   final void Function(String)? onChanged;
   final AutovalidateMode? autovalidateMode;
+  final bool? enabled;
   final int? maxLines;
   final int? maxLength;
   final TextAlign? textAlign;
@@ -45,6 +46,7 @@ class AppTextFormField extends StatelessWidget {
     this.maxLength,
     this.onChanged,
     this.textAlign,
+    this.enabled,
   });
 
   @override
@@ -64,6 +66,7 @@ class AppTextFormField extends StatelessWidget {
       autofillHints: autofillHints ?? autofillHints,
       maxLength: maxLength,
       onChanged: onChanged,
+      enabled: enabled,
       focusNode: focusNode,
       autovalidateMode: autovalidateMode ?? AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(

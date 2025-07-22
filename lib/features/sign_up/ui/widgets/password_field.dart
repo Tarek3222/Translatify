@@ -4,9 +4,11 @@ import 'package:translator/core/validators/app_validator.dart';
 import 'package:translator/core/widgets/app_text_form_field.dart';
 
 class PasswordField extends StatefulWidget {
-  const PasswordField({super.key, this.passwordController, this.validator});
+  const PasswordField(
+      {super.key, this.passwordController, this.validator, this.hintText});
   final TextEditingController? passwordController;
   final String? Function(String?)? validator;
+  final String? hintText;
   @override
   State<PasswordField> createState() => _PasswordFieldState();
 }
@@ -16,7 +18,7 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return AppTextFormField(
-      hintText: "password".tr(),
+      hintText: widget.hintText ?? "password".tr(),
       autofillHints: const [AutofillHints.password],
       controller: widget.passwordController,
       keyboardType: TextInputType.visiblePassword,

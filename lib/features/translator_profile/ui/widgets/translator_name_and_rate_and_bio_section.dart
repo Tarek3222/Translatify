@@ -1,13 +1,22 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translator/core/helpers/spacing.dart';
 import 'package:translator/core/theme/app_colors.dart';
 import 'package:translator/core/theme/app_styles.dart';
 import 'package:translator/core/widgets/app_elevated_button.dart';
+import 'package:translator/features/home/data/models/translator_response_model.dart';
+import 'package:translator/features/translator_profile/logic/payment_translator_cubit/payment_translator_cubit.dart';
+import 'package:translator/features/translator_profile/ui/widgets/add_review_button_and_bloc_provider.dart';
+import 'package:translator/features/translator_profile/ui/widgets/add_to_favorite_icon_button.dart';
+import 'package:translator/features/translator_profile/ui/widgets/payment_bottom_sheet_widgets/pay_now_bottom_sheet_widget.dart';
 
 class TranslatorNameAndRateAndBioSection extends StatelessWidget {
-  const TranslatorNameAndRateAndBioSection({super.key});
-
+  const TranslatorNameAndRateAndBioSection(
+      {super.key, required this.translatorProfileModel});
+  final TranslatorProfileModel translatorProfileModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,23 +27,27 @@ class TranslatorNameAndRateAndBioSection extends StatelessWidget {
           Row(
             children: [
               Text(
-                "Tarek Ahmed",
+                translatorProfileModel.name ?? 'Unknown Translator',
                 style: getSemiBoldStyle(
                   fontSize: 24,
                   color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
               const Spacer(),
+              AddToFavoriteIconButton(
+                translatorProfileModel: translatorProfileModel,
+              ),
+              horizontalSpacing(20),
               Icon(
-                Icons.favorite,
+                Icons.chat,
                 color: AppColors.mainBlue,
                 size: 30.sp,
-              )
+              ),
             ],
           ),
           verticalSpacing(8),
           Text(
-            "3.5 ⭐  (5 reviews)",
+            "${translatorProfileModel.translator!.first.averageRating} ⭐  (${translatorProfileModel.translator!.first.numberOfRating} reviews)",
             style: getRegularStyle(
               color: AppColors.grey,
               fontSize: 15,
@@ -42,7 +55,7 @@ class TranslatorNameAndRateAndBioSection extends StatelessWidget {
           ),
           verticalSpacing(8),
           Text(
-            "Quick and accurate translations with over 6 years of freelance experience.",
+            translatorProfileModel.translator!.first.bio ?? 'No bio available',
             style: getRegularStyle(
               color: AppColors.grey,
               fontSize: 13,
@@ -51,23 +64,51 @@ class TranslatorNameAndRateAndBioSection extends StatelessWidget {
           verticalSpacing(5),
           Row(
             children: [
-              Expanded(
-                child: AppElevatedButton(
-                  onPressed: () {},
-                  text: "Add Review",
-                  height: 40.h,
-                  elevation: 0,
-                ),
+              AddReviewButtonAndBlocListener(
+                translatorProfileModle: translatorProfileModel,
               ),
               horizontalSpacing(10),
-              Expanded(
-                child: AppElevatedButton(
-                  onPressed: () {},
-                  text: "pay Now",
-                  height: 40.h,
-                  elevation: 0,
-                ),
-              ),
+              translatorProfileModel.translator!.first.availability!
+                  ? Expanded(
+                      child: AppElevatedButton(
+                        onPressed: () {
+                          showModalBottomSheet(
+                            context: context,
+                            isScrollControlled: true,
+                            backgroundColor:
+                                Theme.of(context).colorScheme.background,
+                            builder: (context) {
+                              return Padding(
+                                padding: EdgeInsets.only(
+                                    bottom: MediaQuery.of(context)
+                                        .viewInsets
+                                        .bottom),
+                                child: BlocProvider(
+                                  create: (context) => PaymentTranslatorCubit(),
+                                  child: PayNowBottomSheetWidget(
+                                    translatorProfileModel:
+                                        translatorProfileModel,
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        text: "pay",
+                        height: 40.h,
+                        elevation: 0,
+                      ),
+                    )
+                  : Expanded(
+                      child: Text(
+                        "Currently Unavailable",
+                        style: getRegularStyle(
+                          color: AppColors.mainRed,
+                          fontSize: 14,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
             ],
           ),
         ],

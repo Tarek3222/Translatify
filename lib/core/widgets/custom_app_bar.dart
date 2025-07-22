@@ -4,8 +4,9 @@ import 'package:translator/core/theme/app_styles.dart';
 import 'package:translator/core/widgets/custom_app_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.title});
+  const CustomAppBar({super.key, required this.title, this.onBackPress});
   final String title;
+  final VoidCallback? onBackPress;
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +14,18 @@ class CustomAppBar extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16, right: 16, top: 12).w,
       child: Row(
         children: [
-          const CustomAppIcon(),
+          CustomAppIcon(
+            onPressed: onBackPress,
+          ),
           const Spacer(flex: 1),
-          Text(
-            title,
-            style: getSemiBoldStyle(
-              fontSize: 20,
-              color: Theme.of(context).colorScheme.secondary,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              title,
+              style: getSemiBoldStyle(
+                fontSize: 20,
+                color: Theme.of(context).colorScheme.secondary,
+              ),
             ),
           ),
           const Spacer(flex: 2),

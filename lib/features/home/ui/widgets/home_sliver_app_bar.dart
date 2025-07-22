@@ -1,9 +1,17 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:translator/features/home/ui/widgets/custom_list_tile.dart';
+import 'package:translator/core/helpers/extensions.dart';
+import 'package:translator/core/helpers/spacing.dart';
+import 'package:translator/core/routing/routes.dart';
+import 'package:translator/core/theme/app_colors.dart';
+import 'package:translator/core/theme/app_styles.dart';
+import 'package:translator/features/home/logic/get_translators_list_cubit/get_translators_list_cubit.dart';
+import 'package:translator/features/home/ui/widgets/welcome_text_bloc_builder.dart';
+import 'package:translator/features/main/ui/widgets/image_user_bloc_builder.dart';
 
 class HomeSliverAppBar extends StatelessWidget {
   const HomeSliverAppBar({
@@ -20,20 +28,44 @@ class HomeSliverAppBar extends StatelessWidget {
       expandedHeight: 50.h,
       title: buildSliverAppBarTitle(),
       actions: [
-        FaIcon(
-          FontAwesomeIcons.magnifyingGlass,
-          color: Theme.of(context).colorScheme.secondary,
-          size: 20.sp,
+        InkWell(
+          onTap: () {
+            context.pushNamed(Routes.recommendedTranslatorsView, arguments: {
+              'title': 'Search Translators',
+              'translatorsList':
+                  context.read<GetTranslatorsListCubit>().translatorsList,
+            });
+          },
+          child: FaIcon(
+            FontAwesomeIcons.magnifyingGlass,
+            color: Theme.of(context).colorScheme.secondary,
+            size: 20.sp,
+          ),
         ),
       ],
     );
   }
 
   Widget buildSliverAppBarTitle() {
-    return const CustomListTitle(
-        imageUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ1pXeIU3NM8AbIOKZIacRtTRUC3SgtlQQd8XredDWWAu_lfT84bXTE-pjxWndTbqQlB8&usqp=CAU",
-        title: "Hello, Tarek",
-        subtitle: "How are you today?");
+    return Row(
+      children: [
+        const ImageUserBlocBuilder(radius: 30),
+        horizontalSpacing(10),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const WelcomeTextBlocBuilder(),
+            verticalSpacing(5),
+            Text(
+              "How are you today?",
+              style: getRegularStyle(
+                color: AppColors.grey,
+                fontSize: 14,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }

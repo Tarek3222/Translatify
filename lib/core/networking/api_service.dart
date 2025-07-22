@@ -1,10 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:translator/core/networking/api_constants.dart';
+import 'package:translator/features/settings/data/models/update_password_request_body.dart';
 import 'package:translator/features/sign_in/data/models/reset_password_request_body.dart';
 import 'package:translator/features/sign_in/data/models/sign_in_request_body.dart';
 import 'package:translator/features/sign_up/data/models/confirm_email_request_body.dart';
 import 'package:translator/features/sign_up/data/models/sign_up_request_body.dart';
+import 'package:translator/features/translator_profile/data/models/review_request_body.dart';
+import 'package:translator/features/translator_profile/data/models/reviews_response_body.dart';
+import 'package:translator/features/user_profile/data/models/update_user_request_body.dart';
 
 part 'api_service.g.dart';
 
@@ -29,4 +33,49 @@ abstract class ApiService {
   @POST(ApiConstants.resetPasswordEndpoint)
   Future<String> resetPassword(@Path("email") String email,
       @Body() ResetPasswordRequestBody resetPasswordRequestBody);
+
+  // User Profile
+  @GET(ApiConstants.userProfileEndpoint)
+  Future<String> getUserProfile();
+
+  @DELETE(ApiConstants.deleteUserProfileImageEndpoint)
+  Future<String> deleteUserProfileImage();
+
+  @DELETE(ApiConstants.deleteUserCoverImageEndpoint)
+  Future<String> deleteUserCoverImage();
+
+  @PUT(ApiConstants.updateUserEndpoint)
+  Future<String> updateUser(
+      @Body() UpdateUserRequestBody updateUserRequestBody);
+
+  @PATCH(ApiConstants.updatePasswordEndpoint)
+  Future<String> updatePassword(
+      @Body() UpdatePasswordRequestBody updatePasswordRequestBody);
+
+  @POST(ApiConstants.signOutEndpoint)
+  Future<String> signOut();
+
+  @DELETE(ApiConstants.deleteAccountEndpoint)
+  Future<String> deleteAccount();
+
+  // Translator Endpoints
+  @GET(ApiConstants.translatorsListEndpoint)
+  Future<String> getTranslatorsList();
+
+  // Reviews Endpoints
+  @POST(ApiConstants.addReviewEndpoint)
+  Future<String> addReview(@Path("translatorId") String translatorId,
+      @Body() ReviewRequestBody reviewRequestBody);
+
+  @GET(ApiConstants.getReviewsEndpoint)
+  Future<ReviewsResponseBody> getReviews(
+      @Path("translatorId") String translatorId,
+      @Query("page") int page,
+      @Query("limit") int limit);
+
+  @DELETE(ApiConstants.deleteReviewEndpoint)
+  Future<String> deleteReview(@Path("reviewId") String reviewId);
+  @PUT(ApiConstants.updateReviewEndpoint)
+  Future<String> updateReview(@Path("reviewId") String reviewId,
+      @Body() ReviewRequestBody reviewRequestBody);
 }

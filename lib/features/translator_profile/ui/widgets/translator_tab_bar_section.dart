@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translator/core/helpers/spacing.dart';
+import 'package:translator/features/home/data/models/translator_response_model.dart';
 import 'package:translator/features/translator_profile/ui/widgets/custom_tab_bar_tabs.dart';
 import 'package:translator/features/translator_profile/ui/widgets/custom_tab_bar_view.dart';
 
 class TranslatorTabBarSection extends StatefulWidget {
-  const TranslatorTabBarSection({super.key});
-
+  const TranslatorTabBarSection(
+      {super.key, required this.translatorProfileModel});
+  final TranslatorProfileModel translatorProfileModel;
   @override
   State<TranslatorTabBarSection> createState() =>
       _TranslatorTabBarSectionState();
@@ -32,7 +34,10 @@ class _TranslatorTabBarSectionState extends State<TranslatorTabBarSection>
             CustomTabBarTabs(tabController: tabController),
             verticalSpacing(16),
             Expanded(
-              child: CustomTabBarView(tabController: tabController),
+              child: CustomTabBarView(
+                tabController: tabController,
+                translatorProfileModel: widget.translatorProfileModel,
+              ),
             ),
           ],
         ),

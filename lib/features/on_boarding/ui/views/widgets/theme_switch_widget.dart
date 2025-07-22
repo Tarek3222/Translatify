@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/features/settings/logic/cubit/change_theme_cubit.dart';
-import 'package:translator/features/settings/logic/cubit/change_theme_state.dart';
+import 'package:translator/features/settings/logic/change_theme_cubit/change_theme_cubit.dart';
+import 'package:translator/features/settings/logic/change_theme_cubit/change_theme_state.dart';
 
 class ThemeSwitchWidget extends StatelessWidget {
   const ThemeSwitchWidget({super.key});

@@ -4,14 +4,15 @@ import 'package:translator/core/theme/app_colors.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class AppLoadingIndecator extends StatelessWidget {
-  const AppLoadingIndecator({super.key});
+  const AppLoadingIndecator({super.key, this.size});
+  final double? size;
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: LoadingAnimationWidget.staggeredDotsWave(
         color: AppColors.mainBlue,
-        size: 70.w,
+        size: size ?? 40.w,
       ),
     );
   }

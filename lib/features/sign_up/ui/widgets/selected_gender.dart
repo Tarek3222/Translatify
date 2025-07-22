@@ -1,19 +1,31 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/features/sign_up/logic/sign_up_cubit/sign_up_cubit.dart';
 import 'package:translator/features/sign_up/ui/widgets/custom_gender_container.dart';
 
 class SelectedGender extends StatefulWidget {
-  const SelectedGender({super.key});
-
+  const SelectedGender(
+      {super.key,
+      required this.onSelectMale,
+      required this.onSelectFemale,
+      this.initialGender});
+  final VoidCallback onSelectMale;
+  final VoidCallback onSelectFemale;
+  final String? initialGender;
   @override
   State<SelectedGender> createState() => _SelectedGenderState();
 }
 
 class _SelectedGenderState extends State<SelectedGender> {
   int selectedIndex = 0;
+  @override
+  void initState() {
+    super.initState();
+    if (widget.initialGender != null) {
+      selectedIndex = widget.initialGender == "male".tr() ? 0 : 1;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +46,7 @@ class _SelectedGenderState extends State<SelectedGender> {
               isSelected: selectedIndex == 0,
               onTap: () {
                 if (selectedIndex != 0) {
-                  context.read<SignupCubit>().gender = "male";
+                  widget.onSelectMale();
                   setState(() {
                     selectedIndex = 0;
                   });
@@ -48,7 +60,7 @@ class _SelectedGenderState extends State<SelectedGender> {
               isSelected: selectedIndex == 1,
               onTap: () {
                 if (selectedIndex != 1) {
-                  context.read<SignupCubit>().gender = "female";
+                  widget.onSelectFemale();
                   setState(() {
                     selectedIndex = 1;
                   });

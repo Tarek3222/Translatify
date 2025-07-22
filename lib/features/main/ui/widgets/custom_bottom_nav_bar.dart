@@ -7,6 +7,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:translator/core/theme/app_colors.dart';
 import 'package:translator/core/theme/app_styles.dart';
 import 'package:translator/features/main/logic/bottom_nav_bar_cubit/bottom_nav_bar_index_cubit.dart';
+import 'package:translator/features/main/ui/widgets/image_user_bloc_builder.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({super.key});
@@ -43,11 +44,8 @@ class CustomBottomNavBar extends StatelessWidget {
         ),
         GButton(
           icon: Icons.person_outline,
-          leading: CircleAvatar(
-            radius: 15,
-            backgroundImage: NetworkImage(
-              "https://res.cloudinary.com/dns6iddx7/image/upload/v1747299261/Graduation_Project/Users/et8v/Profile/kr8hf8hpelgdmrxywz60.jpg",
-            ),
+          leading: ImageUserBlocBuilder(
+            radius: 18,
           ),
           text: 'Profile',
         )

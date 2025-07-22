@@ -25,7 +25,9 @@ class ApiErrorHandler {
           return const ApiErrorModel(
               message: "Receive timeout in connection with the server");
         case DioExceptionType.badResponse:
-          return _handleError(jsonDecode(error.response?.data));
+          return error.response?.data is Map<String, dynamic>
+              ? _handleError(error.response?.data)
+              : _handleError(jsonDecode(error.response?.data));
         case DioExceptionType.sendTimeout:
           return const ApiErrorModel(
               message: "Send timeout in connection with the server");
