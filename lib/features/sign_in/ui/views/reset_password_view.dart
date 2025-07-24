@@ -4,15 +4,15 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/core/widgets/app_elevated_button.dart';
-import 'package:translator/core/widgets/app_snack_bar.dart';
-import 'package:translator/features/sign_in/logic/reset_password_cubit/reset_password_cubit.dart';
-import 'package:translator/features/sign_in/ui/widgets/reset_password_bloc_listener.dart';
-import 'package:translator/features/sign_up/ui/widgets/custom_otp_field.dart';
-import 'package:translator/features/sign_up/ui/widgets/label_form.dart';
-import 'package:translator/features/sign_up/ui/widgets/password_field.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/core/widgets/app_elevated_button.dart';
+import 'package:translators/core/widgets/app_snack_bar.dart';
+import 'package:translators/features/sign_in/logic/reset_password_cubit/reset_password_cubit.dart';
+import 'package:translators/features/sign_in/ui/widgets/reset_password_bloc_listener.dart';
+import 'package:translators/features/sign_up/ui/widgets/custom_otp_field.dart';
+import 'package:translators/features/sign_up/ui/widgets/label_form.dart';
+import 'package:translators/features/sign_up/ui/widgets/password_field.dart';
 
 class ResetPasswordView extends StatefulWidget {
   const ResetPasswordView({super.key, required this.email});

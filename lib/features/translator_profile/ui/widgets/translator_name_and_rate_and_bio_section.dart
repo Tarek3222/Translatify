@@ -3,15 +3,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/core/widgets/app_elevated_button.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/translator_profile/logic/payment_translator_cubit/payment_translator_cubit.dart';
-import 'package:translator/features/translator_profile/ui/widgets/add_review_button_and_bloc_provider.dart';
-import 'package:translator/features/translator_profile/ui/widgets/add_to_favorite_icon_button.dart';
-import 'package:translator/features/translator_profile/ui/widgets/payment_bottom_sheet_widgets/pay_now_bottom_sheet_widget.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/core/widgets/app_elevated_button.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/translator_profile/logic/payment_translator_cubit/payment_translator_cubit.dart';
+import 'package:translators/features/translator_profile/ui/widgets/add_review_button_and_bloc_provider.dart';
+import 'package:translators/features/translator_profile/ui/widgets/add_to_favorite_icon_button.dart';
+import 'package:translators/features/translator_profile/ui/widgets/payment_bottom_sheet_widgets/pay_now_bottom_sheet_widget.dart';
 
 class TranslatorNameAndRateAndBioSection extends StatelessWidget {
   const TranslatorNameAndRateAndBioSection(

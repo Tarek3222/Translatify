@@ -3,7 +3,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/features/on_boarding/ui/views/widgets/theme_switch_widget.dart';
+import 'package:translators/features/on_boarding/ui/views/widgets/theme_switch_widget.dart';
 
 class ChangeThemeSwitch extends StatelessWidget {
   const ChangeThemeSwitch({

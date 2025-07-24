@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:translator/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_colors.dart';
 
 class CustomOtpField extends StatelessWidget {
   final void Function(String)? onSubmit;

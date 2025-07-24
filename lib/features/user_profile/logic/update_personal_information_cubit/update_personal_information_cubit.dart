@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/features/user_profile/data/models/update_user_request_body.dart';
-import 'package:translator/features/user_profile/data/repo/update_user_info_repo.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/features/user_profile/data/models/update_user_request_body.dart';
+import 'package:translators/features/user_profile/data/repo/update_user_info_repo.dart';
 part 'update_personal_information_state.dart';
 
 class UpdatePersonalInformationCubit

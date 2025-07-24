@@ -3,14 +3,14 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/shared_preference_helper.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/core/networking/dio_factory.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/core/utils/user_model.dart';
-import 'package:translator/features/sign_in/data/models/sign_in_request_body.dart';
-import 'package:translator/features/sign_in/data/repos/sign_in_repo.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/shared_preference_helper.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/core/networking/dio_factory.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/core/utils/user_model.dart';
+import 'package:translators/features/sign_in/data/models/sign_in_request_body.dart';
+import 'package:translators/features/sign_in/data/repos/sign_in_repo.dart';
 part 'sign_in_state.dart';
 
 class SignInCubit extends Cubit<SignInState> {

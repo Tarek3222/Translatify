@@ -2,11 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/sign_up/logic/resend_confirm_email/resend_confirm_email_cubit.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/sign_up/logic/resend_confirm_email/resend_confirm_email_cubit.dart';
 
 class ResendOtpButtonAndBlocConsumer extends StatelessWidget {
   const ResendOtpButtonAndBlocConsumer({super.key, required this.email});

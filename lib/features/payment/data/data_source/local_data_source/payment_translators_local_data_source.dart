@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/helpers/shared_preference_helper.dart';
-import 'package:translator/features/payment/data/models/payment_response_model.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/helpers/shared_preference_helper.dart';
+import 'package:translators/features/payment/data/models/payment_response_model.dart';
 
 class PaymentTranslatorsLocalDataSource {
   /// Add Translator to Favorite

@@ -2,16 +2,16 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/shared_preference_helper.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/features/user_profile/data/models/user_profile_model.dart';
-import 'package:translator/features/user_profile/logic/delete_user_cover_image_cubit/delete_user_cover_image_cubit.dart';
-import 'package:translator/features/user_profile/logic/upload_user_cover_image_cubit/upload_user_cover_image_cubit.dart';
-import 'package:translator/features/user_profile/ui/widgets/custom_camera_icon.dart';
-import 'package:translator/features/user_profile/ui/widgets/delete_cover_image_bloc_listener.dart';
-import 'package:translator/features/user_profile/ui/widgets/show_image_options_bottom_sheet.dart';
-import 'package:translator/features/user_profile/ui/widgets/upload_cover_image_bloc_listener.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/shared_preference_helper.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/features/user_profile/data/models/user_profile_model.dart';
+import 'package:translators/features/user_profile/logic/delete_user_cover_image_cubit/delete_user_cover_image_cubit.dart';
+import 'package:translators/features/user_profile/logic/upload_user_cover_image_cubit/upload_user_cover_image_cubit.dart';
+import 'package:translators/features/user_profile/ui/widgets/custom_camera_icon.dart';
+import 'package:translators/features/user_profile/ui/widgets/delete_cover_image_bloc_listener.dart';
+import 'package:translators/features/user_profile/ui/widgets/show_image_options_bottom_sheet.dart';
+import 'package:translators/features/user_profile/ui/widgets/upload_cover_image_bloc_listener.dart';
 
 class IconCoverImageBlocListener extends StatelessWidget {
   const IconCoverImageBlocListener({super.key});

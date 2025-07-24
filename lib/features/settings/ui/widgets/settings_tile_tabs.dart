@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/routing/routes.dart';
-import 'package:translator/features/on_boarding/ui/views/widgets/change_language_widget.dart';
-import 'package:translator/features/on_boarding/ui/views/widgets/theme_switch_widget.dart';
-import 'package:translator/features/settings/ui/widgets/delete_account_tile_and_bloc_listener.dart';
-import 'package:translator/features/settings/ui/widgets/sign_out_tile_and_bloc_listener.dart';
-import 'package:translator/features/user_profile/ui/widgets/list_tile_tabs_profile_and_settings.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/routing/routes.dart';
+import 'package:translators/features/on_boarding/ui/views/widgets/change_language_widget.dart';
+import 'package:translators/features/on_boarding/ui/views/widgets/theme_switch_widget.dart';
+import 'package:translators/features/settings/ui/widgets/delete_account_tile_and_bloc_listener.dart';
+import 'package:translators/features/settings/ui/widgets/sign_out_tile_and_bloc_listener.dart';
+import 'package:translators/features/user_profile/ui/widgets/list_tile_tabs_profile_and_settings.dart';
 
 class SettingsTileTabs extends StatelessWidget {
   const SettingsTileTabs({super.key});

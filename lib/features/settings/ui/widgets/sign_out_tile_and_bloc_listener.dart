@@ -2,15 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/settings/data/repos/sign_out_and_delete_account_repo.dart';
-import 'package:translator/features/settings/logic/sign_out_cubit/sign_out_cubit.dart';
-import 'package:translator/features/settings/ui/widgets/sign_out_bloc_listener.dart';
-import 'package:translator/features/user_profile/ui/widgets/list_tile_tabs_profile_and_settings.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/settings/data/repos/sign_out_and_delete_account_repo.dart';
+import 'package:translators/features/settings/logic/sign_out_cubit/sign_out_cubit.dart';
+import 'package:translators/features/settings/ui/widgets/sign_out_bloc_listener.dart';
+import 'package:translators/features/user_profile/ui/widgets/list_tile_tabs_profile_and_settings.dart';
 
 class SignOutTileAndBlocListener extends StatelessWidget {
   const SignOutTileAndBlocListener({super.key});

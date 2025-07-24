@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/core/networking/network_info.dart';
-import 'package:translator/features/payment/data/data_source/remote_data_source/stripe_service.dart';
-import 'package:translator/features/payment/data/models/payment_intnet_input_model.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/core/networking/network_info.dart';
+import 'package:translators/features/payment/data/data_source/remote_data_source/stripe_service.dart';
+import 'package:translators/features/payment/data/models/payment_intnet_input_model.dart';
 
 class CheckOutRepo {
   final StripeService stripeService = StripeService();

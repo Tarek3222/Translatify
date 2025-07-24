@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:translator/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_colors.dart';
 
 class AppCircleCachedNetworkImage extends StatelessWidget {
   const AppCircleCachedNetworkImage(

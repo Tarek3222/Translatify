@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:translator/core/networking/api_constants.dart';
-import 'package:translator/core/networking/api_error_handler.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/features/user_profile/data/data_source/remote_data_source/upload_image_data_source.dart';
+import 'package:translators/core/networking/api_constants.dart';
+import 'package:translators/core/networking/api_error_handler.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/features/user_profile/data/data_source/remote_data_source/upload_image_data_source.dart';
 
 class UploadUserImagesRepo {
   final UploadImageDataSource _uploadImageDataSource;

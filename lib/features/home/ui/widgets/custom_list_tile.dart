@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/core/widgets/app_circle_cached_network_image.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/core/widgets/app_circle_cached_network_image.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
 
 class CustomListTitle extends StatelessWidget {
   const CustomListTitle({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/features/home/ui/widgets/filter_widgets_by_language/filter_widgets_by_language_list_items.dart';
-import 'package:translator/features/home/ui/widgets/filter_widgets_by_language/transtlators_filter_by_language_bloc_builder.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/features/home/ui/widgets/filter_widgets_by_language/filter_widgets_by_language_list_items.dart';
+import 'package:translators/features/home/ui/widgets/filter_widgets_by_language/transtlators_filter_by_language_bloc_builder.dart';
 
 class FindTranslatorsByLanguageSection extends StatelessWidget {
   const FindTranslatorsByLanguageSection({super.key});

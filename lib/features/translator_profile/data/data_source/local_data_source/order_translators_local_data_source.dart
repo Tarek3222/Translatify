@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/helpers/shared_preference_helper.dart';
-import 'package:translator/features/translator_profile/data/models/order_translator_model.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/helpers/shared_preference_helper.dart';
+import 'package:translators/features/translator_profile/data/models/order_translator_model.dart';
 
 class OrderTranslatorsLocalDataSource {
   /// Add Translator to Favorite

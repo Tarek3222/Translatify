@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/features/translator_profile/data/models/review_request_body.dart';
-import 'package:translator/features/translator_profile/data/repos/reviews_repo.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/features/translator_profile/data/models/review_request_body.dart';
+import 'package:translators/features/translator_profile/data/repos/reviews_repo.dart';
 part 'add_review_state.dart';
 
 class AddReviewCubit extends Cubit<AddReviewState> {

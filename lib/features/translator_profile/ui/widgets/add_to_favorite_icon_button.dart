@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/user_profile/data/data_source/local_data_source/favorites_translators_local_date_source.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/user_profile/data/data_source/local_data_source/favorites_translators_local_date_source.dart';
 
 class AddToFavoriteIconButton extends StatefulWidget {
   const AddToFavoriteIconButton(

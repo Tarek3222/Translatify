@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/utils/time_formated.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/payment/data/models/payment_response_model.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/utils/time_formated.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/payment/data/models/payment_response_model.dart';
 
 class ThankYouBody extends StatelessWidget {
   const ThankYouBody({super.key, required this.paymentResponseModel});

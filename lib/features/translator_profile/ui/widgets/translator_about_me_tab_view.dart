@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
 
 class TranslatorAboutMeTabView extends StatelessWidget {
   const TranslatorAboutMeTabView(

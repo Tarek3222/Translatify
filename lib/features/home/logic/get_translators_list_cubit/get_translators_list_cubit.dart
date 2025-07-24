@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/home/data/repos/translators_list_repo.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/home/data/repos/translators_list_repo.dart';
 part 'get_translators_list_state.dart';
 
 class GetTranslatorsListCubit extends Cubit<GetTranslatorsListState> {

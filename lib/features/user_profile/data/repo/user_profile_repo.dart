@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:translator/core/networking/api_error_handler.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/core/networking/api_service.dart';
-import 'package:translator/core/networking/network_info.dart';
-import 'package:translator/features/user_profile/data/data_source/local_data_source/user_profile_local_data_source.dart';
-import 'package:translator/features/user_profile/data/models/user_profile_model.dart';
+import 'package:translators/core/networking/api_error_handler.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/core/networking/api_service.dart';
+import 'package:translators/core/networking/network_info.dart';
+import 'package:translators/features/user_profile/data/data_source/local_data_source/user_profile_local_data_source.dart';
+import 'package:translators/features/user_profile/data/models/user_profile_model.dart';
 
 class UserProfileRepo {
   final ApiService _apiService;

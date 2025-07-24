@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/font_weight_helper.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/font_weight_helper.dart';
 
 TextStyle getRegularStyle({
   double fontSize = 12,

@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/core/widgets/custom_app_bar.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/core/widgets/custom_app_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SupportView extends StatelessWidget {

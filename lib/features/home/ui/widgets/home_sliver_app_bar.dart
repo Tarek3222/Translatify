@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/routing/routes.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/features/home/logic/get_translators_list_cubit/get_translators_list_cubit.dart';
-import 'package:translator/features/home/ui/widgets/welcome_text_bloc_builder.dart';
-import 'package:translator/features/main/ui/widgets/image_user_bloc_builder.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/routing/routes.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/features/home/logic/get_translators_list_cubit/get_translators_list_cubit.dart';
+import 'package:translators/features/home/ui/widgets/welcome_text_bloc_builder.dart';
+import 'package:translators/features/main/ui/widgets/image_user_bloc_builder.dart';
 
 class HomeSliverAppBar extends StatelessWidget {
   const HomeSliverAppBar({

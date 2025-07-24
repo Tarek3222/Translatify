@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:translator/core/widgets/custom_app_bar.dart';
-import 'package:translator/features/settings/ui/widgets/settings_tile_tabs.dart';
+import 'package:translators/core/widgets/custom_app_bar.dart';
+import 'package:translators/features/settings/ui/widgets/settings_tile_tabs.dart';
 
 class SettingsBody extends StatelessWidget {
   const SettingsBody({super.key});

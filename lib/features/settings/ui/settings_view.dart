@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:translator/features/settings/ui/widgets/settings_body.dart';
+import 'package:translators/features/settings/ui/widgets/settings_body.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});

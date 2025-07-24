@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/core/widgets/app_circle_cached_network_image.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/core/widgets/app_circle_cached_network_image.dart';
 
 class AppUserAvatar extends StatelessWidget {
   final String? imageUrl;

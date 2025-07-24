@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/core/widgets/app_elevated_button.dart';
-import 'package:translator/features/home/ui/widgets/recommended_translators_widgets/translator_sliver_list_item.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/payment/ui/widgets/pay_now_button_model_bottom_sheet.dart';
-import 'package:translator/features/translator_profile/data/models/order_translator_model.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/core/widgets/app_elevated_button.dart';
+import 'package:translators/features/home/ui/widgets/recommended_translators_widgets/translator_sliver_list_item.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/payment/ui/widgets/pay_now_button_model_bottom_sheet.dart';
+import 'package:translators/features/translator_profile/data/models/order_translator_model.dart';
 
 class PaymentProccessedBody extends StatelessWidget {
   const PaymentProccessedBody({super.key, required this.orderTranslatorModel});

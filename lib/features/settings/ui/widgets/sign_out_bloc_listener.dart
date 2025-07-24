@@ -2,12 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/core/routing/routes.dart';
-import 'package:translator/core/widgets/app_loading_indecator.dart';
-import 'package:translator/core/widgets/app_snack_bar.dart';
-import 'package:translator/features/settings/logic/sign_out_cubit/sign_out_cubit.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/core/routing/routes.dart';
+import 'package:translators/core/widgets/app_loading_indecator.dart';
+import 'package:translators/core/widgets/app_snack_bar.dart';
+import 'package:translators/features/settings/logic/sign_out_cubit/sign_out_cubit.dart';
 
 class SignOutBlocListener extends StatelessWidget {
   const SignOutBlocListener({super.key});

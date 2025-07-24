@@ -1,11 +1,11 @@
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/shared_preference_helper.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/features/payment/data/data_source/remote_data_source/stripe_service.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/shared_preference_helper.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/features/payment/data/data_source/remote_data_source/stripe_service.dart';
 
 class CreateCustomerRepo {
   StripeService stripeService = StripeService();

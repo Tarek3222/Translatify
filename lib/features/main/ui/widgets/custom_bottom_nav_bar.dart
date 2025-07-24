@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/features/main/logic/bottom_nav_bar_cubit/bottom_nav_bar_index_cubit.dart';
-import 'package:translator/features/main/ui/widgets/image_user_bloc_builder.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/features/main/logic/bottom_nav_bar_cubit/bottom_nav_bar_index_cubit.dart';
+import 'package:translators/features/main/ui/widgets/image_user_bloc_builder.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({super.key});

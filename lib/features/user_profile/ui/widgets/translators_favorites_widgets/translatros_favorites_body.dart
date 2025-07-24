@@ -3,15 +3,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/routing/routes.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/core/widgets/custom_app_bar.dart';
-import 'package:translator/features/home/ui/widgets/recommended_translators_widgets/translator_sliver_list_item.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/user_profile/logic/translators_favorites_cubit/translators_favorites_cubit.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/routing/routes.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/core/widgets/custom_app_bar.dart';
+import 'package:translators/features/home/ui/widgets/recommended_translators_widgets/translator_sliver_list_item.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/user_profile/logic/translators_favorites_cubit/translators_favorites_cubit.dart';
 
 class TranslatrosFavoritesBody extends StatelessWidget {
   const TranslatrosFavoritesBody({super.key});

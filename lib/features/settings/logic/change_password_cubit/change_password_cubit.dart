@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/features/settings/data/models/update_password_request_body.dart';
-import 'package:translator/features/settings/data/repos/update_password_repo.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/features/settings/data/models/update_password_request_body.dart';
+import 'package:translators/features/settings/data/repos/update_password_repo.dart';
 part 'change_password_state.dart';
 
 class ChangePasswordCubit extends Cubit<ChangePasswordState> {

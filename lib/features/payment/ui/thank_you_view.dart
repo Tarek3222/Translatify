@@ -1,12 +1,12 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/core/widgets/custom_app_bar.dart';
-import 'package:translator/features/payment/data/models/payment_response_model.dart';
-import 'package:translator/features/payment/logic/orders_translators_cubit/orders_translators_cubit.dart';
-import 'package:translator/features/payment/ui/widgets/thank_you_body.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/core/widgets/custom_app_bar.dart';
+import 'package:translators/features/payment/data/models/payment_response_model.dart';
+import 'package:translators/features/payment/logic/orders_translators_cubit/orders_translators_cubit.dart';
+import 'package:translators/features/payment/ui/widgets/thank_you_body.dart';
 
 class ThankYouView extends StatelessWidget {
   const ThankYouView(

@@ -1,10 +1,10 @@
 import 'package:flutter_stripe/flutter_stripe.dart';
-import 'package:translator/core/utils/api_keys.dart';
-import 'package:translator/features/payment/data/data_source/remote_data_source/stripe_api_services.dart';
-import 'package:translator/features/payment/data/models/ephemeral_key_model/ephemeral_key_model.dart';
-import 'package:translator/features/payment/data/models/init_payment_sheet_input_model.dart';
-import 'package:translator/features/payment/data/models/payment_intent_model/payment_intent_model.dart';
-import 'package:translator/features/payment/data/models/payment_intnet_input_model.dart';
+import 'package:translators/core/utils/api_keys.dart';
+import 'package:translators/features/payment/data/data_source/remote_data_source/stripe_api_services.dart';
+import 'package:translators/features/payment/data/models/ephemeral_key_model/ephemeral_key_model.dart';
+import 'package:translators/features/payment/data/models/init_payment_sheet_input_model.dart';
+import 'package:translators/features/payment/data/models/payment_intent_model/payment_intent_model.dart';
+import 'package:translators/features/payment/data/models/payment_intnet_input_model.dart';
 
 class StripeService {
   final StripeApiServices _apiService = StripeApiServices();

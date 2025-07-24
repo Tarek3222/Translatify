@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/features/sign_up/ui/widgets/custom_gender_container.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/features/sign_up/ui/widgets/custom_gender_container.dart';
 
 class SelectedGender extends StatefulWidget {
   const SelectedGender(

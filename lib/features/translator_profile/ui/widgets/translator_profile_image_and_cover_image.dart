@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/widgets/app_cached_network_image.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/user_profile/ui/widgets/circle_profile_image.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/widgets/app_cached_network_image.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/user_profile/ui/widgets/circle_profile_image.dart';
 
 class TranslatorProfileImageAndCoverImage extends StatelessWidget {
   const TranslatorProfileImageAndCoverImage(

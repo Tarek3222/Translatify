@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/features/sign_up/ui/widgets/custom_check_box.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/features/sign_up/ui/widgets/custom_check_box.dart';
 
 class CheckBoxAndTermsAndPrivacyPolicyText extends StatelessWidget {
   const CheckBoxAndTermsAndPrivacyPolicyText({super.key});

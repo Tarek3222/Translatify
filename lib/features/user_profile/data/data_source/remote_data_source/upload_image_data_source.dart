@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:translator/core/networking/api_constants.dart';
-import 'package:translator/core/networking/dio_factory.dart';
+import 'package:translators/core/networking/api_constants.dart';
+import 'package:translators/core/networking/dio_factory.dart';
 
 class UploadImageDataSource {
   final Dio dio;

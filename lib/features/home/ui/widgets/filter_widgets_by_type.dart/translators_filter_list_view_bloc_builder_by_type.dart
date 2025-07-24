@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/features/home/logic/get_translators_list_cubit/get_translators_list_cubit.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/home/ui/widgets/translators_filtered_list_view.dart';
+import 'package:translators/features/home/logic/get_translators_list_cubit/get_translators_list_cubit.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/home/ui/widgets/translators_filtered_list_view.dart';
 
 class TranslatorsFilterListViewBlocBuilderByType extends StatelessWidget {
   const TranslatorsFilterListViewBlocBuilderByType({super.key});

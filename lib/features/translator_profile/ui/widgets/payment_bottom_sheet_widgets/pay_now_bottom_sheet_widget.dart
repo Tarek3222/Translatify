@@ -2,18 +2,18 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/widgets/app_text_form_field.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/sign_up/ui/widgets/build_date_of_birth_picker.dart';
-import 'package:translator/features/sign_up/ui/widgets/label_form.dart';
-import 'package:translator/features/translator_profile/logic/payment_translator_cubit/payment_translator_cubit.dart';
-import 'package:translator/features/translator_profile/ui/widgets/payment_bottom_sheet_widgets/build_time_picker_widget.dart';
-import 'package:translator/features/translator_profile/ui/widgets/payment_bottom_sheet_widgets/currency_drop_dwon_menu_item.dart';
-import 'package:translator/features/translator_profile/ui/widgets/payment_bottom_sheet_widgets/proccessed_button_and_bloc_consumer.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/widgets/app_text_form_field.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/sign_up/ui/widgets/build_date_of_birth_picker.dart';
+import 'package:translators/features/sign_up/ui/widgets/label_form.dart';
+import 'package:translators/features/translator_profile/logic/payment_translator_cubit/payment_translator_cubit.dart';
+import 'package:translators/features/translator_profile/ui/widgets/payment_bottom_sheet_widgets/build_time_picker_widget.dart';
+import 'package:translators/features/translator_profile/ui/widgets/payment_bottom_sheet_widgets/currency_drop_dwon_menu_item.dart';
+import 'package:translators/features/translator_profile/ui/widgets/payment_bottom_sheet_widgets/proccessed_button_and_bloc_consumer.dart';
 
 class PayNowBottomSheetWidget extends StatelessWidget {
   const PayNowBottomSheetWidget(

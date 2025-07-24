@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:translator/core/widgets/app_cached_network_image.dart';
+import 'package:translators/core/widgets/app_cached_network_image.dart';
 
 class ImageViewerView extends StatelessWidget {
   const ImageViewerView({super.key, required this.imageUrl});

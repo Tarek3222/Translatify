@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/helpers/shared_preference_helper.dart';
-import 'package:translator/core/routing/routes.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/core/widgets/app_elevated_button.dart';
-import 'package:translator/core/widgets/app_loading_indecator.dart';
-import 'package:translator/core/widgets/app_snack_bar.dart';
-import 'package:translator/features/payment/data/models/payment_intnet_input_model.dart';
-import 'package:translator/features/payment/logic/orders_translators_cubit/orders_translators_cubit.dart';
-import 'package:translator/features/payment/logic/payment_cubit/payment_cubit.dart';
-import 'package:translator/features/translator_profile/data/models/order_translator_model.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/helpers/shared_preference_helper.dart';
+import 'package:translators/core/routing/routes.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/core/widgets/app_elevated_button.dart';
+import 'package:translators/core/widgets/app_loading_indecator.dart';
+import 'package:translators/core/widgets/app_snack_bar.dart';
+import 'package:translators/features/payment/data/models/payment_intnet_input_model.dart';
+import 'package:translators/features/payment/logic/orders_translators_cubit/orders_translators_cubit.dart';
+import 'package:translators/features/payment/logic/payment_cubit/payment_cubit.dart';
+import 'package:translators/features/translator_profile/data/models/order_translator_model.dart';
 
 class CustomButtonBlocConsumer extends StatelessWidget {
   const CustomButtonBlocConsumer({

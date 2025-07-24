@@ -1,12 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/widgets/app_elevated_button.dart';
-import 'package:translator/core/widgets/app_snack_bar.dart';
-import 'package:translator/features/sign_up/logic/sign_up_cubit/sign_up_cubit.dart';
-import 'package:translator/features/sign_up/ui/widgets/sign_up_bloc_listener.dart';
-import 'package:translator/features/sign_up/ui/widgets/sign_up_form.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/widgets/app_elevated_button.dart';
+import 'package:translators/core/widgets/app_snack_bar.dart';
+import 'package:translators/features/sign_up/logic/sign_up_cubit/sign_up_cubit.dart';
+import 'package:translators/features/sign_up/ui/widgets/sign_up_bloc_listener.dart';
+import 'package:translators/features/sign_up/ui/widgets/sign_up_form.dart';
 
 class SignUpFormAndSignupButton extends StatelessWidget {
   const SignUpFormAndSignupButton({super.key});

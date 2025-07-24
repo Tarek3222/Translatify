@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/helpers/shared_preference_helper.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/helpers/shared_preference_helper.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
 
 class FavoritesTranslatorsLocalDateSource {
   /// Add Translator to Favorite

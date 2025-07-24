@@ -2,11 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/features/translator_profile/data/models/reviews_response_body.dart';
-import 'package:translator/features/translator_profile/ui/widgets/delete_review_alert_dialog.dart';
-import 'package:translator/features/translator_profile/ui/widgets/edit_review_bottom_sheet_and_bloc_listener.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/features/translator_profile/data/models/reviews_response_body.dart';
+import 'package:translators/features/translator_profile/ui/widgets/delete_review_alert_dialog.dart';
+import 'package:translators/features/translator_profile/ui/widgets/edit_review_bottom_sheet_and_bloc_listener.dart';
 
 class PopMenuItemsForSingleReview extends StatelessWidget {
   const PopMenuItemsForSingleReview({super.key, required this.reviewModel});

@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/widgets/app_text_shimmer_loading.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/user_profile/logic/user_profile_cubit/user_profile_cubit.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/widgets/app_text_shimmer_loading.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/user_profile/logic/user_profile_cubit/user_profile_cubit.dart';
 
 class WelcomeTextBlocBuilder extends StatelessWidget {
   const WelcomeTextBlocBuilder({super.key});

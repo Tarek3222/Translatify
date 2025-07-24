@@ -5,15 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/helpers/shared_preference_helper.dart';
-import 'package:translator/core/routing/app_router.dart';
-import 'package:translator/core/utils/api_keys.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/core/utils/user_model.dart';
-import 'package:translator/features/settings/logic/change_theme_cubit/change_theme_cubit.dart';
-import 'package:translator/translators_app.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/helpers/shared_preference_helper.dart';
+import 'package:translators/core/routing/app_router.dart';
+import 'package:translators/core/utils/api_keys.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/core/utils/user_model.dart';
+import 'package:translators/features/settings/logic/change_theme_cubit/change_theme_cubit.dart';
+import 'package:translators/translators_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

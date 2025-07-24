@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_colors.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class AppLoadingIndecator extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/features/user_profile/data/repo/delete_user_images_repo.dart';
-import 'package:translator/features/user_profile/logic/user_profile_cubit/user_profile_cubit.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/features/user_profile/data/repo/delete_user_images_repo.dart';
+import 'package:translators/features/user_profile/logic/user_profile_cubit/user_profile_cubit.dart';
 part 'delete_user_cover_image_state.dart';
 
 class DeleteUserCoverImageCubit extends Cubit<DeleteUserCoverImageState> {

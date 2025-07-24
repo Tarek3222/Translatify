@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/core/utils/time_formated.dart';
-import 'package:translator/core/widgets/custom_app_bar.dart';
-import 'package:translator/features/home/ui/widgets/recommended_translators_widgets/translator_sliver_list_item.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/payment/logic/history_payments_cubit/history_payments_cubit.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/core/utils/time_formated.dart';
+import 'package:translators/core/widgets/custom_app_bar.dart';
+import 'package:translators/features/home/ui/widgets/recommended_translators_widgets/translator_sliver_list_item.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/payment/logic/history_payments_cubit/history_payments_cubit.dart';
 
 class PaymentsHistoryBody extends StatelessWidget {
   const PaymentsHistoryBody({super.key});

@@ -1,8 +1,8 @@
-import 'package:translator/core/networking/api_error_handler.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/core/networking/api_service.dart';
-import 'package:translator/features/sign_up/data/models/confirm_email_request_body.dart';
-import 'package:translator/features/sign_up/data/models/sign_up_request_body.dart';
+import 'package:translators/core/networking/api_error_handler.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/core/networking/api_service.dart';
+import 'package:translators/features/sign_up/data/models/confirm_email_request_body.dart';
+import 'package:translators/features/sign_up/data/models/sign_up_request_body.dart';
 import 'package:dartz/dartz.dart';
 
 class SignUpRepo {

@@ -2,10 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/routing/app_router.dart';
-import 'package:translator/core/routing/routes.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/features/settings/logic/change_theme_cubit/change_theme_state.dart';
+import 'package:translators/core/routing/app_router.dart';
+import 'package:translators/core/routing/routes.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/features/settings/logic/change_theme_cubit/change_theme_state.dart';
 
 import 'features/settings/logic/change_theme_cubit/change_theme_cubit.dart';
 

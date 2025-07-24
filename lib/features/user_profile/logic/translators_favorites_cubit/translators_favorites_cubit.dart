@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/user_profile/data/data_source/local_data_source/favorites_translators_local_date_source.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/user_profile/data/data_source/local_data_source/favorites_translators_local_date_source.dart';
 part 'translators_favorites_state.dart';
 
 class TranslatorsFavoritesCubit extends Cubit<TranslatorsFavoritesState> {

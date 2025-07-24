@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/features/payment/logic/history_payments_cubit/history_payments_cubit.dart';
-import 'package:translator/features/payment/ui/widgets/payments_history_body.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/features/payment/logic/history_payments_cubit/history_payments_cubit.dart';
+import 'package:translators/features/payment/ui/widgets/payments_history_body.dart';
 
 class PaymentsHistoryView extends StatelessWidget {
   const PaymentsHistoryView({super.key});

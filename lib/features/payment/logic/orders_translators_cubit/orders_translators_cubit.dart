@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/features/translator_profile/data/data_source/local_data_source/order_translators_local_data_source.dart';
-import 'package:translator/features/translator_profile/data/models/order_translator_model.dart';
+import 'package:translators/features/translator_profile/data/data_source/local_data_source/order_translators_local_data_source.dart';
+import 'package:translators/features/translator_profile/data/models/order_translator_model.dart';
 part 'orders_translators_state.dart';
 
 class OrdersTranslatorsCubit extends Cubit<OrdersTranslatorsState> {

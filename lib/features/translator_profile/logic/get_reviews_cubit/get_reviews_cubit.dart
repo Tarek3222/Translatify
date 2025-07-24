@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/features/translator_profile/data/models/reviews_response_body.dart';
-import 'package:translator/features/translator_profile/data/repos/reviews_repo.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/features/translator_profile/data/models/reviews_response_body.dart';
+import 'package:translators/features/translator_profile/data/repos/reviews_repo.dart';
 part 'get_reviews_state.dart';
 
 class GetReviewsCubit extends Cubit<GetReviewsState> {

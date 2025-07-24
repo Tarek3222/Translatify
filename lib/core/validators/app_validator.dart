@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:translator/core/helpers/extensions.dart';
+import 'package:translators/core/helpers/extensions.dart';
 
 class AppValidators {
   static String? validateEmail(String? val) {

@@ -3,13 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/core/widgets/app_loading_indecator.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/translator_profile/data/models/reviews_response_body.dart';
-import 'package:translator/features/translator_profile/logic/get_reviews_cubit/get_reviews_cubit.dart';
-import 'package:translator/features/translator_profile/ui/widgets/single_review_item.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/core/widgets/app_loading_indecator.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/translator_profile/data/models/reviews_response_body.dart';
+import 'package:translators/features/translator_profile/logic/get_reviews_cubit/get_reviews_cubit.dart';
+import 'package:translators/features/translator_profile/ui/widgets/single_review_item.dart';
 
 class ReviewsTabBarBlocBuilder extends StatefulWidget {
   const ReviewsTabBarBlocBuilder(

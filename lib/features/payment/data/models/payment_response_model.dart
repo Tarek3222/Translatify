@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:translator/features/translator_profile/data/models/order_translator_model.dart';
+import 'package:translators/features/translator_profile/data/models/order_translator_model.dart';
 
 part 'payment_response_model.g.dart';
 

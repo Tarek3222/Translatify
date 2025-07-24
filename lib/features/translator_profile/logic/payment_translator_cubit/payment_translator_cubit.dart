@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/translator_profile/data/data_source/local_data_source/order_translators_local_data_source.dart';
-import 'package:translator/features/translator_profile/data/models/order_translator_model.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/translator_profile/data/data_source/local_data_source/order_translators_local_data_source.dart';
+import 'package:translators/features/translator_profile/data/models/order_translator_model.dart';
 part 'payment_translator_state.dart';
 
 class PaymentTranslatorCubit extends Cubit<PaymentTranslatorState> {

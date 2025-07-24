@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/features/translator_profile/data/repos/reviews_repo.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/features/translator_profile/data/repos/reviews_repo.dart';
 part 'delete_review_state.dart';
 
 class DeleteReviewCubit extends Cubit<DeleteReviewState> {

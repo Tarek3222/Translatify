@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/features/sign_up/data/models/confirm_email_request_body.dart';
-import 'package:translator/features/sign_up/data/repos/sign_up_repo.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/features/sign_up/data/models/confirm_email_request_body.dart';
+import 'package:translators/features/sign_up/data/repos/sign_up_repo.dart';
 part 'confirm_email_state.dart';
 
 class ConfirmEmailCubit extends Cubit<ConfirmEmailState> {

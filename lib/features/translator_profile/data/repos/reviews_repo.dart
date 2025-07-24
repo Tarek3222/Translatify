@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:translator/core/networking/api_error_handler.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/core/networking/api_service.dart';
-import 'package:translator/features/translator_profile/data/models/review_request_body.dart';
-import 'package:translator/features/translator_profile/data/models/reviews_response_body.dart';
+import 'package:translators/core/networking/api_error_handler.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/core/networking/api_service.dart';
+import 'package:translators/features/translator_profile/data/models/review_request_body.dart';
+import 'package:translators/features/translator_profile/data/models/reviews_response_body.dart';
 
 class ReviewsRepo {
   final ApiService _apiService;

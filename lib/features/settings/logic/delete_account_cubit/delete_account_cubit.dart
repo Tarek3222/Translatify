@@ -1,9 +1,10 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/shared_preference_helper.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/features/settings/data/repos/sign_out_and_delete_account_repo.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/shared_preference_helper.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/features/settings/data/repos/sign_out_and_delete_account_repo.dart';
 part 'delete_account_state.dart';
 
 class DeleteAccountCubit extends Cubit<DeleteAccountState> {
@@ -21,6 +22,8 @@ class DeleteAccountCubit extends Cubit<DeleteAccountState> {
             ), (suucess) async {
       // delete the token from the local storage
       await deleteToken();
+      // delete customer id from shared preference
+      await getIt<SharedPrefHelper>().removeData(SharedPrefKeys.kCustomerId);
       emit(
         DeleteAccountSuccess(),
       );

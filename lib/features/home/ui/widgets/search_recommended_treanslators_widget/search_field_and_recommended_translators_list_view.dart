@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/widgets/app_text_form_field.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/home/logic/filter_translators_cubit/filter_translators_cubit.dart';
-import 'package:translator/features/home/ui/widgets/recommended_translators_widgets/translator_sliver_list_item.dart';
-import 'package:translator/features/home/ui/widgets/search_recommended_treanslators_widget/filter_selection.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/widgets/app_text_form_field.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/home/logic/filter_translators_cubit/filter_translators_cubit.dart';
+import 'package:translators/features/home/ui/widgets/recommended_translators_widgets/translator_sliver_list_item.dart';
+import 'package:translators/features/home/ui/widgets/search_recommended_treanslators_widget/filter_selection.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
 
 class SearchFieldAndRecommendedTranslatorsListView extends StatefulWidget {
   const SearchFieldAndRecommendedTranslatorsListView(

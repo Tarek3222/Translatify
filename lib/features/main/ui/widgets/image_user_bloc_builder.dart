@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/widgets/app_loading_indecator.dart';
-import 'package:translator/core/widgets/app_user_avatar.dart';
-import 'package:translator/features/user_profile/logic/user_profile_cubit/user_profile_cubit.dart';
+import 'package:translators/core/widgets/app_loading_indecator.dart';
+import 'package:translators/core/widgets/app_user_avatar.dart';
+import 'package:translators/features/user_profile/logic/user_profile_cubit/user_profile_cubit.dart';
 
 class ImageUserBlocBuilder extends StatelessWidget {
   const ImageUserBlocBuilder({super.key, this.radius = 15});

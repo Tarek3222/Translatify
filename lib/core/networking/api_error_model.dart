@@ -1,4 +1,4 @@
-import 'package:translator/core/helpers/extensions.dart';
+import 'package:translators/core/helpers/extensions.dart';
 
 class ApiErrorModel {
   final String? message;

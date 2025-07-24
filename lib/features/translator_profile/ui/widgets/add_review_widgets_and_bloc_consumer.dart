@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/core/widgets/app_elevated_button.dart';
-import 'package:translator/core/widgets/app_loading_indecator.dart';
-import 'package:translator/core/widgets/app_snack_bar.dart';
-import 'package:translator/core/widgets/app_text_form_field.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/translator_profile/logic/add_review_cubit/add_review_cubit.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/core/widgets/app_elevated_button.dart';
+import 'package:translators/core/widgets/app_loading_indecator.dart';
+import 'package:translators/core/widgets/app_snack_bar.dart';
+import 'package:translators/core/widgets/app_text_form_field.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/translator_profile/logic/add_review_cubit/add_review_cubit.dart';
 
 class AddReviewWidgetsAndBlocConsumer extends StatelessWidget {
   const AddReviewWidgetsAndBlocConsumer(

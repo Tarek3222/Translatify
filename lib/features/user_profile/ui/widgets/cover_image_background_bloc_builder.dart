@@ -6,15 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/shared_preference_helper.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/core/widgets/app_cached_network_image.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/user_profile/data/models/user_profile_model.dart';
-import 'package:translator/features/user_profile/logic/user_profile_cubit/user_profile_cubit.dart';
-import 'package:translator/features/user_profile/ui/widgets/show_image_options_bottom_sheet.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/shared_preference_helper.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/core/widgets/app_cached_network_image.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/user_profile/data/models/user_profile_model.dart';
+import 'package:translators/features/user_profile/logic/user_profile_cubit/user_profile_cubit.dart';
+import 'package:translators/features/user_profile/ui/widgets/show_image_options_bottom_sheet.dart';
 
 class CoverImageBackgroundBlocBuilder extends StatelessWidget {
   const CoverImageBackgroundBlocBuilder({

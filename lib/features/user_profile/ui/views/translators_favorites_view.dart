@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/features/user_profile/logic/translators_favorites_cubit/translators_favorites_cubit.dart';
-import 'package:translator/features/user_profile/ui/widgets/translators_favorites_widgets/translatros_favorites_body.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/features/user_profile/logic/translators_favorites_cubit/translators_favorites_cubit.dart';
+import 'package:translators/features/user_profile/ui/widgets/translators_favorites_widgets/translatros_favorites_body.dart';
 
 class TranslatorsFavoritesView extends StatelessWidget {
   const TranslatorsFavoritesView({super.key});

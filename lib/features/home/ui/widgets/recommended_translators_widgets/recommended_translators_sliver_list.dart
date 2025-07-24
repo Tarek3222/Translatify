@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/routing/routes.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/home/ui/widgets/recommended_translators_widgets/translator_sliver_list_item.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/routing/routes.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/home/ui/widgets/recommended_translators_widgets/translator_sliver_list_item.dart';
 
 class RecommendedTranslatorsSliverList extends StatelessWidget {
   const RecommendedTranslatorsSliverList(

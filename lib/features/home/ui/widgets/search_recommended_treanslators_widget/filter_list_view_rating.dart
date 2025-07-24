@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:translator/features/home/logic/filter_translators_cubit/filter_translators_cubit.dart';
-import 'package:translator/features/home/ui/widgets/filter_widget_translator_item.dart';
+import 'package:translators/features/home/logic/filter_translators_cubit/filter_translators_cubit.dart';
+import 'package:translators/features/home/ui/widgets/filter_widget_translator_item.dart';
 
 class FilterListViewRating extends StatefulWidget {
   const FilterListViewRating({super.key, required this.filterTranslatorCubit});

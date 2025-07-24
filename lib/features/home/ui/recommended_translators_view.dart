@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/home/ui/widgets/search_recommended_treanslators_widget/recommended_translators_body.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/home/ui/widgets/search_recommended_treanslators_widget/recommended_translators_body.dart';
 
 class RecommendedTranslatorsView extends StatelessWidget {
   const RecommendedTranslatorsView(

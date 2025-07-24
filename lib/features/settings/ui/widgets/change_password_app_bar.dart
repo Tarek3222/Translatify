@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/widgets/custom_app_bar.dart';
+import 'package:translators/core/widgets/custom_app_bar.dart';
 
 class ChangePasswordAppBar extends StatelessWidget {
   const ChangePasswordAppBar({super.key});

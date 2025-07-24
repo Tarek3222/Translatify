@@ -3,12 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/widgets/app_elevated_button.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/translator_profile/data/repos/reviews_repo.dart';
-import 'package:translator/features/translator_profile/logic/add_review_cubit/add_review_cubit.dart';
-import 'package:translator/features/translator_profile/ui/widgets/add_review_widgets_and_bloc_consumer.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/widgets/app_elevated_button.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/translator_profile/data/repos/reviews_repo.dart';
+import 'package:translators/features/translator_profile/logic/add_review_cubit/add_review_cubit.dart';
+import 'package:translators/features/translator_profile/ui/widgets/add_review_widgets_and_bloc_consumer.dart';
 
 class AddReviewButtonAndBlocListener extends StatelessWidget {
   const AddReviewButtonAndBlocListener(

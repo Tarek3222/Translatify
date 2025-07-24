@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
 
 part 'order_translator_model.g.dart';
 

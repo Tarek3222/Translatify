@@ -1,14 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:translator/core/networking/api_constants.dart';
-import 'package:translator/features/settings/data/models/update_password_request_body.dart';
-import 'package:translator/features/sign_in/data/models/reset_password_request_body.dart';
-import 'package:translator/features/sign_in/data/models/sign_in_request_body.dart';
-import 'package:translator/features/sign_up/data/models/confirm_email_request_body.dart';
-import 'package:translator/features/sign_up/data/models/sign_up_request_body.dart';
-import 'package:translator/features/translator_profile/data/models/review_request_body.dart';
-import 'package:translator/features/translator_profile/data/models/reviews_response_body.dart';
-import 'package:translator/features/user_profile/data/models/update_user_request_body.dart';
+import 'package:translators/core/networking/api_constants.dart';
+import 'package:translators/features/settings/data/models/update_password_request_body.dart';
+import 'package:translators/features/sign_in/data/models/reset_password_request_body.dart';
+import 'package:translators/features/sign_in/data/models/sign_in_request_body.dart';
+import 'package:translators/features/sign_up/data/models/confirm_email_request_body.dart';
+import 'package:translators/features/sign_up/data/models/sign_up_request_body.dart';
+import 'package:translators/features/translator_profile/data/models/review_request_body.dart';
+import 'package:translators/features/translator_profile/data/models/reviews_response_body.dart';
+import 'package:translators/features/user_profile/data/models/update_user_request_body.dart';
 
 part 'api_service.g.dart';
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/features/translator_profile/logic/payment_translator_cubit/payment_translator_cubit.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/features/translator_profile/logic/payment_translator_cubit/payment_translator_cubit.dart';
 
 class CurrencyDropDwonMenuItem extends StatefulWidget {
   const CurrencyDropDwonMenuItem({super.key});

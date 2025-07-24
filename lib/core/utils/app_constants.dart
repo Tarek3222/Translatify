@@ -1,4 +1,4 @@
-import 'package:translator/core/utils/current_user_data.dart';
+import 'package:translators/core/utils/current_user_data.dart';
 
 bool isLoggedIn = false;
 

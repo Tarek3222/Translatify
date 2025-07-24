@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/translator_profile/ui/widgets/translator_profile_body.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/translator_profile/ui/widgets/translator_profile_body.dart';
 
 class TranslatorProfileView extends StatelessWidget {
   const TranslatorProfileView(

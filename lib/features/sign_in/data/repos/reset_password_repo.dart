@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:translator/core/networking/api_error_handler.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/core/networking/api_service.dart';
-import 'package:translator/features/sign_in/data/models/reset_password_request_body.dart';
+import 'package:translators/core/networking/api_error_handler.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/core/networking/api_service.dart';
+import 'package:translators/features/sign_in/data/models/reset_password_request_body.dart';
 
 class ResetPasswordRepo {
   final ApiService apiService;

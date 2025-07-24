@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/helpers/shared_preference_helper.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/core/utils/user_model.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/helpers/shared_preference_helper.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/core/utils/user_model.dart';
 
 class DioFactory {
   /// private constructor as I don't want to allow creating an instance of this class

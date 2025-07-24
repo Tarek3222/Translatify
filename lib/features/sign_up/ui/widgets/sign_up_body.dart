@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/features/sign_up/ui/widgets/check_box_and_terms_and_privacy_policy_text.dart';
-import 'package:translator/features/sign_up/ui/widgets/sign_up_form_and_sign_up_button.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/features/sign_up/ui/widgets/check_box_and_terms_and_privacy_policy_text.dart';
+import 'package:translators/features/sign_up/ui/widgets/sign_up_form_and_sign_up_button.dart';
 
 class SignUpBody extends StatelessWidget {
   const SignUpBody({super.key});

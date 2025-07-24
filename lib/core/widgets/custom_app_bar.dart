@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/core/widgets/custom_app_icon.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/core/widgets/custom_app_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key, required this.title, this.onBackPress});

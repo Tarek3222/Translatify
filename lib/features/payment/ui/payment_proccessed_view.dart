@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:translator/core/widgets/custom_app_bar.dart';
-import 'package:translator/features/payment/ui/widgets/payment_proccessed_body.dart';
-import 'package:translator/features/translator_profile/data/models/order_translator_model.dart';
+import 'package:translators/core/widgets/custom_app_bar.dart';
+import 'package:translators/features/payment/ui/widgets/payment_proccessed_body.dart';
+import 'package:translators/features/translator_profile/data/models/order_translator_model.dart';
 
 class PaymentProccessedView extends StatelessWidget {
   const PaymentProccessedView({super.key, required this.orderTranslatorModel});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:translator/core/theme/app_styles.dart';
+import 'package:translators/core/theme/app_styles.dart';
 
 class TitleTextWidet extends StatelessWidget {
   const TitleTextWidet(

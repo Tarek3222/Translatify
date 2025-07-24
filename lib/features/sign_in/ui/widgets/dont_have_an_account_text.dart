@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/routing/routes.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/routing/routes.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
 
 class DontHaveAnAccountText extends StatelessWidget {
   const DontHaveAnAccountText({super.key});

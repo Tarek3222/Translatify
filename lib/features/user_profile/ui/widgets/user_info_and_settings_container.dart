@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/features/user_profile/ui/widgets/user_info_and_settings_tiles.dart';
+import 'package:translators/features/user_profile/ui/widgets/user_info_and_settings_tiles.dart';
 
 class UserInfoAndSettingsContainer extends StatelessWidget {
   const UserInfoAndSettingsContainer({

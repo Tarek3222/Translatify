@@ -3,13 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/features/payment/logic/orders_translators_cubit/orders_translators_cubit.dart';
-import 'package:translator/features/payment/logic/payment_cubit/payment_cubit.dart';
-import 'package:translator/features/payment/repos/check_out_repo.dart';
-import 'package:translator/features/payment/ui/widgets/custom_button_bloc_consumer.dart';
-import 'package:translator/features/payment/ui/widgets/payment_method_list_view.dart';
-import 'package:translator/features/translator_profile/data/models/order_translator_model.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/features/payment/logic/orders_translators_cubit/orders_translators_cubit.dart';
+import 'package:translators/features/payment/logic/payment_cubit/payment_cubit.dart';
+import 'package:translators/features/payment/data/repos/check_out_repo.dart';
+import 'package:translators/features/payment/ui/widgets/custom_button_bloc_consumer.dart';
+import 'package:translators/features/payment/ui/widgets/payment_method_list_view.dart';
+import 'package:translators/features/translator_profile/data/models/order_translator_model.dart';
 
 payNowButtonModelBottomSheet(
     {required BuildContext context,

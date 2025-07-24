@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/home/ui/widgets/translator_filtered_item.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/home/ui/widgets/translator_filtered_item.dart';
 
 class TranslatorsFilteredListView extends StatelessWidget {
   const TranslatorsFilteredListView({super.key, required this.translatorsList});

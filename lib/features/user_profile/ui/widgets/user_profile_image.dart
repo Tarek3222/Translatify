@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/features/main/ui/widgets/image_user_bloc_builder.dart';
-import 'package:translator/features/user_profile/data/repo/delete_user_images_repo.dart';
-import 'package:translator/features/user_profile/data/repo/upload_user_images_repo.dart';
-import 'package:translator/features/user_profile/logic/delete_user_profile_image_cubit/delete_user_profile_image_cubit.dart';
-import 'package:translator/features/user_profile/logic/upload_user_profile_image_cubit/upload_user_profile_image_cubit.dart';
-import 'package:translator/features/user_profile/logic/user_profile_cubit/user_profile_cubit.dart';
-import 'package:translator/features/user_profile/ui/widgets/circle_profile_image.dart';
-import 'package:translator/features/user_profile/ui/widgets/icon_profile_image_bloc_listener.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/features/main/ui/widgets/image_user_bloc_builder.dart';
+import 'package:translators/features/user_profile/data/repo/delete_user_images_repo.dart';
+import 'package:translators/features/user_profile/data/repo/upload_user_images_repo.dart';
+import 'package:translators/features/user_profile/logic/delete_user_profile_image_cubit/delete_user_profile_image_cubit.dart';
+import 'package:translators/features/user_profile/logic/upload_user_profile_image_cubit/upload_user_profile_image_cubit.dart';
+import 'package:translators/features/user_profile/logic/user_profile_cubit/user_profile_cubit.dart';
+import 'package:translators/features/user_profile/ui/widgets/circle_profile_image.dart';
+import 'package:translators/features/user_profile/ui/widgets/icon_profile_image_bloc_listener.dart';
 
 class UserProfileImage extends StatefulWidget {
   const UserProfileImage({super.key});

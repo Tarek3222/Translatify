@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:translator/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_colors.dart';
 
 /// ThemeManager is an abstract class that provides light and dark themes
 abstract class ThemeManager {

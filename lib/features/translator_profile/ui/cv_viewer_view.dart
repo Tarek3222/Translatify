@@ -3,10 +3,10 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/widgets/app_loading_indecator.dart';
-import 'package:translator/core/widgets/custom_app_icon.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/widgets/app_loading_indecator.dart';
+import 'package:translators/core/widgets/custom_app_icon.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
 
 class CvViewerView extends StatefulWidget {
   final String pdfUrl;

@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/features/sign_in/data/models/reset_password_request_body.dart';
-import 'package:translator/features/sign_in/data/repos/reset_password_repo.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/features/sign_in/data/models/reset_password_request_body.dart';
+import 'package:translators/features/sign_in/data/repos/reset_password_repo.dart';
 part 'reset_password_state.dart';
 
 class ResetPasswordCubit extends Cubit<ResetPasswordState> {

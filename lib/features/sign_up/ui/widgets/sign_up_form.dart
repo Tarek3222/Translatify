@@ -2,14 +2,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translator/features/sign_up/logic/sign_up_cubit/sign_up_cubit.dart';
-import 'package:translator/features/sign_up/ui/widgets/build_date_of_birth_picker.dart';
-import 'package:translator/features/sign_up/ui/widgets/email_field.dart';
-import 'package:translator/features/sign_up/ui/widgets/label_form.dart';
-import 'package:translator/features/sign_up/ui/widgets/name_field.dart';
-import 'package:translator/features/sign_up/ui/widgets/password_field.dart';
-import 'package:translator/features/sign_up/ui/widgets/phone_field.dart';
-import 'package:translator/features/sign_up/ui/widgets/selected_gender.dart';
+import 'package:translators/features/sign_up/logic/sign_up_cubit/sign_up_cubit.dart';
+import 'package:translators/features/sign_up/ui/widgets/build_date_of_birth_picker.dart';
+import 'package:translators/features/sign_up/ui/widgets/email_field.dart';
+import 'package:translators/features/sign_up/ui/widgets/label_form.dart';
+import 'package:translators/features/sign_up/ui/widgets/name_field.dart';
+import 'package:translators/features/sign_up/ui/widgets/password_field.dart';
+import 'package:translators/features/sign_up/ui/widgets/phone_field.dart';
+import 'package:translators/features/sign_up/ui/widgets/selected_gender.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({super.key});

@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:translator/core/helpers/spacing.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/features/sign_up/ui/widgets/label_form.dart';
-import 'package:translator/features/user_profile/data/models/user_profile_model.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/features/sign_up/ui/widgets/label_form.dart';
+import 'package:translators/features/user_profile/data/models/user_profile_model.dart';
 
 class AccountInfoData extends StatelessWidget {
   const AccountInfoData({super.key, this.userProfileModel});

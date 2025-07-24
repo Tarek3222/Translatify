@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/di/depandecy_injection.dart';
-import 'package:translator/core/helpers/shared_preference_helper.dart';
-import 'package:translator/core/theme/app_theme.dart';
-import 'package:translator/features/settings/logic/change_theme_cubit/change_theme_state.dart';
+import 'package:translators/core/di/depandecy_injection.dart';
+import 'package:translators/core/helpers/shared_preference_helper.dart';
+import 'package:translators/core/theme/app_theme.dart';
+import 'package:translators/features/settings/logic/change_theme_cubit/change_theme_state.dart';
 
 class ChangeThemeCubit extends Cubit<ThemeState> {
   ChangeThemeCubit() : super(_initialState);

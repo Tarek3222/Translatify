@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:translator/core/networking/api_error_handler.dart';
-import 'package:translator/core/networking/api_error_model.dart';
-import 'package:translator/core/networking/api_service.dart';
+import 'package:translators/core/networking/api_error_handler.dart';
+import 'package:translators/core/networking/api_error_model.dart';
+import 'package:translators/core/networking/api_service.dart';
 
 class SignOutAndDeleteAccountRepo {
   final ApiService _apiService;

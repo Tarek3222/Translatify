@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/features/home/logic/get_translators_list_cubit/get_translators_list_cubit.dart';
-import 'package:translator/features/home/ui/widgets/recommended_translators_widgets/recommended_translators_shimmer_loading.dart';
-import 'package:translator/features/home/ui/widgets/recommended_translators_widgets/recommended_translators_sliver_list.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/home/logic/get_translators_list_cubit/get_translators_list_cubit.dart';
+import 'package:translators/features/home/ui/widgets/recommended_translators_widgets/recommended_translators_shimmer_loading.dart';
+import 'package:translators/features/home/ui/widgets/recommended_translators_widgets/recommended_translators_sliver_list.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
 
 class RecommendedTranslatorsBlocBuilder extends StatelessWidget {
   const RecommendedTranslatorsBlocBuilder({super.key});

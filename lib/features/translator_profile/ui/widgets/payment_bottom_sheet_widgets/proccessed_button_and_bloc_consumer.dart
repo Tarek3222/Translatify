@@ -2,15 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/core/helpers/extensions.dart';
-import 'package:translator/core/routing/routes.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
-import 'package:translator/core/utils/app_constants.dart';
-import 'package:translator/core/widgets/app_elevated_button.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
-import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
-import 'package:translator/features/translator_profile/logic/payment_translator_cubit/payment_translator_cubit.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/routing/routes.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/core/utils/app_constants.dart';
+import 'package:translators/core/widgets/app_elevated_button.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translators/features/translator_profile/logic/payment_translator_cubit/payment_translator_cubit.dart';
 
 class ProccessedButtonAndBlocConsumer extends StatelessWidget {
   const ProccessedButtonAndBlocConsumer({super.key, required this.translator});

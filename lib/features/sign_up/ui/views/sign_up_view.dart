@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:translator/features/sign_up/ui/widgets/sign_up_body.dart';
+import 'package:translators/features/sign_up/ui/widgets/sign_up_body.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});

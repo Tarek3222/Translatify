@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:translator/features/home/data/models/translator_response_model.dart';
+import 'package:translators/features/home/data/models/translator_response_model.dart';
 part 'filter_translators_state.dart';
 
 class FilterTranslatorsCubit extends Cubit<FilterTranslatorsState> {
