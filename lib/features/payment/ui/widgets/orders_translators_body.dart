@@ -11,6 +11,7 @@ import 'package:translator/core/widgets/custom_app_bar.dart';
 import 'package:translator/features/home/ui/widgets/recommended_translators_widgets/translator_sliver_list_item.dart';
 import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
 import 'package:translator/features/payment/logic/orders_translators_cubit/orders_translators_cubit.dart';
+import 'package:translator/features/payment/ui/widgets/pay_now_button_model_bottom_sheet.dart';
 
 class OrdersTranslatorsBody extends StatelessWidget {
   const OrdersTranslatorsBody({super.key});
@@ -64,86 +65,85 @@ class OrdersTranslatorsBody extends StatelessWidget {
 
   Widget buildTranslatorsListView(
       OrdersTranslatorsState state, BuildContext context) {
-    double totalSalary = (state as OrdersTranslatorsSuccess)
-        .translatorsList
-        .map((e) => e.salary)
-        .reduce((value, element) => value + element);
-    return Column(
-      children: [
-        Expanded(
-          child: ListView.builder(
-            physics: const AlwaysScrollableScrollPhysics(),
-            itemCount: state.translatorsList.length,
-            itemBuilder: (context, index) {
-              return Dismissible(
-                key: UniqueKey(),
-                background: Container(
-                  color: AppColors.mainRed,
-                  margin: const EdgeInsets.symmetric(vertical: 16).w,
-                ),
-                onDismissed: (dismissDirection) {
-                  context.read<OrdersTranslatorsCubit>().deleteTranslators(
-                        SharedPrefKeys.kOrderListForUser,
-                        state.translatorsList[index].translatorProfileModel
-                            .translator!.first.id!,
-                      );
-                },
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8).w,
-                  child: TranslatorSliverListItem(
-                    translatorProfileModel:
-                        state.translatorsList[index].translatorProfileModel,
-                  ),
-                ),
-              );
-            },
+    return ListView.separated(
+      separatorBuilder: (context, index) => Divider(
+        color: AppColors.grey,
+        thickness: 0.5,
+        indent: 30.w,
+        endIndent: 30.w,
+      ),
+      physics: const AlwaysScrollableScrollPhysics(),
+      itemCount: (state as OrdersTranslatorsSuccess).translatorsList.length,
+      itemBuilder: (context, index) {
+        return Dismissible(
+          key: UniqueKey(),
+          background: Container(
+            color: AppColors.mainRed,
+            margin: const EdgeInsets.symmetric(vertical: 16).w,
           ),
-        ),
-        Divider(
-          color: AppColors.grey,
-          thickness: 0.4,
-          height: 30.h,
-          endIndent: 20.w,
-          indent: 20.w,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16).w,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: TitleTextWidet(
-                  title: "Payment Information",
-                  fontSize: 20,
+          onDismissed: (dismissDirection) {
+            context.read<OrdersTranslatorsCubit>().deleteTranslators(
+                  SharedPrefKeys.kOrderListForUser,
+                  state.translatorsList[index].translatorProfileModel
+                      .translator!.first.id!,
+                );
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8).w,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TranslatorSliverListItem(
+                  translatorProfileModel:
+                      state.translatorsList[index].translatorProfileModel,
                 ),
-              ),
-              verticalSpacing(10),
-              buildRowForPayInof(
-                "Subtotal :",
-                "$totalSalary",
-                16,
-              ),
-              buildRowForPayInof(
-                "Taxes :",
-                "${state.translatorsList.length * 200}",
-                16,
-              ),
-              buildRowForPayInof(
-                "Total :",
-                "${totalSalary + (state.translatorsList.length * 200)}",
-                18,
-              ),
-            ],
+                buildRowForPayInof(
+                  "order Date&Time:",
+                  "${state.translatorsList[index].date} At ${state.translatorsList[index].time}",
+                  14,
+                ),
+                buildRowForPayInof(
+                  "Total Salary:",
+                  "${state.translatorsList[index].salary + 200} ${state.translatorsList[index].currency}",
+                  14,
+                ),
+                state.translatorsList[index].isPaid
+                    ? Align(
+                        alignment: AlignmentDirectional.centerEnd,
+                        child: Container(
+                          padding: const EdgeInsets.all(8).w,
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: const TitleTextWidet(
+                            title: "Paid",
+                            fontSize: 14,
+                            textColor: AppColors.white,
+                          ),
+                        ),
+                      )
+                    : Align(
+                        alignment: AlignmentDirectional.centerEnd,
+                        child: AppElevatedButton(
+                          width: MediaQuery.sizeOf(context).width * 0.3,
+                          onPressed: () {
+                            payNowButtonModelBottomSheet(
+                              context: context,
+                              orderTranslator: state.translatorsList[index],
+                              orderCubit:
+                                  context.read<OrdersTranslatorsCubit>(),
+                            );
+                          },
+                          text: "Pay",
+                          elevation: 0,
+                        ),
+                      ),
+              ],
+            ),
           ),
-        ),
-        AppElevatedButton(
-          onPressed: () {},
-          text: "Checkout",
-          elevation: 0,
-        ),
-      ],
+        );
+      },
     );
   }
 

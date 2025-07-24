@@ -25,6 +25,8 @@ abstract class ApiService {
   @PUT(ApiConstants.confirmEmail)
   Future<String> confirmEmail(
       @Body() ConfirmEmailRequestBody confirmEmailRequestBody);
+  @PUT(ApiConstants.resendConfirmEmailOtpEndpoint)
+  Future<String> resendConfirmEmail(@Body() Map<String, dynamic> email);
 
   @POST(ApiConstants.forgetPasswordEndpoint)
   Future<String> forgetPassword(

@@ -63,6 +63,9 @@ class PayNowBottomSheetWidget extends StatelessWidget {
               verticalSpacing(10),
               const LabelForm(labelText: "Scheduled Date & Time"),
               BuildDateOfBirthPicker(
+                fromAny: "translator",
+                firstDate: DateTime.now(),
+                lastDate: DateTime.now().add(const Duration(days: 30)),
                 onDateSelected: (dateSelected) {
                   context.read<PaymentTranslatorCubit>().date =
                       DateFormat('yyyy-MM-dd').format(dateSelected);

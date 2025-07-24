@@ -7,8 +7,10 @@ TextStyle getRegularStyle({
   double fontSize = 12,
   Color color = AppColors.black,
   TextOverflow? overflow,
+  TextDecoration? decoration,
 }) {
   return TextStyle(
+    decoration: decoration,
     color: color,
     fontSize: fontSize.sp,
     overflow: overflow,

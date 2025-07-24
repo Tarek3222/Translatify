@@ -7,6 +7,8 @@ abstract class ApiConstants {
   static const String forgetPasswordEndpoint = "/auth/forget-password/{email}";
   static const String resetPasswordEndpoint = "/auth/reset-password/{email}";
   static const String signInEndpoint = "/auth/signin";
+  static const String resendConfirmEmailOtpEndpoint =
+      "/auth/resend-confirm-email";
 
   // User Endpoints
   static const String userProfileEndpoint = "/user/get-login-user";

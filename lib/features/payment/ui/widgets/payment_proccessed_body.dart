@@ -6,6 +6,7 @@ import 'package:translator/core/theme/app_styles.dart';
 import 'package:translator/core/widgets/app_elevated_button.dart';
 import 'package:translator/features/home/ui/widgets/recommended_translators_widgets/translator_sliver_list_item.dart';
 import 'package:translator/features/home/ui/widgets/title_text_widet.dart';
+import 'package:translator/features/payment/ui/widgets/pay_now_button_model_bottom_sheet.dart';
 import 'package:translator/features/translator_profile/data/models/order_translator_model.dart';
 
 class PaymentProccessedBody extends StatelessWidget {
@@ -74,7 +75,14 @@ class PaymentProccessedBody extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            AppElevatedButton(onPressed: () {}, text: "Pay Now"),
+            AppElevatedButton(
+                onPressed: () {
+                  payNowButtonModelBottomSheet(
+                    context: context,
+                    orderTranslator: orderTranslatorModel,
+                  );
+                },
+                text: "Pay Now"),
           ],
         ),
       ),

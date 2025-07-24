@@ -12,8 +12,10 @@ class OrderTranslatorModel {
   final String time;
   final String? coupon;
   final double salary;
+  bool isPaid;
 
   OrderTranslatorModel({
+    this.isPaid = false,
     required this.translatorProfileModel,
     required this.currency,
     required this.durationInHours,

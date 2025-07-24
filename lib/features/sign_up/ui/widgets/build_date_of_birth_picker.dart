@@ -12,10 +12,16 @@ class BuildDateOfBirthPicker extends StatefulWidget {
     required this.onDateSelected,
     this.initialDate,
     this.title,
+    this.firstDate,
+    this.lastDate,
+    required this.fromAny,
   });
   final void Function(DateTime) onDateSelected;
-  final String? initialDate;
+  final DateTime? initialDate;
   final String? title;
+  final DateTime? firstDate;
+  final DateTime? lastDate;
+  final String fromAny;
 
   @override
   State<BuildDateOfBirthPicker> createState() => _BuildDateOfBirthPickerState();
@@ -28,14 +34,16 @@ class _BuildDateOfBirthPickerState extends State<BuildDateOfBirthPicker> {
   void initState() {
     super.initState();
     if (widget.initialDate != null) {
-      _selectedDate = DateTime.parse(widget.initialDate!);
+      _selectedDate = widget.initialDate;
     }
   }
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
-      initialDate: _selectedDate ?? DateTime(2003, 10, 9),
+      initialDate: widget.fromAny == "translator"
+          ? widget.initialDate ?? DateTime.now()
+          : widget.initialDate ?? DateTime(2000, 1, 1),
       helpText: widget.title ?? 'selectDOB'.tr(),
       cancelText: 'Cancel'.tr(),
       confirmText: 'Confirm'.tr(),
@@ -54,8 +62,9 @@ class _BuildDateOfBirthPickerState extends State<BuildDateOfBirthPicker> {
           child: child!,
         );
       },
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now().subtract(const Duration(days: 365 * 5)),
+      firstDate: widget.firstDate ?? DateTime(1900),
+      lastDate: widget.lastDate ??
+          DateTime.now().subtract(const Duration(days: 365 * 5)),
     );
 
     if (picked != null && picked != _selectedDate) {

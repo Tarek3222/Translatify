@@ -1,7 +1,10 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:translator/core/helpers/extensions.dart';
 import 'package:translator/core/helpers/spacing.dart';
 import 'package:translator/core/theme/app_colors.dart';
 import 'package:translator/core/theme/app_styles.dart';
@@ -26,32 +29,41 @@ class _VerificationEmailCodeViewState extends State<VerificationEmailCodeView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "emailVerificationTitle".tr(),
-                style: getBoldStyle(
-                  fontSize: 24,
-                  color: Theme.of(context).colorScheme.secondary,
+    return WillPopScope(
+      onWillPop: () async {
+        context.pop();
+        context.pop();
+        return true;
+      },
+      child: Scaffold(
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "emailVerificationTitle".tr(),
+                  style: getBoldStyle(
+                    fontSize: 24,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
                 ),
-              ),
-              verticalSpacing(8),
-              Text(
-                "emailVerificationSubtitle".tr(),
-                style: getRegularStyle(
-                  fontSize: 14,
-                  overflow: TextOverflow.visible,
-                  color: AppColors.grey,
+                verticalSpacing(8),
+                Text(
+                  "emailVerificationSubtitle".tr(),
+                  style: getRegularStyle(
+                    fontSize: 14,
+                    overflow: TextOverflow.visible,
+                    color: AppColors.grey,
+                  ),
                 ),
-              ),
-              verticalSpacing(36),
-              const OtpFieldAndConfirmButton(),
-            ],
+                verticalSpacing(36),
+                OtpFieldAndConfirmButton(
+                  email: widget.email,
+                ),
+              ],
+            ),
           ),
         ),
       ),

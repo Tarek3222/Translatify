@@ -9,6 +9,7 @@ part of 'order_translator_model.dart';
 OrderTranslatorModel _$OrderTranslatorModelFromJson(
         Map<String, dynamic> json) =>
     OrderTranslatorModel(
+      isPaid: json['isPaid'] as bool? ?? false,
       translatorProfileModel: TranslatorProfileModel.fromJson(
           json['translatorProfileModel'] as Map<String, dynamic>),
       currency: json['currency'] as String,
@@ -29,4 +30,5 @@ Map<String, dynamic> _$OrderTranslatorModelToJson(
       'time': instance.time,
       'coupon': instance.coupon,
       'salary': instance.salary,
+      'isPaid': instance.isPaid,
     };

@@ -41,6 +41,7 @@ class SignUpForm extends StatelessWidget {
             phoneController: context.read<SignupCubit>().phoneController),
         LabelForm(labelText: "dateOfBirth".tr()),
         BuildDateOfBirthPicker(
+          fromAny: "signUp",
           onDateSelected: (pickedDate) {
             context.read<SignupCubit>().dateOfBirth = pickedDate;
           },

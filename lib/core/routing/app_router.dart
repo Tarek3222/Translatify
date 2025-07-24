@@ -12,6 +12,8 @@ import 'package:translator/features/main/ui/main_view.dart';
 import 'package:translator/features/on_boarding/ui/views/on_boarding_view.dart';
 import 'package:translator/features/payment/ui/orders_translators_view.dart';
 import 'package:translator/features/payment/ui/payment_proccessed_view.dart';
+import 'package:translator/features/payment/ui/payments_history_view.dart';
+import 'package:translator/features/payment/ui/thank_you_view.dart';
 import 'package:translator/features/settings/data/repos/update_password_repo.dart';
 import 'package:translator/features/settings/logic/change_password_cubit/change_password_cubit.dart';
 import 'package:translator/features/settings/ui/change_password_view.dart';
@@ -137,6 +139,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const FAQView(),
         );
+      case Routes.historyPaymentsView:
+        return MaterialPageRoute(
+          builder: (context) => const PaymentsHistoryView(),
+        );
       case Routes.paymentProccessView:
         return MaterialPageRoute(
           builder: (context) => PaymentProccessedView(
@@ -146,6 +152,14 @@ class AppRouter {
       case Routes.translatorsFavoritesView:
         return MaterialPageRoute(
           builder: (context) => const TranslatorsFavoritesView(),
+        );
+      case Routes.thankYouView:
+        var data = settings.arguments as Map<String, dynamic>?;
+        return MaterialPageRoute(
+          builder: (context) => ThankYouView(
+            orderCubit: data?['orderCubit'],
+            paymentResponseModel: data!['paymentResponseModel'],
+          ),
         );
       case Routes.orderTranslatorsView:
         return MaterialPageRoute(

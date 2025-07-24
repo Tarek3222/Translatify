@@ -75,7 +75,9 @@ class UserInfoAndSettingsTiles extends StatelessWidget {
         ListTileTabsProfileAndSettings(
           icon: Icons.payment,
           title: "Payments",
-          onTap: () {},
+          onTap: () {
+            context.pushNamed(Routes.historyPaymentsView);
+          },
         ),
         ListTileTabsProfileAndSettings(
           icon: Icons.settings,

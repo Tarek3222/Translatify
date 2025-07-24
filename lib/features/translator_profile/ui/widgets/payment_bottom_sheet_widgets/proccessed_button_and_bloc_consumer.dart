@@ -49,8 +49,14 @@ class ProccessedButtonAndBlocConsumer extends StatelessWidget {
         showCustomDialog(
             context, "Pick DateTime", "Please Pick Scheduled Time & Date");
       } else {
-        await paymentTranslatorCubit.addTranslatorToOrder(
-            key: SharedPrefKeys.kOrderListForUser, translator: translator);
+        DateTime date = DateTime.parse(paymentTranslatorCubit.date!);
+        bool isFutureDate = date.isAfter(DateTime.now());
+        if (isFutureDate) {
+          await paymentTranslatorCubit.addTranslatorToOrder(
+              key: SharedPrefKeys.kOrderListForUser, translator: translator);
+        } else {
+          showCustomDialog(context, "Pick DateTime", "Please Pick Future Date");
+        }
       }
     }
   }

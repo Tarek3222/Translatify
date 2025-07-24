@@ -87,13 +87,15 @@ class _UserInfoDataFormState extends State<UserInfoDataForm> {
                 ignoring:
                     !context.read<UpdatePersonalInformationCubit>().isUpdate,
                 child: BuildDateOfBirthPicker(
+                  fromAny: "update",
                   onDateSelected: (pickedDate) {
                     context.read<UpdatePersonalInformationCubit>().dateOfBirth =
                         DateFormat('yyyy-MM-dd').format(pickedDate);
                   },
-                  initialDate: context
-                      .read<UpdatePersonalInformationCubit>()
-                      .dateOfBirth,
+                  initialDate: DateTime.tryParse(context
+                          .read<UpdatePersonalInformationCubit>()
+                          .dateOfBirth ??
+                      ""),
                 ),
               ),
               verticalSpacing(10),

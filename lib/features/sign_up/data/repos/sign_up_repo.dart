@@ -29,4 +29,13 @@ class SignUpRepo {
       return Left(ApiErrorHandler.handle(e));
     }
   }
+
+  Future<Either<ApiErrorModel, String>> resendConfirmEmail(String email) async {
+    try {
+      String response = await apiService.resendConfirmEmail({"email": email});
+      return Right(response);
+    } catch (e) {
+      return Left(ApiErrorHandler.handle(e));
+    }
+  }
 }

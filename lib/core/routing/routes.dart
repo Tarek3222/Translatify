@@ -18,4 +18,6 @@ abstract class Routes {
   static const String translatorsFavoritesView = '/translatorsFavorites';
   static const String paymentProccessView = '/paymentProccessView';
   static const String orderTranslatorsView = '/orderTranslators';
+  static const String thankYouView = '/thankYou';
+  static const String historyPaymentsView = '/historyPayments';
 }

@@ -8,6 +8,8 @@ import 'package:translator/core/networking/dio_factory.dart';
 import 'package:translator/core/networking/network_info.dart';
 import 'package:translator/features/home/data/date_source/local_data_source/translators_list_local_data_source.dart';
 import 'package:translator/features/home/data/repos/translators_list_repo.dart';
+import 'package:translator/features/payment/repos/check_out_repo.dart';
+import 'package:translator/features/payment/repos/create_customer_repo.dart';
 import 'package:translator/features/settings/data/repos/sign_out_and_delete_account_repo.dart';
 import 'package:translator/features/settings/data/repos/update_password_repo.dart';
 import 'package:translator/features/sign_in/data/repos/forget_password_repo.dart';
@@ -96,5 +98,12 @@ Future<void> setupDependencyInjection() async {
   // reviews
   getIt.registerLazySingleton<ReviewsRepo>(
     () => ReviewsRepo(getIt<ApiService>()),
+  );
+  // Payment
+  getIt.registerLazySingleton<CheckOutRepo>(
+    () => CheckOutRepo(),
+  );
+  getIt.registerLazySingleton<CreateCustomerRepo>(
+    () => CreateCustomerRepo(),
   );
 }

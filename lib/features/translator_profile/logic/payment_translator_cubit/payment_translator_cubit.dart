@@ -31,7 +31,13 @@ class PaymentTranslatorCubit extends Cubit<PaymentTranslatorState> {
           (translator.translator!.first.averageRating! - 3) * 0.05;
       if (ratingFactor < 0) ratingFactor = 0;
       // todo: edit salary
-      salary = durationHours * (1 + ratingFactor) * 1200;
+      salary = durationHours *
+          (1 + ratingFactor) *
+          (currency == 'EGP'
+              ? 3000
+              : currency == 'USD'
+                  ? 300
+                  : 200);
       var orderTranslatorModel = OrderTranslatorModel(
           translatorProfileModel: translator,
           currency: currency,
