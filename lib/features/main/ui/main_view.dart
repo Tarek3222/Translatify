@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:translators/core/helpers/extensions.dart';
+import 'package:translators/core/routing/routes.dart';
 import 'package:translators/core/theme/app_colors.dart';
 import 'package:translators/features/home/ui/widgets/home_view_body.dart';
 import 'package:translators/features/main/logic/bottom_nav_bar_cubit/bottom_nav_bar_index_cubit.dart';
@@ -29,7 +31,9 @@ class MainView extends StatelessWidget {
       ),
       bottomNavigationBar: const CustomBottomNavBar(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          context.pushNamed(Routes.googleTranslateView);
+        },
         backgroundColor: AppColors.mainBlue,
         tooltip: "Google Translate",
         child: Image.asset(

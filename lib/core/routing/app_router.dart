@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 import 'package:translators/core/di/depandecy_injection.dart';
 import 'package:translators/core/routing/routes.dart';
+import 'package:translators/features/google_translate/logic/app_state.dart';
+import 'package:translators/features/google_translate/ui/views/google_translate_view.dart';
 import 'package:translators/features/home/data/models/translator_response_model.dart';
 import 'package:translators/features/home/data/repos/translators_list_repo.dart';
 import 'package:translators/features/home/logic/get_translators_list_cubit/get_translators_list_cubit.dart';
@@ -120,6 +123,13 @@ class AppRouter {
       case Routes.settingsScreen:
         return MaterialPageRoute(
           builder: (context) => const SettingsView(),
+        );
+      case Routes.googleTranslateView:
+        return MaterialPageRoute(
+          builder: (context) => ChangeNotifierProvider(
+            create: (context) => GoogleTranslateAppState(),
+            child: const GoogleTranslateView(),
+          ),
         );
       case Routes.cvViewerView:
         return MaterialPageRoute(
