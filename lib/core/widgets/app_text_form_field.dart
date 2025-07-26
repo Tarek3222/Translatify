@@ -5,7 +5,7 @@ import 'package:translators/core/theme/app_colors.dart';
 import 'package:translators/core/theme/app_styles.dart';
 
 class AppTextFormField extends StatelessWidget {
-  final InputBorder? foundedBorder;
+  final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
   final TextStyle? inputTextStyle;
   final TextStyle? hintStyle;
@@ -22,12 +22,13 @@ class AppTextFormField extends StatelessWidget {
   final AutovalidateMode? autovalidateMode;
   final bool? enabled;
   final int? maxLines;
+  final String? labelText;
   final int? maxLength;
   final TextAlign? textAlign;
   final FocusNode? focusNode;
   const AppTextFormField({
     super.key,
-    this.foundedBorder,
+    this.focusedBorder,
     this.enabledBorder,
     this.maxLines = 1,
     this.validator,
@@ -47,6 +48,7 @@ class AppTextFormField extends StatelessWidget {
     this.onChanged,
     this.textAlign,
     this.enabled,
+    this.labelText,
   });
 
   @override
@@ -74,6 +76,12 @@ class AppTextFormField extends StatelessWidget {
         fillColor: backgroundColor ?? Theme.of(context).colorScheme.background,
         filled: true,
         isDense: true,
+        labelText: labelText,
+        labelStyle: inputTextStyle ??
+            getLightStyle(
+              fontSize: 15,
+              color: Theme.of(context).colorScheme.secondary,
+            ),
         enabledBorder: enabledBorder ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
@@ -82,7 +90,7 @@ class AppTextFormField extends StatelessWidget {
                 width: 0.8,
               ),
             ),
-        focusedBorder: foundedBorder ??
+        focusedBorder: focusedBorder ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
               borderSide: const BorderSide(

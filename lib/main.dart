@@ -14,6 +14,7 @@ import 'package:translators/core/utils/app_constants.dart';
 import 'package:translators/core/utils/user_model.dart';
 import 'package:translators/features/settings/logic/change_theme_cubit/change_theme_cubit.dart';
 import 'package:translators/translators_app.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +22,7 @@ void main() async {
     ScreenUtil.ensureScreenSize(),
     EasyLocalization.ensureInitialized(),
     setupDependencyInjection(),
+    dotenv.load(fileName: ".env"),
   ]);
   await checkIfLoggedInUser();
   Stripe.publishableKey = APiKeys.publishableKey;

@@ -20,4 +20,5 @@ abstract class Routes {
   static const String orderTranslatorsView = '/orderTranslators';
   static const String thankYouView = '/thankYou';
   static const String historyPaymentsView = '/historyPayments';
+  static const String googleTranslateView = '/googleTranslate';
 }
