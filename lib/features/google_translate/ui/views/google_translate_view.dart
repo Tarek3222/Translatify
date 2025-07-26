@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:translators/core/helpers/extensions.dart';
 import 'package:translators/core/theme/app_colors.dart';
 import 'package:translators/features/google_translate/data/models/constants.dart';
-import 'package:translators/features/google_translate/logic/app_state.dart';
+import 'package:translators/features/google_translate/logic/google_translate_app_state.dart';
 import 'package:translators/features/google_translate/ui/views/image_main_page.dart';
 import 'package:translators/features/google_translate/ui/views/subpages/choose_language_page.dart';
 import 'package:translators/features/google_translate/ui/views/text_main_page.dart';

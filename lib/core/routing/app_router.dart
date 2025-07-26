@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:translators/core/di/depandecy_injection.dart';
 import 'package:translators/core/routing/routes.dart';
-import 'package:translators/features/google_translate/logic/app_state.dart';
+import 'package:translators/features/google_translate/logic/google_translate_app_state.dart';
 import 'package:translators/features/google_translate/ui/views/google_translate_view.dart';
 import 'package:translators/features/home/data/models/translator_response_model.dart';
 import 'package:translators/features/home/data/repos/translators_list_repo.dart';

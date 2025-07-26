@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:translators/core/theme/app_colors.dart';
 import 'package:translators/core/utils/image_resize.dart';
-import 'package:translators/features/google_translate/logic/app_state.dart';
+import 'package:translators/features/google_translate/logic/google_translate_app_state.dart';
 import 'package:translators/features/google_translate/ui/widgets/rectangle_text_painter.dart';
 
 class ImageMainPage extends StatefulWidget {

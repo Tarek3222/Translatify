@@ -8,7 +8,7 @@ import 'package:translators/core/theme/app_styles.dart';
 import 'package:translators/core/widgets/custom_app_icon.dart';
 import 'package:translators/features/google_translate/data/models/constants.dart';
 import 'package:translators/features/google_translate/data/models/suppported_language.dart';
-import 'package:translators/features/google_translate/logic/app_state.dart';
+import 'package:translators/features/google_translate/logic/google_translate_app_state.dart';
 import 'package:translators/features/google_translate/ui/widgets/search_language_text_field.dart';
 import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
 

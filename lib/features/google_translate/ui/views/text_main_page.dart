@@ -6,7 +6,7 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:translators/core/helpers/spacing.dart';
 import 'package:translators/core/theme/app_colors.dart';
 import 'package:translators/core/theme/app_styles.dart';
-import 'package:translators/features/google_translate/logic/app_state.dart';
+import 'package:translators/features/google_translate/logic/google_translate_app_state.dart';
 
 class TextMainPage extends StatefulWidget {
   const TextMainPage({super.key});
