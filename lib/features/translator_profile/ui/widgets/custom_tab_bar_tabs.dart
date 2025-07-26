@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:translators/core/theme/app_colors.dart';
 import 'package:translators/core/theme/app_styles.dart';
@@ -18,15 +19,15 @@ class CustomTabBarTabs extends StatelessWidget {
       indicatorAnimation: TabIndicatorAnimation.linear,
       dividerColor: AppColors.lightGrey,
       indicatorSize: TabBarIndicatorSize.tab,
-      tabs: const [
+      tabs: [
         Tab(
-          text: "About me",
+          text: "About me".tr(),
         ),
         Tab(
-          text: "Experience",
+          text: "Experience".tr(),
         ),
         Tab(
-          text: "Reviews",
+          text: "Reviews".tr(),
         ),
       ],
     );

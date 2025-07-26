@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:translators/core/di/depandecy_injection.dart';
@@ -24,7 +25,7 @@ class DeleteAccountTileAndBlocListener extends StatelessWidget {
         return Column(
           children: [
             ListTileTabsProfileAndSettings(
-              title: "Delete Account",
+              title: "Delete Account".tr(),
               icon: Icons.delete_outlined,
               onTap: () {
                 buildDialogForDeleteAccount(context);

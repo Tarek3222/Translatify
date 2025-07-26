@@ -1,5 +1,6 @@
 // ignore_for_file: type_literal_in_constant_pattern, deprecated_member_use
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,7 +22,7 @@ class AddReviewButtonAndBlocListener extends StatelessWidget {
         onPressed: () {
           showModelBottomSheetForAddReview(context);
         },
-        text: "Add Review",
+        text: "Add Review".tr(),
         height: 40.h,
         elevation: 0,
       ),

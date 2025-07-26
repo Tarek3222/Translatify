@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +28,7 @@ class TranslatorNameAndRateAndBioSection extends StatelessWidget {
           Row(
             children: [
               Text(
-                translatorProfileModel.name ?? 'Unknown Translator',
+                translatorProfileModel.name ?? 'Unknown Translator'.tr(),
                 style: getSemiBoldStyle(
                   fontSize: 24,
                   color: Theme.of(context).colorScheme.secondary,
@@ -55,7 +56,8 @@ class TranslatorNameAndRateAndBioSection extends StatelessWidget {
           ),
           verticalSpacing(8),
           Text(
-            translatorProfileModel.translator!.first.bio ?? 'No bio available',
+            translatorProfileModel.translator!.first.bio ??
+                'No bio available'.tr(),
             style: getRegularStyle(
               color: AppColors.grey,
               fontSize: 13,
@@ -94,14 +96,14 @@ class TranslatorNameAndRateAndBioSection extends StatelessWidget {
                             },
                           );
                         },
-                        text: "pay",
+                        text: "pay".tr(),
                         height: 40.h,
                         elevation: 0,
                       ),
                     )
                   : Expanded(
                       child: Text(
-                        "Currently Unavailable",
+                        "Currently Unavailable".tr(),
                         style: getRegularStyle(
                           color: AppColors.mainRed,
                           fontSize: 14,

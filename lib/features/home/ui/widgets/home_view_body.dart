@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -72,20 +73,20 @@ class _HomeViewBodyState extends State<HomeViewBody>
                   verticalSpacing(15),
                   Row(
                     children: [
-                      const TitleTextWidet(title: "Recommended Translators"),
+                      TitleTextWidet(title: "Recommended Translators".tr()),
                       const Spacer(),
                       TextButton(
                         onPressed: () {
                           context.pushNamed(Routes.recommendedTranslatorsView,
                               arguments: {
-                                'title': 'Recommended Translators',
+                                'title': 'Recommended Translators'.tr(),
                                 'translatorsList': context
                                     .read<GetTranslatorsListCubit>()
                                     .translatorsList,
                               });
                         },
                         child: Text(
-                          "See All",
+                          "See All".tr(),
                           style: getMediumStyle(
                             color: AppColors.mainBlue,
                             fontSize: 14,

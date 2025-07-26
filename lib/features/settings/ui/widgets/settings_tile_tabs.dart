@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translators/core/helpers/extensions.dart';
@@ -18,36 +19,36 @@ class SettingsTileTabs extends StatelessWidget {
       child: Column(
         children: [
           ListTileTabsProfileAndSettings(
-            title: "Change Password",
+            title: "Change Password".tr(),
             icon: Icons.lock_open_outlined,
             onTap: () {
               context.pushNamed(Routes.changePasswordView);
             },
           ),
-          const ListTileTabsProfileAndSettings(
-            title: "Language",
+          ListTileTabsProfileAndSettings(
+            title: "Language".tr(),
             icon: Icons.language_outlined,
-            trailing: ChangeLanguageWidget(
+            trailing: const ChangeLanguageWidget(
               icon: Icon(
                 Icons.arrow_forward_ios,
               ),
               padding: EdgeInsets.zero,
             ),
           ),
-          const ListTileTabsProfileAndSettings(
-            title: "Dark Mode",
+          ListTileTabsProfileAndSettings(
+            title: "Dark Mode".tr(),
             icon: Icons.dark_mode_outlined,
-            trailing: ThemeSwitchWidget(),
+            trailing: const ThemeSwitchWidget(),
           ),
           ListTileTabsProfileAndSettings(
-            title: "FAQ",
+            title: "FAQ".tr(),
             icon: Icons.question_answer_outlined,
             onTap: () {
               context.pushNamed(Routes.faqVeiw);
             },
           ),
           ListTileTabsProfileAndSettings(
-            title: "Support",
+            title: "Support".tr(),
             icon: Icons.support_agent_outlined,
             onTap: () {
               context.pushNamed(Routes.supportView);

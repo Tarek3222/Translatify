@@ -1,5 +1,6 @@
 // ignore_for_file: type_literal_in_constant_pattern
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:translators/core/theme/app_colors.dart';
@@ -33,8 +34,8 @@ class WelcomeTextBlocBuilder extends StatelessWidget {
   }
 
   TitleTextWidet setupErrorState() {
-    return const TitleTextWidet(
-      title: "Hello, Unknown!",
+    return TitleTextWidet(
+      title: "Hello, Unknown!".tr(),
       textColor: AppColors.mainRed,
     );
   }
@@ -42,7 +43,7 @@ class WelcomeTextBlocBuilder extends StatelessWidget {
   TitleTextWidet setupSuccessStata(UserProfileState state) {
     return TitleTextWidet(
         title:
-            "Hello, ${(state as UserProfileSuccess).userProfileModel.user?.name?.split(" ").first ?? ""}!");
+            "${tr("Hello,")} ${(state as UserProfileSuccess).userProfileModel.user?.name?.split(" ").first ?? ""}!");
   }
 
   Widget setupLoadingState() {

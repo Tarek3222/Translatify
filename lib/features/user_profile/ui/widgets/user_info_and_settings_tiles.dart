@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,7 +37,7 @@ class UserInfoAndSettingsTiles extends StatelessWidget {
                 onPressed: () {
                   context.pushNamed(Routes.translatorsFavoritesView);
                 },
-                text: "Favorites",
+                text: context.tr("Favorites"),
                 elevation: 0,
               ),
             ),
@@ -47,7 +48,7 @@ class UserInfoAndSettingsTiles extends StatelessWidget {
                   context.pushNamed(Routes.orderTranslatorsView);
                 },
                 elevation: 0,
-                text: "Orders",
+                text: "Orders".tr(),
               ),
             ),
           ],
@@ -61,7 +62,7 @@ class UserInfoAndSettingsTiles extends StatelessWidget {
         ),
         ListTileTabsProfileAndSettings(
           icon: Icons.person,
-          title: "Personal Information",
+          title: "Personal Information".tr(),
           onTap: () {
             context.pushNamed(
               Routes.personalInformationView,
@@ -74,14 +75,14 @@ class UserInfoAndSettingsTiles extends StatelessWidget {
         ),
         ListTileTabsProfileAndSettings(
           icon: Icons.payment,
-          title: "Payments",
+          title: "Payments".tr(),
           onTap: () {
             context.pushNamed(Routes.historyPaymentsView);
           },
         ),
         ListTileTabsProfileAndSettings(
           icon: Icons.settings,
-          title: "Settings",
+          title: "Settings".tr(),
           onTap: () {
             context.pushNamed(Routes.settingsScreen);
           },

@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -57,7 +58,7 @@ class HomeSliverAppBar extends StatelessWidget {
             const WelcomeTextBlocBuilder(),
             verticalSpacing(5),
             Text(
-              "How are you today?",
+              "How are you today?".tr(),
               style: getRegularStyle(
                 color: AppColors.grey,
                 fontSize: 14,

@@ -89,7 +89,7 @@ class SingleReviewItem extends StatelessWidget {
 
   Widget buildRatingBar() {
     return RatingBar.builder(
-      initialRating: reviewModel.rating! as double,
+      initialRating: reviewModel.rating!.toDouble(),
       direction: Axis.horizontal,
       itemCount: 5,
       itemSize: 24,
