@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:lottie/lottie.dart';
 import 'package:translators/core/helpers/spacing.dart';
 import 'package:translators/core/theme/app_colors.dart';
 import 'package:translators/core/theme/app_styles.dart';
@@ -48,11 +47,6 @@ class SupportView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const CustomAppBar(title: "Support"),
-              verticalSpacing(20),
-              Lottie.asset(
-                'assets/images/support.json', // Add your Lottie file in assets
-                height: 180.h,
-              ),
               verticalSpacing(20),
               Text(
                 "Need Help?",
