@@ -32,7 +32,7 @@ class HomeSliverAppBar extends StatelessWidget {
         InkWell(
           onTap: () {
             context.pushNamed(Routes.recommendedTranslatorsView, arguments: {
-              'title': 'Search Translators',
+              'title': 'Search Translators'.tr(),
               'translatorsList':
                   context.read<GetTranslatorsListCubit>().translatorsList,
             });

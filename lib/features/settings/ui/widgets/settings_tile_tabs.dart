@@ -19,14 +19,14 @@ class SettingsTileTabs extends StatelessWidget {
       child: Column(
         children: [
           ListTileTabsProfileAndSettings(
-            title: "Change Password".tr(),
+            title: context.tr("Change Password"),
             icon: Icons.lock_open_outlined,
             onTap: () {
               context.pushNamed(Routes.changePasswordView);
             },
           ),
           ListTileTabsProfileAndSettings(
-            title: "Language".tr(),
+            title: context.tr("Language"),
             icon: Icons.language_outlined,
             trailing: const ChangeLanguageWidget(
               icon: Icon(
@@ -36,19 +36,19 @@ class SettingsTileTabs extends StatelessWidget {
             ),
           ),
           ListTileTabsProfileAndSettings(
-            title: "Dark Mode".tr(),
+            title: context.tr("Dark Mode"),
             icon: Icons.dark_mode_outlined,
             trailing: const ThemeSwitchWidget(),
           ),
           ListTileTabsProfileAndSettings(
-            title: "FAQ".tr(),
+            title: context.tr("FAQ"),
             icon: Icons.question_answer_outlined,
             onTap: () {
               context.pushNamed(Routes.faqVeiw);
             },
           ),
           ListTileTabsProfileAndSettings(
-            title: "Support".tr(),
+            title: context.tr("Support"),
             icon: Icons.support_agent_outlined,
             onTap: () {
               context.pushNamed(Routes.supportView);

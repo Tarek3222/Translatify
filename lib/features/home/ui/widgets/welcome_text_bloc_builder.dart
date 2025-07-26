@@ -23,7 +23,7 @@ class WelcomeTextBlocBuilder extends StatelessWidget {
           case UserProfileLoading:
             return setupLoadingState();
           case UserProfileSuccess:
-            return setupSuccessStata(state);
+            return setupSuccessStata(state, context);
           case UserProfileError:
             return setupErrorState();
           default:
@@ -40,10 +40,11 @@ class WelcomeTextBlocBuilder extends StatelessWidget {
     );
   }
 
-  TitleTextWidet setupSuccessStata(UserProfileState state) {
+  TitleTextWidet setupSuccessStata(
+      UserProfileState state, BuildContext context) {
     return TitleTextWidet(
         title:
-            "${tr("Hello,")} ${(state as UserProfileSuccess).userProfileModel.user?.name?.split(" ").first ?? ""}!");
+            "${context.tr("Hello,")} ${(state as UserProfileSuccess).userProfileModel.user?.name?.split(" ").first ?? ""}!");
   }
 
   Widget setupLoadingState() {

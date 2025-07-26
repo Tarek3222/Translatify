@@ -25,7 +25,7 @@ class DeleteAccountTileAndBlocListener extends StatelessWidget {
         return Column(
           children: [
             ListTileTabsProfileAndSettings(
-              title: "Delete Account".tr(),
+              title: context.tr("Delete Account"),
               icon: Icons.delete_outlined,
               onTap: () {
                 buildDialogForDeleteAccount(context);

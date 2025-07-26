@@ -24,7 +24,7 @@ class SignOutTileAndBlocListener extends StatelessWidget {
         return Column(
           children: [
             ListTileTabsProfileAndSettings(
-              title: "Sign Out".tr(),
+              title: context.tr("Sign Out"),
               icon: Icons.logout_outlined,
               onTap: () {
                 buildDialogForSignOut(context);

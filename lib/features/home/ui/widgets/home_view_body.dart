@@ -73,7 +73,8 @@ class _HomeViewBodyState extends State<HomeViewBody>
                   verticalSpacing(15),
                   Row(
                     children: [
-                      TitleTextWidet(title: "Recommended Translators".tr()),
+                      TitleTextWidet(
+                          title: context.tr("Recommended Translators")),
                       const Spacer(),
                       TextButton(
                         onPressed: () {
@@ -86,7 +87,7 @@ class _HomeViewBodyState extends State<HomeViewBody>
                               });
                         },
                         child: Text(
-                          "See All".tr(),
+                          context.tr("See All"),
                           style: getMediumStyle(
                             color: AppColors.mainBlue,
                             fontSize: 14,

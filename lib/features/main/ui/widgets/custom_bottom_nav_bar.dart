@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,21 +34,21 @@ class CustomBottomNavBar extends StatelessWidget {
       hoverColor: AppColors.black, // tab button hover color
       haptic: true, // haptic feedback
       tabBorderRadius: 12,
-      tabs: const [
+      tabs: [
         GButton(
           icon: Icons.home_outlined,
-          text: 'Home',
+          text: context.tr('Home'),
         ),
         GButton(
           icon: Icons.message_outlined,
-          text: 'Chats',
+          text: context.tr('Chats'),
         ),
         GButton(
           icon: Icons.person_outline,
-          leading: ImageUserBlocBuilder(
+          leading: const ImageUserBlocBuilder(
             radius: 18,
           ),
-          text: 'Profile',
+          text: context.tr('Profile'),
         )
       ],
     );
