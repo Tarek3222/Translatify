@@ -27,23 +27,42 @@ class TranslatorNameAndRateAndBioSection extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text(
-                translatorProfileModel.name ?? 'Unknown Translator'.tr(),
-                style: getSemiBoldStyle(
-                  fontSize: 24,
-                  color: Theme.of(context).colorScheme.secondary,
+              Expanded(
+                child: Text(
+                  translatorProfileModel.name ?? 'Unknown Translator'.tr(),
+                  style: getSemiBoldStyle(
+                    fontSize: 24,
+                    color: Theme.of(context).colorScheme.secondary,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ),
-              const Spacer(),
               AddToFavoriteIconButton(
                 translatorProfileModel: translatorProfileModel,
               ),
               horizontalSpacing(20),
-              Icon(
-                Icons.chat,
-                color: AppColors.mainBlue,
-                size: 30.sp,
-              ),
+              TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: AppColors.mainBlue,
+                ),
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.chat,
+                      color: AppColors.white,
+                    ),
+                    horizontalSpacing(5),
+                    Text(
+                      'Chat'.tr(),
+                      style: getMediumStyle(
+                        fontSize: 16,
+                        color: AppColors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
           verticalSpacing(8),
