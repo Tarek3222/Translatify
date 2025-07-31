@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:translators/core/di/depandecy_injection.dart';
 import 'package:translators/core/routing/routes.dart';
+import 'package:translators/features/chat/data/models/receiver_info_model.dart';
+import 'package:translators/features/chat/ui/views/chat_view.dart';
 import 'package:translators/features/google_translate/logic/google_translate_app_state.dart';
 import 'package:translators/features/google_translate/ui/views/google_translate_view.dart';
 import 'package:translators/features/home/data/models/translator_response_model.dart';
@@ -123,6 +125,11 @@ class AppRouter {
       case Routes.settingsScreen:
         return MaterialPageRoute(
           builder: (context) => const SettingsView(),
+        );
+      case Routes.chatView:
+        return MaterialPageRoute(
+          builder: (context) => ChatView(
+              receiverInfoModel: settings.arguments as ReceiverInfoModel),
         );
       case Routes.googleTranslateView:
         return MaterialPageRoute(

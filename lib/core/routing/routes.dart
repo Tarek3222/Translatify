@@ -11,6 +11,7 @@ abstract class Routes {
   static const String imageViewerScreen = '/imageViewer';
   static const String personalInformationView = '/personalInformation';
   static const String changePasswordView = '/changePassword';
+  static const String chatView = '/chat';
   static const String faqVeiw = '/faq';
   static const String supportView = '/support';
   static const String cvViewerView = '/cvViewer';

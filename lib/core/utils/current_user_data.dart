@@ -13,3 +13,12 @@ String getEmailCurruntUser() {
     json.decode(jsonString),
   ).user!.email!;
 }
+
+String getIdCurruntUser() {
+  final String jsonString = getIt<SharedPrefHelper>().getString(
+    SharedPrefKeys.kUserProfileKey,
+  )!;
+  return UserProfileModel.fromJson(
+    json.decode(jsonString),
+  ).user!.id!;
+}

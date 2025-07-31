@@ -4,10 +4,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:translators/core/helpers/extensions.dart';
 import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/routing/routes.dart';
 import 'package:translators/core/theme/app_colors.dart';
 import 'package:translators/core/theme/app_styles.dart';
+import 'package:translators/core/utils/app_constants.dart';
 import 'package:translators/core/widgets/app_elevated_button.dart';
+import 'package:translators/features/chat/data/models/receiver_info_model.dart';
 import 'package:translators/features/home/data/models/translator_response_model.dart';
 import 'package:translators/features/translator_profile/logic/payment_translator_cubit/payment_translator_cubit.dart';
 import 'package:translators/features/translator_profile/ui/widgets/add_review_button_and_bloc_provider.dart';
@@ -42,7 +46,17 @@ class TranslatorNameAndRateAndBioSection extends StatelessWidget {
               ),
               horizontalSpacing(20),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.pushNamed(
+                    Routes.chatView,
+                    arguments: ReceiverInfoModel(
+                      name: translatorProfileModel.name ?? 'Unknown',
+                      avatarUrl: translatorProfileModel.profilePic?.secureUrl ??
+                          AppConstants.unKnownImageTranslator,
+                      userId: translatorProfileModel.id!,
+                    ),
+                  );
+                },
                 style: TextButton.styleFrom(
                   backgroundColor: AppColors.mainBlue,
                 ),

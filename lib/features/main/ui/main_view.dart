@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translators/core/helpers/extensions.dart';
 import 'package:translators/core/routing/routes.dart';
 import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/features/chat/ui/views/chats_body_tab.dart';
 import 'package:translators/features/home/ui/widgets/home_view_body.dart';
 import 'package:translators/features/main/logic/bottom_nav_bar_cubit/bottom_nav_bar_index_cubit.dart';
 import 'package:translators/features/main/ui/widgets/custom_bottom_nav_bar.dart';
@@ -13,7 +14,7 @@ class MainView extends StatelessWidget {
   const MainView({super.key});
   final List<Widget> pages = const [
     HomeViewBody(),
-    Center(child: Text("Chats")),
+    ChatsBodyTab(),
     UserProfileTabBody(),
   ];
   @override
