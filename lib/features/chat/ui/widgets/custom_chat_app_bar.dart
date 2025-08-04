@@ -11,28 +11,31 @@ class CustomChatAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const CustomAppIcon(),
-        horizontalSpacing(30),
-        Expanded(
-          child: Row(
-            children: [
-              AppCircleCachedNetworkImage(
-                imageUrl: receiverInfoModel.avatarUrl,
-                radius: 28,
-              ),
-              horizontalSpacing(10),
-              Expanded(
-                child: TitleTextWidet(
-                  title: receiverInfoModel.name,
-                  overflow: TextOverflow.ellipsis,
+    return Padding(
+      padding: const EdgeInsets.only(top: 5),
+      child: Row(
+        children: [
+          const CustomAppIcon(),
+          horizontalSpacing(30),
+          Expanded(
+            child: Row(
+              children: [
+                AppCircleCachedNetworkImage(
+                  imageUrl: receiverInfoModel.avatarUrl,
+                  radius: 30,
                 ),
-              ),
-            ],
+                horizontalSpacing(10),
+                Expanded(
+                  child: TitleTextWidet(
+                    title: receiverInfoModel.name,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

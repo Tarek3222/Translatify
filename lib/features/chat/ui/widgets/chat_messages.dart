@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:translators/features/chat/data/models/receiver_info_model.dart';
+import 'package:translators/features/chat/data/models/message_response_model.dart';
 import 'package:translators/features/chat/ui/widgets/chat_bubble.dart';
 
 class ChatMessages extends StatelessWidget {
-  const ChatMessages({super.key, required this.receiverInfoModel});
-  final ReceiverInfoModel receiverInfoModel;
+  const ChatMessages({
+    super.key,
+    required this.messages,
+  });
+  final List<Messages> messages;
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 4,
+      itemCount: messages.length,
       itemBuilder: (context, index) {
-        return ChatBubble(receiverInfoModel: receiverInfoModel);
+        return ChatBubble(
+          message: messages[index],
+        );
       },
     );
   }

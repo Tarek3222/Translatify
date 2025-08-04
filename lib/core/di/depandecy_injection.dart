@@ -6,6 +6,9 @@ import 'package:translators/core/helpers/shared_preference_helper.dart';
 import 'package:translators/core/networking/api_service.dart';
 import 'package:translators/core/networking/dio_factory.dart';
 import 'package:translators/core/networking/network_info.dart';
+import 'package:translators/features/chat/data/data_source/local_data_source/chats_list_local_data_source.dart';
+import 'package:translators/features/chat/data/data_source/local_data_source/get_single_chat_local_data_source.dart';
+import 'package:translators/features/chat/data/repo/chats_repo.dart';
 import 'package:translators/features/home/data/date_source/local_data_source/translators_list_local_data_source.dart';
 import 'package:translators/features/home/data/repos/translators_list_repo.dart';
 import 'package:translators/features/payment/data/repos/check_out_repo.dart';
@@ -105,5 +108,21 @@ Future<void> setupDependencyInjection() async {
   );
   getIt.registerLazySingleton<CreateCustomerRepo>(
     () => CreateCustomerRepo(),
+  );
+
+  //chats
+  getIt.registerLazySingleton<GetSingleChatLocalDataSource>(
+    () => GetSingleChatLocalDataSource(),
+  );
+  getIt.registerLazySingleton<ChatsListLocalDataSource>(
+    () => ChatsListLocalDataSource(),
+  );
+  getIt.registerLazySingleton<ChatsRepo>(
+    () => ChatsRepo(
+      getIt<ApiService>(),
+      getIt<NetworkInfo>(),
+      getIt<GetSingleChatLocalDataSource>(),
+      getIt<ChatsListLocalDataSource>(),
+    ),
   );
 }

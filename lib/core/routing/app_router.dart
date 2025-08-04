@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:translators/core/di/depandecy_injection.dart';
 import 'package:translators/core/routing/routes.dart';
 import 'package:translators/features/chat/data/models/receiver_info_model.dart';
+import 'package:translators/features/chat/data/repo/chats_repo.dart';
+import 'package:translators/features/chat/logic/cubit/chats_list_cubit.dart';
 import 'package:translators/features/chat/ui/views/chat_view.dart';
 import 'package:translators/features/google_translate/logic/google_translate_app_state.dart';
 import 'package:translators/features/google_translate/ui/views/google_translate_view.dart';
@@ -73,6 +75,9 @@ class AppRouter {
                 create: (context) =>
                     GetTranslatorsListCubit(getIt<TranslatorsListRepo>())
                       ..getTranslatorsList(),
+              ),
+              BlocProvider(
+                create: (context) => ChatsListCubit(getIt<ChatsRepo>()),
               ),
             ],
             child: const MainView(),

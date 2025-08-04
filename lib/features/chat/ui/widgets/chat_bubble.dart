@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:translators/core/theme/app_colors.dart';
 import 'package:translators/core/theme/app_styles.dart';
 import 'package:translators/core/utils/current_user_data.dart';
-import 'package:translators/features/chat/data/models/receiver_info_model.dart';
+import 'package:translators/core/utils/time_formated.dart';
+import 'package:translators/features/chat/data/models/message_response_model.dart';
 
 class ChatBubble extends StatelessWidget {
-  const ChatBubble({super.key, required this.receiverInfoModel});
-  final ReceiverInfoModel receiverInfoModel;
+  const ChatBubble({
+    super.key,
+    required this.message,
+  });
+  final Messages message;
   @override
   Widget build(BuildContext context) {
-    bool isCurrentUser = getIdCurruntUser() == receiverInfoModel.userId;
+    bool isCurrentUser = getIdCurruntUser() == message.senderId!.id!;
     var colorScheme = Theme.of(context).colorScheme;
     return Align(
       alignment: isCurrentUser
@@ -32,7 +36,7 @@ class ChatBubble extends StatelessWidget {
               isCurrentUser ? CrossAxisAlignment.end : CrossAxisAlignment.start,
           children: [
             Text(
-              "Hi Mr.Tarek, How are you?",
+              message.body!,
               style: getMediumStyle(
                 fontSize: 16,
                 // ignore: deprecated_member_use
@@ -40,7 +44,7 @@ class ChatBubble extends StatelessWidget {
               ),
             ),
             Text(
-              "12:00 PM",
+              getChatTimeFormatted(context: context, time: message.createdAt!),
               style: getMediumStyle(
                 fontSize: 14,
                 color: AppColors.lightGrey,

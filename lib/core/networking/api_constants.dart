@@ -32,4 +32,12 @@ abstract class ApiConstants {
   static const String getReviewsEndpoint = "/review/get-reviews/{translatorId}";
   static const String deleteReviewEndpoint = "/review/delete-review/{reviewId}";
   static const String updateReviewEndpoint = "/review/update-review/{reviewId}";
+
+  //Chats Endpoints
+  static const String getSingleChatEndpoint =
+      "/user/get-chat-history/{receiverId}";
+  static const String sendMessageEndpoint = "/user/send-message/{receiverId}";
+  static const String getListChatsEndpoint = "/user/get-last-chats";
+  static const String deleteChatEndpoint =
+      "/user/delete-chat-history/{receiverId}";
 }

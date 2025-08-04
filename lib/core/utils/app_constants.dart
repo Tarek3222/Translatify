@@ -8,6 +8,7 @@ abstract class SharedPrefKeys {
   static const String kTranslatorsList = 'translatorsList';
   static String kFavoritesListForUser = "${getEmailCurruntUser()}_favorites";
   static String kOrderListForUser = "${getEmailCurruntUser()}orders";
+  static String kChatsListForUser = "${getEmailCurruntUser()}chats";
   static String kPaymnetsListForUser = "${getEmailCurruntUser()}payments";
   static String kCustomerId = "customerId";
 }

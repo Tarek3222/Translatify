@@ -80,4 +80,16 @@ abstract class ApiService {
   @PUT(ApiConstants.updateReviewEndpoint)
   Future<String> updateReview(@Path("reviewId") String reviewId,
       @Body() ReviewRequestBody reviewRequestBody);
+
+  //Chats Endpoints
+  @GET(ApiConstants.getSingleChatEndpoint)
+  Future<String> getSignleChat(@Path("receiverId") String receiverId);
+
+  @POST(ApiConstants.sendMessageEndpoint)
+  Future<String> sendMessage(@Path("receiverId") String receiverId,
+      @Body() Map<String, dynamic> messageBody);
+  @DELETE(ApiConstants.deleteChatEndpoint)
+  Future<String> deleteChat(@Path("receiverId") String receiverId);
+  @GET(ApiConstants.getListChatsEndpoint)
+  Future<String> getListChats();
 }
