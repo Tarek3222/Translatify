@@ -30,9 +30,11 @@ class SendButtonBlocConsumer extends StatelessWidget {
       },
       builder: (context, state) {
         return IconButton(
-          onPressed: () {
+          onPressed: () async {
             if (context.read<ChatCubit>().messageController.text.isNotEmpty) {
-              context
+              scrollToLastMessage(context);
+
+              await context
                   .read<ChatCubit>()
                   .sendMessage(receiverId: receiverInfoModel.userId);
             }
@@ -76,5 +78,13 @@ class SendButtonBlocConsumer extends StatelessWidget {
         );
       },
     );
+  }
+
+  // scroll to last message
+  void scrollToLastMessage(BuildContext context) {
+    context.read<ChatCubit>().scrollController.animateTo(
+        context.read<ChatCubit>().scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut);
   }
 }

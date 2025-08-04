@@ -39,7 +39,9 @@ class ChatsListBlocBuilder extends StatelessWidget {
 
   Widget setupSuccessState(ChatsListState state, BuildContext context) {
     final successState = state as ChatsListSuccess;
-    // get the list of translators with rating above 3.0
+    // sort chats bsaed on last message
+    successState.chats.sort((a, b) =>
+        b.messages!.last.createdAt!.compareTo(a.messages!.last.createdAt!));
     return successState.chats.isNotEmpty
         ? RefreshIndicator(
             onRefresh: () async {

@@ -11,6 +11,7 @@ class ChatCubit extends Cubit<ChatState> {
   ChatCubit(this._chatsRepo) : super(ChatInitial());
   List<Messages> messages = [];
   TextEditingController messageController = TextEditingController();
+  ScrollController scrollController = ScrollController();
 
   Future<void> getSingleChat(
       {bool isFromSendMessage = false, required String receiverId}) async {
