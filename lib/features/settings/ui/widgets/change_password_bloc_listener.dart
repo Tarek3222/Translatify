@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:translators/core/helpers/extensions.dart';
 import 'package:translators/core/networking/api_error_model.dart';
-import 'package:translators/core/theme/app_colors.dart';
 import 'package:translators/core/widgets/app_loading_indecator.dart';
 import 'package:translators/core/widgets/app_snack_bar.dart';
 import 'package:translators/features/settings/logic/change_password_cubit/change_password_cubit.dart';
@@ -32,10 +31,10 @@ class ChangePasswordBlocListener extends StatelessWidget {
             break;
           case ChangePasswordSuccess:
             context.pop(); // Dismiss the loading dialog
-            showSnackBar(
-                context: context,
-                message: "Password updated successfully",
-                backgroundColor: AppColors.mainBlue);
+            AppSnackBar.showSuccess(
+              context: context,
+              message: "Password updated successfully",
+            );
             break;
           case ChangePasswordError:
             // Dismiss the loading dialog and show error message
@@ -50,6 +49,6 @@ class ChangePasswordBlocListener extends StatelessWidget {
   }
 
   void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
-    showSnackBar(context: context, message: apiErrorModel.message!);
+    AppSnackBar.showError(context: context, message: apiErrorModel.message!);
   }
 }

@@ -30,10 +30,10 @@ class AddReviewWidgetsAndBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         switch (state.runtimeType) {
           case AddReviewSuccess:
-            showSnackBar(
-                context: context,
-                message: "Review added successfully.",
-                backgroundColor: AppColors.mainBlue);
+            AppSnackBar.showSuccess(
+              context: context,
+              message: "Review added successfully.",
+            );
             context.pop();
             break;
           case AddReviewError:

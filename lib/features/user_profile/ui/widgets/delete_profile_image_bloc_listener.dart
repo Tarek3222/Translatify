@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:translators/core/helpers/extensions.dart';
 import 'package:translators/core/networking/api_error_model.dart';
-import 'package:translators/core/theme/app_colors.dart';
 import 'package:translators/core/widgets/app_loading_indecator.dart';
 import 'package:translators/core/widgets/app_snack_bar.dart';
 import 'package:translators/features/user_profile/logic/delete_user_profile_image_cubit/delete_user_profile_image_cubit.dart';
@@ -33,10 +32,10 @@ class DeleteProfileImageBlocListener extends StatelessWidget {
             break;
           case DeleteUserProfileImageSuccess:
             context.pop(); // Dismiss the loading dialog
-            showSnackBar(
-                context: context,
-                message: "Image deleted",
-                backgroundColor: AppColors.mainBlue);
+            AppSnackBar.showSuccess(
+              context: context,
+              message: "Image deleted",
+            );
             break;
           case DeleteUserProfileImageError:
             // Dismiss the loading dialog and show error message
@@ -52,6 +51,7 @@ class DeleteProfileImageBlocListener extends StatelessWidget {
   }
 
   void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
-    showSnackBar(context: context, message: apiErrorModel.getAllMessages());
+    AppSnackBar.showError(
+        context: context, message: apiErrorModel.getAllMessages());
   }
 }

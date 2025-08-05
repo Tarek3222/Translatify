@@ -31,6 +31,11 @@ class CustomChatListTile extends StatelessWidget {
         radius: 30,
         imageUrl: chat.receiverId?.profilePic?.secureUrl ??
             AppConstants.unKnownImageTranslator,
+        memCacheHeight: 100,
+        memCacheWidth: 100,
+        maxHeightDiskCache: 200,
+        maxWidthDiskCache: 200,
+        cacheKey: chat.receiverId?.profilePic?.secureUrl,
       ),
       title: TitleTextWidet(
         title: chat.receiverId?.name ?? "Unknown",

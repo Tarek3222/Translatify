@@ -26,6 +26,11 @@ class TranslatorSliverListItem extends StatelessWidget {
                 AppConstants.unKnownImageTranslator,
             width: 110,
             height: 110,
+            memCacheHeight: 200,
+            memCacheWidth: 200,
+            maxHeightDiskCache: 400,
+            maxWidthDiskCache: 400,
+            cacheKey: translatorProfileModel.id,
           ),
           horizontalSpacing(16),
           Expanded(

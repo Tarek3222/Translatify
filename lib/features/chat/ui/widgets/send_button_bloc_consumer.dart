@@ -14,6 +14,7 @@ class SendButtonBlocConsumer extends StatelessWidget {
   final ReceiverInfoModel receiverInfoModel;
   @override
   Widget build(BuildContext context) {
+    var chatCubit = context.read<ChatCubit>();
     return BlocConsumer<ChatCubit, ChatState>(
       listenWhen: (previous, current) =>
           current is SendMessageLoading || current is SendMessageError,
@@ -31,12 +32,9 @@ class SendButtonBlocConsumer extends StatelessWidget {
       builder: (context, state) {
         return IconButton(
           onPressed: () async {
-            if (context.read<ChatCubit>().messageController.text.isNotEmpty) {
-              scrollToLastMessage(context);
-
-              await context
-                  .read<ChatCubit>()
-                  .sendMessage(receiverId: receiverInfoModel.userId);
+            if (chatCubit.messageController.text.isNotEmpty) {
+              await chatCubit.sendMessage(receiverId: receiverInfoModel.userId);
+              scrollToLastMessage(chatCubit);
             }
           },
           icon: state is SendMessageLoading
@@ -81,13 +79,13 @@ class SendButtonBlocConsumer extends StatelessWidget {
   }
 
   // scroll to last message
-  void scrollToLastMessage(BuildContext context) {
-    if (context.read<ChatCubit>().scrollController.hasClients) {
-      context.read<ChatCubit>().scrollController.animateTo(
-            context.read<ChatCubit>().scrollController.position.maxScrollExtent,
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeOut,
-          );
+  void scrollToLastMessage(ChatCubit chatCubit) {
+    if (chatCubit.scrollController.hasClients) {
+      chatCubit.scrollController.animateTo(
+        chatCubit.scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOut,
+      );
     }
   }
 }

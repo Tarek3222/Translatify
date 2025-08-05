@@ -50,6 +50,7 @@ class DeleteAccountBlocListener extends StatelessWidget {
   }
 
   void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
-    showSnackBar(context: context, message: apiErrorModel.getAllMessages());
+    AppSnackBar.showError(
+        context: context, message: apiErrorModel.getAllMessages());
   }
 }

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:translators/core/helpers/extensions.dart';
 import 'package:translators/core/networking/api_error_model.dart';
-import 'package:translators/core/theme/app_colors.dart';
 import 'package:translators/core/widgets/app_loading_indecator.dart';
 import 'package:translators/core/widgets/app_snack_bar.dart';
 import 'package:translators/features/user_profile/logic/update_personal_information_cubit/update_personal_information_cubit.dart';
@@ -33,10 +32,10 @@ class UpdateUserInfoBlocListener extends StatelessWidget {
             break;
           case UpdatePersonalInformationSuccess:
             context.pop(); // Dismiss the loading dialog
-            showSnackBar(
-                context: context,
-                message: "Personal information updated",
-                backgroundColor: AppColors.mainBlue);
+            AppSnackBar.showSuccess(
+              context: context,
+              message: "Personal information updated",
+            );
             break;
           case UpdatePersonalInformationError:
             // Dismiss the loading dialog and show error message
@@ -55,13 +54,13 @@ class UpdateUserInfoBlocListener extends StatelessWidget {
     if (apiErrorModel.getAllMessages() ==
         "error in global middleware handler") {
       context.read<UpdatePersonalInformationCubit>().isChannged = true;
-      showSnackBar(
+      AppSnackBar.showSuccess(
         context: context,
         message: "Personal information updated",
-        backgroundColor: AppColors.mainBlue,
       );
     } else {
-      showSnackBar(context: context, message: apiErrorModel.getAllMessages());
+      AppSnackBar.showError(
+          context: context, message: apiErrorModel.getAllMessages());
     }
   }
 }

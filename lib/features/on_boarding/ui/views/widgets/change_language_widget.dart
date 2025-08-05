@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:translators/core/theme/app_styles.dart';
 
 class ChangeLanguageWidget extends StatelessWidget {
   const ChangeLanguageWidget({
@@ -23,6 +24,10 @@ class ChangeLanguageWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(8.r),
         ),
         child: DropdownButton<String>(
+          style: getMediumStyle(
+            fontSize: 16,
+            color: Theme.of(context).colorScheme.secondary,
+          ),
           icon: icon,
           value: context.locale.languageCode == 'en'
               ? context.tr("English")
@@ -45,7 +50,9 @@ class ChangeLanguageWidget extends StatelessWidget {
           ].map((String value) {
             return DropdownMenuItem<String>(
               value: value,
-              child: Text(value),
+              child: Text(
+                value,
+              ),
             );
           }).toList(),
           onChanged: (String? newValue) {

@@ -41,14 +41,14 @@ class DeleteReviewAlertDialog extends StatelessWidget {
       listener: (context, state) {
         switch (state.runtimeType) {
           case DeleteReviewSuccess:
-            showSnackBar(
-                context: context,
-                message: "Review Deleteed successfully.",
-                backgroundColor: AppColors.mainBlue);
+            AppSnackBar.showSuccess(
+              context: context,
+              message: "Review Deleteed successfully.",
+            );
             context.pop();
             break;
           case DeleteReviewError:
-            showSnackBar(
+            AppSnackBar.showError(
               context: context,
               message: (state as DeleteReviewError).errorModel.getAllMessages(),
             );

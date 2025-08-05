@@ -45,10 +45,10 @@ class _EditReviewWidgetsAndBlocConsumerState
       listener: (context, state) {
         switch (state.runtimeType) {
           case UpdateReviewSuccess:
-            showSnackBar(
-                context: context,
-                message: "Review updateed successfully.",
-                backgroundColor: AppColors.mainBlue);
+            AppSnackBar.showSuccess(
+              context: context,
+              message: "Review updateed successfully.",
+            );
             context.pop();
             break;
           case UpdateReviewError:

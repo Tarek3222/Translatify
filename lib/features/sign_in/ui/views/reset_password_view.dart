@@ -101,7 +101,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                     child: AppElevatedButton(
                       onPressed: () {
                         if (context.read<ResetPasswordCubit>().code.isEmpty) {
-                          showSnackBar(
+                          AppSnackBar.showWarning(
                               context: context,
                               message: "pleaseEnterOtpCode".tr());
                         }

@@ -38,7 +38,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
         }
         if (state is PaymentError) {
           context.pop();
-          showSnackBar(context: context, message: state.error);
+          AppSnackBar.showError(context: context, message: state.error);
         }
       },
       builder: (context, state) {

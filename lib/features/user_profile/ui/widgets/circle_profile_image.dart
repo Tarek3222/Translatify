@@ -26,6 +26,11 @@ class CircleProfileImage extends StatelessWidget {
           AppCircleCachedNetworkImage(
             radius: innerRadius ?? 80,
             imageUrl: imageUrl ?? AppConstants.unKnownImageTranslator,
+            memCacheHeight: 100,
+            memCacheWidth: 100,
+            maxHeightDiskCache: 200,
+            maxWidthDiskCache: 200,
+            cacheKey: imageUrl,
           ),
     );
   }

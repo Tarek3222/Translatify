@@ -102,6 +102,11 @@ class CoverImageBackgroundBlocBuilder extends StatelessWidget {
             imageUrl: state.userProfileModel.user?.coverPic?.secureUrl ?? "",
             width: double.infinity,
             height: 200.h,
+            memCacheHeight: 200,
+            memCacheWidth: 200,
+            maxHeightDiskCache: 400,
+            maxWidthDiskCache: 400,
+            cacheKey: state.userProfileModel.user?.coverPic?.publicId,
           );
   }
 }

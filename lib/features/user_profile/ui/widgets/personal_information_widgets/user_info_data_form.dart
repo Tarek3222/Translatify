@@ -26,11 +26,13 @@ class UserInfoDataForm extends StatefulWidget {
 class _UserInfoDataFormState extends State<UserInfoDataForm> {
   @override
   Widget build(BuildContext context) {
+    var updatePersonalInfoCubit =
+        context.read<UpdatePersonalInformationCubit>();
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 2).w,
         child: Form(
-          key: context.read<UpdatePersonalInformationCubit>().formKey,
+          key: updatePersonalInfoCubit.formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -39,63 +41,48 @@ class _UserInfoDataFormState extends State<UserInfoDataForm> {
               ),
               EmailField(
                 isReadOnly: false,
-                emailController: context
-                    .read<UpdatePersonalInformationCubit>()
-                    .emailController,
+                emailController: updatePersonalInfoCubit.emailController,
               ),
               verticalSpacing(10),
               LabelForm(
                 labelText: "name".tr(),
               ),
               NameField(
-                isReadOnly:
-                    context.read<UpdatePersonalInformationCubit>().isUpdate,
-                nameController: context
-                    .read<UpdatePersonalInformationCubit>()
-                    .nameController,
+                isReadOnly: updatePersonalInfoCubit.isUpdate,
+                nameController: updatePersonalInfoCubit.nameController,
               ),
               verticalSpacing(10),
               LabelForm(labelText: "phoneNumber".tr()),
               PhoneField(
-                isReadOnly:
-                    context.read<UpdatePersonalInformationCubit>().isUpdate,
-                phoneController: context
-                    .read<UpdatePersonalInformationCubit>()
-                    .phoneController,
+                isReadOnly: updatePersonalInfoCubit.isUpdate,
+                phoneController: updatePersonalInfoCubit.phoneController,
               ),
               verticalSpacing(10),
               LabelForm(labelText: context.tr("gender")),
               IgnorePointer(
-                ignoring:
-                    !context.read<UpdatePersonalInformationCubit>().isUpdate,
+                ignoring: !updatePersonalInfoCubit.isUpdate,
                 child: SelectedGender(
-                  initialGender:
-                      context.read<UpdatePersonalInformationCubit>().gender,
+                  initialGender: updatePersonalInfoCubit.gender,
                   onSelectMale: () {
-                    context.read<UpdatePersonalInformationCubit>().gender =
-                        "male";
+                    updatePersonalInfoCubit.gender = "male";
                   },
                   onSelectFemale: () {
-                    context.read<UpdatePersonalInformationCubit>().gender =
-                        "female";
+                    updatePersonalInfoCubit.gender = "female";
                   },
                 ),
               ),
               verticalSpacing(10),
               LabelForm(labelText: "dateOfBirth".tr()),
               IgnorePointer(
-                ignoring:
-                    !context.read<UpdatePersonalInformationCubit>().isUpdate,
+                ignoring: !updatePersonalInfoCubit.isUpdate,
                 child: BuildDateOfBirthPicker(
                   fromAny: "update",
                   onDateSelected: (pickedDate) {
-                    context.read<UpdatePersonalInformationCubit>().dateOfBirth =
+                    updatePersonalInfoCubit.dateOfBirth =
                         DateFormat('yyyy-MM-dd').format(pickedDate);
                   },
-                  initialDate: DateTime.tryParse(context
-                          .read<UpdatePersonalInformationCubit>()
-                          .dateOfBirth ??
-                      ""),
+                  initialDate: DateTime.tryParse(
+                      updatePersonalInfoCubit.dateOfBirth ?? ""),
                 ),
               ),
               verticalSpacing(10),
@@ -107,27 +94,9 @@ class _UserInfoDataFormState extends State<UserInfoDataForm> {
                 alignment: AlignmentDirectional.centerEnd,
                 child: AppElevatedButton(
                   onPressed: () async {
-                    if (context
-                        .read<UpdatePersonalInformationCubit>()
-                        .isUpdate) {
-                      context.read<UpdatePersonalInformationCubit>().isUpdate =
-                          false;
-                      if (context
-                          .read<UpdatePersonalInformationCubit>()
-                          .formKey
-                          .currentState!
-                          .validate()) {
-                        await context
-                            .read<UpdatePersonalInformationCubit>()
-                            .updateUserInformation();
-                      }
-                    } else {
-                      context.read<UpdatePersonalInformationCubit>().isUpdate =
-                          true;
-                    }
-                    setState(() {});
+                    await savePersonalDataState(updatePersonalInfoCubit);
                   },
-                  text: context.read<UpdatePersonalInformationCubit>().isUpdate
+                  text: updatePersonalInfoCubit.isUpdate
                       ? "Save Profile"
                       : "Edit Profile",
                   width: MediaQuery.sizeOf(context).width * 0.5,
@@ -139,5 +108,18 @@ class _UserInfoDataFormState extends State<UserInfoDataForm> {
         ),
       ),
     );
+  }
+
+  Future<void> savePersonalDataState(
+      UpdatePersonalInformationCubit updatePersonalInfoCubit) async {
+    if (updatePersonalInfoCubit.isUpdate) {
+      updatePersonalInfoCubit.isUpdate = false;
+      if (updatePersonalInfoCubit.formKey.currentState!.validate()) {
+        await updatePersonalInfoCubit.updateUserInformation();
+      }
+    } else {
+      updatePersonalInfoCubit.isUpdate = true;
+    }
+    setState(() {});
   }
 }

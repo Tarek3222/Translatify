@@ -21,7 +21,15 @@ class CustomListTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      leading: AppCircleCachedNetworkImage(imageUrl: imageUrl, radius: 30),
+      leading: AppCircleCachedNetworkImage(
+        imageUrl: imageUrl,
+        radius: 30,
+        memCacheHeight: 100,
+        memCacheWidth: 100,
+        maxHeightDiskCache: 200,
+        maxWidthDiskCache: 200,
+        cacheKey: imageUrl,
+      ),
       title: TitleTextWidet(
         title: title,
         textColor: textColor,

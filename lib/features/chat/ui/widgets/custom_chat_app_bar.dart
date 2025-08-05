@@ -23,6 +23,11 @@ class CustomChatAppBar extends StatelessWidget {
                 AppCircleCachedNetworkImage(
                   imageUrl: receiverInfoModel.avatarUrl,
                   radius: 30,
+                  memCacheHeight: 100,
+                  memCacheWidth: 100,
+                  maxHeightDiskCache: 200,
+                  maxWidthDiskCache: 200,
+                  cacheKey: receiverInfoModel.avatarUrl,
                 ),
                 horizontalSpacing(10),
                 Expanded(

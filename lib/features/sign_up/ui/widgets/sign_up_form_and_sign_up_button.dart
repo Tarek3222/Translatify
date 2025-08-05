@@ -37,9 +37,10 @@ class SignUpFormAndSignupButton extends StatelessWidget {
     FocusScope.of(context).unfocus();
     // show messages when the date of birth is not set or terms are not accepted
     if (context.read<SignupCubit>().dateOfBirth == null) {
-      showSnackBar(context: context, message: 'pleaseSelectDateOfBirth'.tr());
+      AppSnackBar.showError(
+          context: context, message: 'pleaseSelectDateOfBirth'.tr());
     } else if (!context.read<SignupCubit>().isTermsAccepted) {
-      showSnackBar(
+      AppSnackBar.showError(
           context: context, message: 'pleaseAcceptTermsAndPrivacyPolicy'.tr());
     }
     // Check if the form is valid, terms are accepted, and date of birth is set
