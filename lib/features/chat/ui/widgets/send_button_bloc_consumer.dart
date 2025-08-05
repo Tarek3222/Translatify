@@ -82,9 +82,12 @@ class SendButtonBlocConsumer extends StatelessWidget {
 
   // scroll to last message
   void scrollToLastMessage(BuildContext context) {
-    context.read<ChatCubit>().scrollController.animateTo(
-        context.read<ChatCubit>().scrollController.position.maxScrollExtent,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeInOut);
+    if (context.read<ChatCubit>().scrollController.hasClients) {
+      context.read<ChatCubit>().scrollController.animateTo(
+            context.read<ChatCubit>().scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOut,
+          );
+    }
   }
 }

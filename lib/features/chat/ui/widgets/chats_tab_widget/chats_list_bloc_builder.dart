@@ -77,15 +77,15 @@ class ChatsListBlocBuilder extends StatelessWidget {
       onRefresh: () async {
         await context.read<ChatsListCubit>().getChatsList(forceRefresh: true);
       },
-      child: SingleChildScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        child: Center(
+      child:
+          ListView(physics: const AlwaysScrollableScrollPhysics(), children: [
+        Center(
           child: TitleTextWidet(
             title: "Error: ${errorState.errorModel.getAllMessages()}",
             textColor: Colors.red,
           ),
         ),
-      ),
+      ]),
     );
   }
 }

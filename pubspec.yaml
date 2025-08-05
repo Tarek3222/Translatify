@@ -99,6 +99,7 @@ dependencies:
   flutter_stripe: ^11.3.0
   flutter_svg: ^2.2.0
   web_socket_channel: ^3.0.3
+  flutter_launcher_icons: ^0.14.4
 
   # google translator packages
   english_words: ^4.0.0
@@ -123,6 +124,11 @@ dev_dependencies:
   hive_ce_generator: ^1.9.0
   retrofit_generator: ^9.1.9
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: assets\images\launcher_icon.jpg
+  min_sdk_android: 21 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
