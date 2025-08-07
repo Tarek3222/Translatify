@@ -1,9 +1,11 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
-import 'package:translator/core/theme/app_colors.dart';
-import 'package:translator/core/theme/app_styles.dart';
+import 'package:translators/core/theme/app_colors.dart';
+import 'package:translators/core/theme/app_styles.dart';
 
 class AppTextFormField extends StatelessWidget {
-  final InputBorder? foundedBorder;
+  final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
   final TextStyle? inputTextStyle;
   final TextStyle? hintStyle;
@@ -18,13 +20,15 @@ class AppTextFormField extends StatelessWidget {
   final Iterable<String>? autofillHints;
   final void Function(String)? onChanged;
   final AutovalidateMode? autovalidateMode;
+  final bool? enabled;
   final int? maxLines;
+  final String? labelText;
   final int? maxLength;
   final TextAlign? textAlign;
   final FocusNode? focusNode;
   const AppTextFormField({
     super.key,
-    this.foundedBorder,
+    this.focusedBorder,
     this.enabledBorder,
     this.maxLines = 1,
     this.validator,
@@ -43,10 +47,13 @@ class AppTextFormField extends StatelessWidget {
     this.maxLength,
     this.onChanged,
     this.textAlign,
+    this.enabled,
+    this.labelText,
   });
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return TextFormField(
       controller: controller,
       validator: validator,
@@ -56,53 +63,60 @@ class AppTextFormField extends StatelessWidget {
       textAlign: textAlign ?? TextAlign.start,
       style: inputTextStyle ??
           getLightStyle(
-            fontSize: 14,
-            color: AppColors.darkBlue,
+            fontSize: 15,
+            color: theme.colorScheme.secondary,
           ),
       autofillHints: autofillHints ?? autofillHints,
       maxLength: maxLength,
       onChanged: onChanged,
+      enabled: enabled,
       focusNode: focusNode,
       autovalidateMode: autovalidateMode ?? AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         counterText: "",
-        fillColor: backgroundColor ?? AppColors.white,
+        fillColor: backgroundColor ?? theme.colorScheme.background,
         filled: true,
         isDense: true,
+        labelText: labelText,
+        labelStyle: inputTextStyle ??
+            getLightStyle(
+              fontSize: 15,
+              color: theme.colorScheme.secondary,
+            ),
         enabledBorder: enabledBorder ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
-              borderSide: const BorderSide(
-                color: AppColors.mainBlue,
-                width: 0.5,
+              borderSide: BorderSide(
+                color: theme.colorScheme.onPrimary,
+                width: 0.8,
               ),
             ),
-        focusedBorder: foundedBorder ??
+        focusedBorder: focusedBorder ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
               borderSide: const BorderSide(
                 color: AppColors.mainBlue,
-                width: 0.5,
+                width: 0.8,
               ),
             ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: const BorderSide(
             color: Colors.red,
-            width: 0.5,
+            width: 0.9,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: const BorderSide(
             color: Colors.red,
-            width: 0.5,
+            width: 0.9,
           ),
         ),
         hintStyle: hintStyle ??
             getLightStyle(
-              fontSize: 14,
-              color: AppColors.darkBlue,
+              fontSize: 15,
+              color: theme.colorScheme.secondary,
             ),
         hintText: hintText,
         suffixIcon: suffixIcon,

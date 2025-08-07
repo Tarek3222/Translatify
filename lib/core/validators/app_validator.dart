@@ -1,13 +1,14 @@
-import 'package:translator/core/helpers/extensions.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:translators/core/helpers/extensions.dart';
 
 class AppValidators {
   static String? validateEmail(String? val) {
     RegExp emailRegex = RegExp(
         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
     if (val.isNullOrEmpty()) {
-      return "Please enter an email";
+      return tr("pleaseEnterEmail");
     } else if (emailRegex.hasMatch(val!) == false) {
-      return "Please enter a valid email";
+      return tr("pleaseEnterValidEmail");
     } else {
       return null;
     }
@@ -17,9 +18,9 @@ class AppValidators {
     RegExp passwordRegex = RegExp(
         r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$");
     if (password.isNullOrEmpty()) {
-      return "Please enter a password";
+      return tr("pleaseEnterPassword");
     } else if (!passwordRegex.hasMatch(password!)) {
-      return "Password must contain at least:\n-one uppercase letter\n-one lowercase letter\n-one number\n-one special character";
+      return tr("passwordRequirements");
     } else {
       return null;
     }
@@ -28,9 +29,9 @@ class AppValidators {
   static String? validatePhoneNumber(String? phoneNumber) {
     RegExp phoneRegex = RegExp(r'^(010|011|012|015)\d{8}$');
     if (phoneNumber.isNullOrEmpty()) {
-      return "Please enter a phone number";
+      return tr("pleaseEnterPhone");
     } else if (!phoneRegex.hasMatch(phoneNumber!)) {
-      return "Please enter a valid phone number";
+      return tr("pleaseEnterValidPhone");
     } else {
       return null;
     }
