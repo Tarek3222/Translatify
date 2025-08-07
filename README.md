@@ -13,6 +13,11 @@
 
 </div>
 
+## App For Tranlsators: 
+<p>
+    <a href="https://github.com/Tarek3222/Translators_app-2ed-">Project Repo</a>
+</p>
+
 ## 🚀 Features for tourists
 
 ### 🚨 **Authentication System**
@@ -217,7 +222,7 @@ lib/
 - **AWS Services** - Translation and text-to-speech
 - **Stripe** - Payment processing
 - **Easy Localization** - Internationalization
-- **Firebase** - Backend services
+- **Api** - Backend services
 
 ## 🚀 Getting Started
 
