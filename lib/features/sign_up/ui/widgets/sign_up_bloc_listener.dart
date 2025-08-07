@@ -58,9 +58,7 @@ class SignupBlocListener extends StatelessWidget {
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
-                Text(
-                    "User Registered Successfully , please check your email to verif"
-                        .tr()),
+                Text("User Registered Successfully , go to login".tr()),
               ],
             ),
           ),
@@ -73,7 +71,10 @@ class SignupBlocListener extends StatelessWidget {
               ),
               onPressed: () {
                 context.pop(); // Dismiss the success dialog
-                context.pushNamed(Routes.verifyCodeEmail, arguments: email);
+                //todo:i return it when the otp is work in backend
+                // context.pushNamed(Routes.verifyCodeEmail, arguments: email);
+                context.pushNamedAndRemoveUntil(Routes.onBoardingScreen,
+                    predicate: (Route<dynamic> route) => false);
               },
               child: Text('continue'.tr()),
             ),
