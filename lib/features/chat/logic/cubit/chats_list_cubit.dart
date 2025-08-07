@@ -8,7 +8,7 @@ part 'chats_list_state.dart';
 class ChatsListCubit extends Cubit<ChatsListState> {
   final ChatsRepo _chatsRepo;
   ChatsListCubit(this._chatsRepo) : super(ChatsListInitial());
-  List<Chats> chats = [];
+  List<Chats>? chats;
   bool _dataFetched = false;
 
   Future<void> getChatsList({bool forceRefresh = false}) async {
@@ -48,5 +48,11 @@ class ChatsListCubit extends Cubit<ChatsListState> {
         );
       },
     );
+  }
+
+  void clearChatsList() {
+    chats?.clear();
+    chats = null;
+    emit(ChatsListLoading());
   }
 }

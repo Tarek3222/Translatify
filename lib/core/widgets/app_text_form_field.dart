@@ -53,6 +53,7 @@ class AppTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return TextFormField(
       controller: controller,
       validator: validator,
@@ -63,7 +64,7 @@ class AppTextFormField extends StatelessWidget {
       style: inputTextStyle ??
           getLightStyle(
             fontSize: 15,
-            color: Theme.of(context).colorScheme.secondary,
+            color: theme.colorScheme.secondary,
           ),
       autofillHints: autofillHints ?? autofillHints,
       maxLength: maxLength,
@@ -73,20 +74,20 @@ class AppTextFormField extends StatelessWidget {
       autovalidateMode: autovalidateMode ?? AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         counterText: "",
-        fillColor: backgroundColor ?? Theme.of(context).colorScheme.background,
+        fillColor: backgroundColor ?? theme.colorScheme.background,
         filled: true,
         isDense: true,
         labelText: labelText,
         labelStyle: inputTextStyle ??
             getLightStyle(
               fontSize: 15,
-              color: Theme.of(context).colorScheme.secondary,
+              color: theme.colorScheme.secondary,
             ),
         enabledBorder: enabledBorder ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide(
-                color: Theme.of(context).colorScheme.onPrimary,
+                color: theme.colorScheme.onPrimary,
                 width: 0.8,
               ),
             ),
@@ -115,7 +116,7 @@ class AppTextFormField extends StatelessWidget {
         hintStyle: hintStyle ??
             getLightStyle(
               fontSize: 15,
-              color: Theme.of(context).colorScheme.secondary,
+              color: theme.colorScheme.secondary,
             ),
         hintText: hintText,
         suffixIcon: suffixIcon,

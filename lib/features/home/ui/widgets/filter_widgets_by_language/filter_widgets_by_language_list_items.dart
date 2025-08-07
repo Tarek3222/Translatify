@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translators/features/home/logic/get_translators_list_cubit/get_translators_list_cubit.dart';
 import 'package:translators/features/home/ui/widgets/filter_widget_translator_item.dart';
 
@@ -18,13 +19,13 @@ class _FilterWidgetsByLanguageListItemsState
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: IntrinsicHeight(
-        child: Row(
-          children: List.generate(
-            languages.length,
-            (index) => InkWell(
+    return SizedBox(
+      height: 40.h,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: languages.length,
+          itemBuilder: (context, index) {
+            return InkWell(
               onTap: () {
                 if (selectedIndex != index) {
                   context
@@ -42,10 +43,8 @@ class _FilterWidgetsByLanguageListItemsState
                 index: index,
                 selectedIndex: selectedIndex,
               ),
-            ),
-          ),
-        ),
-      ),
+            );
+          }),
     );
   }
 }

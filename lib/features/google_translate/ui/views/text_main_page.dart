@@ -16,9 +16,17 @@ class TextMainPage extends StatefulWidget {
 }
 
 class _TextMainPageState extends State<TextMainPage> {
-  final ScrollController _firstController = ScrollController();
-  final ScrollController _secondController = ScrollController();
-  final TextEditingController _sourceTextController = TextEditingController();
+  late ScrollController _firstController;
+  late ScrollController _secondController;
+  late TextEditingController _sourceTextController;
+
+  @override
+  void initState() {
+    _firstController = ScrollController();
+    _secondController = ScrollController();
+    _sourceTextController = TextEditingController();
+    super.initState();
+  }
 
   @override
   void dispose() {

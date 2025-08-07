@@ -41,4 +41,12 @@ class UpdatePersonalInformationCubit
       );
     });
   }
+
+  @override
+  Future<void> close() {
+    phoneController.dispose();
+    nameController.dispose();
+    emailController.dispose();
+    return super.close();
+  }
 }

@@ -13,18 +13,11 @@ import 'package:translators/features/home/ui/widgets/recommended_translators_wid
 import 'package:translators/features/home/ui/widgets/search_recommended_treanslators_widget/filter_selection.dart';
 import 'package:translators/features/home/ui/widgets/title_text_widet.dart';
 
-class SearchFieldAndRecommendedTranslatorsListView extends StatefulWidget {
+class SearchFieldAndRecommendedTranslatorsListView extends StatelessWidget {
   const SearchFieldAndRecommendedTranslatorsListView(
       {super.key, required this.translatorsList});
   final List<TranslatorProfileModel> translatorsList;
 
-  @override
-  State<SearchFieldAndRecommendedTranslatorsListView> createState() =>
-      _SearchFieldAndRecommendedTranslatorsListViewState();
-}
-
-class _SearchFieldAndRecommendedTranslatorsListViewState
-    extends State<SearchFieldAndRecommendedTranslatorsListView> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -44,7 +37,7 @@ class _SearchFieldAndRecommendedTranslatorsListViewState
                     context.read<FilterTranslatorsCubit>().searchQuery = value;
                     context
                         .read<FilterTranslatorsCubit>()
-                        .filterTranslators(translators: widget.translatorsList);
+                        .filterTranslators(translators: translatorsList);
                   },
                 ),
               ),
@@ -59,7 +52,7 @@ class _SearchFieldAndRecommendedTranslatorsListViewState
                     builder: (context) {
                       return FilterSelection(
                         filterTranslatorCubit: filterTranslatorCubit,
-                        translatorsList: widget.translatorsList,
+                        translatorsList: translatorsList,
                       );
                     },
                   );

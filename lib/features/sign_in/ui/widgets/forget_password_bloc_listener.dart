@@ -85,10 +85,11 @@ class ForgetPasswordBlocListener extends StatelessWidget {
 
   void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
     context.pop();
+    var theme = Theme.of(context);
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: theme.colorScheme.background,
         icon: const Icon(
           Icons.error,
           color: Colors.red,
@@ -98,7 +99,7 @@ class ForgetPasswordBlocListener extends StatelessWidget {
           apiErrorModel.getAllMessages(),
           style: getMediumStyle(
             fontSize: 16,
-            color: Theme.of(context).colorScheme.error,
+            color: theme.colorScheme.error,
           ),
         ),
         actions: [
@@ -110,7 +111,7 @@ class ForgetPasswordBlocListener extends StatelessWidget {
               'Got it'.tr(),
               style: getMediumStyle(
                 fontSize: 16,
-                color: Theme.of(context).colorScheme.primary,
+                color: theme.colorScheme.primary,
               ),
             ),
           ),

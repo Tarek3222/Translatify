@@ -21,8 +21,9 @@ class HomeSliverAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return SliverAppBar(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: theme.colorScheme.background,
       pinned: true,
       scrolledUnderElevation: 0,
       automaticallyImplyLeading: false,
@@ -39,7 +40,7 @@ class HomeSliverAppBar extends StatelessWidget {
           },
           child: FaIcon(
             FontAwesomeIcons.magnifyingGlass,
-            color: Theme.of(context).colorScheme.secondary,
+            color: theme.colorScheme.secondary,
             size: 20.sp,
           ),
         ),

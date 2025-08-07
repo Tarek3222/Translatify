@@ -14,6 +14,7 @@ class PaymentProccessedBody extends StatelessWidget {
   final OrderTranslatorModel orderTranslatorModel;
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10).w,
@@ -47,7 +48,7 @@ class PaymentProccessedBody extends StatelessWidget {
                 buildTextWidget(
                   "${orderTranslatorModel.salary.toStringAsFixed(2)}  ${orderTranslatorModel.currency}",
                   16,
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: theme.colorScheme.secondary,
                 ),
               ],
             ),
@@ -59,7 +60,7 @@ class PaymentProccessedBody extends StatelessWidget {
                 buildTextWidget(
                   "200  ${orderTranslatorModel.currency}",
                   16,
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: theme.colorScheme.secondary,
                 ),
               ],
             ),
@@ -70,7 +71,7 @@ class PaymentProccessedBody extends StatelessWidget {
                 buildTextWidget(
                   "${orderTranslatorModel.salary + 200}  ${orderTranslatorModel.currency}",
                   16,
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: theme.colorScheme.secondary,
                 ),
               ],
             ),

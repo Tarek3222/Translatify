@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:translators/core/helpers/extensions.dart';
 import 'package:translators/core/networking/api_error_model.dart';
 import 'package:translators/features/home/data/models/translator_response_model.dart';
 import 'package:translators/features/home/data/repos/translators_list_repo.dart';
@@ -9,7 +10,7 @@ class GetTranslatorsListCubit extends Cubit<GetTranslatorsListState> {
   final TranslatorsListRepo _translatorsListRepo;
   GetTranslatorsListCubit(this._translatorsListRepo)
       : super(GetTranslatorsListInitial());
-  List<TranslatorProfileModel> translatorsList = [];
+  List<TranslatorProfileModel>? translatorsList;
   bool _dataFetched = false;
 
   Future<void> getTranslatorsList({bool forceRefresh = false}) async {
@@ -32,14 +33,14 @@ class GetTranslatorsListCubit extends Cubit<GetTranslatorsListState> {
   }
 
   void filterTranslatorsByLanguage(String language) {
-    if (translatorsList.isEmpty) {
+    if (translatorsList.isNullOrEmpty()) {
       emit(
         const GetTranslatorsListFilteredByLanguageError(
             errorMessage: "No translators available to filter"),
       );
       return;
     }
-    final filteredTranslators = translatorsList
+    final filteredTranslators = translatorsList!
         .where((translator) =>
             translator.translator!.first.language!.contains(language))
         .toList();
@@ -55,14 +56,14 @@ class GetTranslatorsListCubit extends Cubit<GetTranslatorsListState> {
   }
 
   void filterTranslatorsByType(String type) {
-    if (translatorsList.isEmpty) {
+    if (translatorsList.isNullOrEmpty()) {
       emit(
         const GetTranslatorsListFilteredByTypeError(
             errorMessage: "No translators available to filter"),
       );
       return;
     }
-    final filteredTranslators = translatorsList
+    final filteredTranslators = translatorsList!
         .where(
             (translator) => translator.translator!.first.type!.contains(type))
         .toList();
@@ -76,5 +77,11 @@ class GetTranslatorsListCubit extends Cubit<GetTranslatorsListState> {
         ),
       );
     }
+  }
+
+  void clearTranslatorsList() {
+    translatorsList?.clear();
+    translatorsList = null;
+    emit(GetTranslatorsListLoading());
   }
 }

@@ -14,6 +14,7 @@ class OnboardingImageAndText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return BounceInDown(
       delay: const Duration(milliseconds: 300),
       child: Stack(
@@ -22,11 +23,8 @@ class OnboardingImageAndText extends StatelessWidget {
             foregroundDecoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Theme.of(context).colorScheme.surfaceContainer,
-                  Theme.of(context)
-                      .colorScheme
-                      .surfaceContainer
-                      .withOpacity(0.0),
+                  theme.colorScheme.surfaceContainer,
+                  theme.colorScheme.surfaceContainer.withOpacity(0.0),
                 ],
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
@@ -34,7 +32,7 @@ class OnboardingImageAndText extends StatelessWidget {
               ),
             ),
             child: Image.asset(
-              Theme.of(context).brightness == Brightness.dark
+              theme.brightness == Brightness.dark
                   ? 'assets/images/onboard_image.jpg'
                   : 'assets/images/onboarding_image.jpg',
               height: 350.h,

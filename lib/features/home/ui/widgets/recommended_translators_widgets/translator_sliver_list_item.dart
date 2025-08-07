@@ -18,7 +18,7 @@ class TranslatorSliverListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 16.h),
+      padding: const EdgeInsets.only(bottom: 16).h,
       child: Row(
         children: [
           AppCachedNetworkImage(

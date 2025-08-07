@@ -21,6 +21,7 @@ class FilterSelection extends StatelessWidget {
   final List<TranslatorProfileModel> translatorsList;
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.all(16).w,
       child: Column(
@@ -44,7 +45,7 @@ class FilterSelection extends StatelessWidget {
               "Language",
               style: getSemiBoldStyle(
                 fontSize: 16,
-                color: Theme.of(context).colorScheme.secondary,
+                color: theme.colorScheme.secondary,
               ),
             ),
           ),
@@ -59,7 +60,7 @@ class FilterSelection extends StatelessWidget {
               "type",
               style: getSemiBoldStyle(
                 fontSize: 16,
-                color: Theme.of(context).colorScheme.secondary,
+                color: theme.colorScheme.secondary,
               ),
             ),
           ),
@@ -74,7 +75,7 @@ class FilterSelection extends StatelessWidget {
               "Rating",
               style: getSemiBoldStyle(
                 fontSize: 16,
-                color: Theme.of(context).colorScheme.secondary,
+                color: theme.colorScheme.secondary,
               ),
             ),
           ),

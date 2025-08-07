@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:translators/core/theme/app_colors.dart';
 
 class AppCircleCachedNetworkImage extends StatelessWidget {
@@ -55,8 +54,8 @@ class AppCircleCachedNetworkImage extends StatelessWidget {
       fadeOutDuration: fadeOutDuration,
       fadeInCurve: fadeInCurve,
       fadeOutCurve: fadeOutCurve,
-      placeholder: placeholder ??
-          (context, url) => _buildShimmerPlaceholder(context, url),
+      placeholder:
+          placeholder ?? (context, url) => _buildPlaceholder(context, url),
       errorWidget: errorWidget ??
           (context, url, error) => _buildErrorWidget(context, url, error),
       imageBuilder: _buildCircleAvatar,
@@ -67,15 +66,8 @@ class AppCircleCachedNetworkImage extends StatelessWidget {
     );
   }
 
-  Widget _buildShimmerPlaceholder(BuildContext context, String url) {
-    return Shimmer.fromColors(
-      baseColor: AppColors.lightGrey,
-      highlightColor: Colors.white,
-      child: CircleAvatar(
-        radius: radius.r,
-        backgroundColor: AppColors.lightGrey,
-      ),
-    );
+  Widget _buildPlaceholder(BuildContext context, String url) {
+    return const CircularProgressIndicator();
   }
 
   Widget _buildErrorWidget(BuildContext context, String url, dynamic error) {

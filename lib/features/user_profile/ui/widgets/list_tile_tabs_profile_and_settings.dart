@@ -17,17 +17,18 @@ class ListTileTabsProfileAndSettings extends StatelessWidget {
   final Widget? trailing;
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return ListTile(
       onTap: onTap,
-      leading: Icon(icon,
-          color: color ?? Theme.of(context).colorScheme.secondary, size: 30),
+      leading:
+          Icon(icon, color: color ?? theme.colorScheme.secondary, size: 30),
       title: FittedBox(
         fit: BoxFit.scaleDown,
         alignment: Alignment.centerLeft,
         child: Text(
           title,
           style: getMediumStyle(
-            color: color ?? Theme.of(context).colorScheme.secondary,
+            color: color ?? theme.colorScheme.secondary,
             fontSize: 18,
           ),
         ),
@@ -35,7 +36,7 @@ class ListTileTabsProfileAndSettings extends StatelessWidget {
       trailing: trailing ??
           Icon(
             Icons.arrow_forward_ios,
-            color: color ?? Theme.of(context).colorScheme.secondary,
+            color: color ?? theme.colorScheme.secondary,
           ),
     );
   }

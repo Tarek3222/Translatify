@@ -13,6 +13,7 @@ class ChatMessages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      addAutomaticKeepAlives: false,
       controller: context.read<ChatCubit>().scrollController,
       itemCount: messages.length,
       itemBuilder: (context, index) {

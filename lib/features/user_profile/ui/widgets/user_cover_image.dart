@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translators/core/di/depandecy_injection.dart';
@@ -20,11 +19,7 @@ class UserCoverImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const CoverImageBackgroundBlocBuilder()
-            .animate()
-            .fade()
-            .scale()
-            .shake(),
+        const CoverImageBackgroundBlocBuilder(),
         PositionedDirectional(
           top: 10.h,
           end: 10.w,

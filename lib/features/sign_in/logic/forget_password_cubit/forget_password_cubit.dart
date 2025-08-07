@@ -26,4 +26,10 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
       ),
     );
   }
+
+  @override
+  Future<void> close() {
+    emailController.dispose();
+    return super.close();
+  }
 }

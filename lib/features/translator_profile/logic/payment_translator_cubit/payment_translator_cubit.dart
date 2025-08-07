@@ -54,4 +54,11 @@ class PaymentTranslatorCubit extends Cubit<PaymentTranslatorState> {
           PaymentTranslatorSuccess(orderTranslatorModel: orderTranslatorModel));
     }
   }
+
+  @override
+  Future<void> close() {
+    durationController.dispose();
+    couponController.dispose();
+    return super.close();
+  }
 }

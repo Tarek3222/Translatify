@@ -29,4 +29,10 @@ class UpdateReviewCubit extends Cubit<UpdateReviewState> {
       );
     });
   }
+
+  @override
+  Future<void> close() {
+    commentController.dispose();
+    return super.close();
+  }
 }

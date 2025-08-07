@@ -74,16 +74,18 @@ class AppCachedNetworkImage extends StatelessWidget {
   }
 
   Widget _buildShimmerPlaceholder(BuildContext context, String url) {
-    return Shimmer.fromColors(
-      baseColor: AppColors.lightGrey,
-      highlightColor: Colors.white,
-      child: Container(
-        width: width.w,
-        height: height.h,
-        decoration: BoxDecoration(
-          shape: BoxShape.rectangle,
-          borderRadius: borderRadius ?? BorderRadius.circular(12.0),
-          color: Colors.white,
+    return RepaintBoundary(
+      child: Shimmer.fromColors(
+        baseColor: AppColors.lightGrey,
+        highlightColor: Colors.white,
+        child: Container(
+          width: width.w,
+          height: height.h,
+          decoration: BoxDecoration(
+            shape: BoxShape.rectangle,
+            borderRadius: borderRadius ?? BorderRadius.circular(12.0),
+            color: Colors.white,
+          ),
         ),
       ),
     );

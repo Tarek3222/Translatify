@@ -12,6 +12,7 @@ class ChangeThemeSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return ElasticIn(
       delay: const Duration(milliseconds: 200),
       child: Row(
@@ -19,13 +20,13 @@ class ChangeThemeSwitch extends StatelessWidget {
         children: [
           Icon(
             Icons.light_mode,
-            color: Theme.of(context).colorScheme.onPrimary,
+            color: theme.colorScheme.onPrimary,
             size: 30.w,
           ),
           const ThemeSwitchWidget(),
           Icon(
             Icons.dark_mode,
-            color: Theme.of(context).colorScheme.onSecondary,
+            color: theme.colorScheme.onSecondary,
             size: 30.w,
           ),
         ],

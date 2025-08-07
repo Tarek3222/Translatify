@@ -11,21 +11,19 @@ class RecommendedTranslatorsShimmerLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList.builder(
-      itemCount: 5,
+      itemCount: 2,
       itemBuilder: (context, index) => Padding(
-        padding: EdgeInsets.only(bottom: 16.h),
+        padding: const EdgeInsets.only(bottom: 16).h,
         child: Row(
           children: [
-            Shimmer.fromColors(
-              baseColor: AppColors.lightGrey,
-              highlightColor: Colors.white,
-              child: Container(
-                width: 110.w,
-                height: 110.h,
-                decoration: BoxDecoration(
+            RepaintBoundary(
+              child: Shimmer.fromColors(
+                baseColor: AppColors.lightGrey,
+                highlightColor: Colors.white,
+                child: Container(
+                  width: 110.w,
+                  height: 110.h,
                   color: AppColors.lightGrey,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(12.0),
                 ),
               ),
             ),

@@ -10,13 +10,13 @@ class AppTextShimmerLoading extends StatelessWidget {
   final double width;
   @override
   Widget build(BuildContext context) {
-    return Shimmer.fromColors(
-      baseColor: AppColors.lightGrey,
-      highlightColor: Colors.white,
-      child: Container(
-        height: height.h,
-        width: width.w,
-        decoration: const BoxDecoration(
+    return RepaintBoundary(
+      child: Shimmer.fromColors(
+        baseColor: AppColors.lightGrey,
+        highlightColor: Colors.white,
+        child: Container(
+          height: height.h,
+          width: width.w,
           color: AppColors.lightGrey,
         ),
       ),

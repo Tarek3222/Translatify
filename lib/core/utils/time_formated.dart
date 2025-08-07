@@ -133,31 +133,6 @@ String getChatTimeFormatted({
   }
 }
 
-/// Formats time for message bubbles with compact display
-String getMessageTimeFormatted({
-  required BuildContext context,
-  required String time,
-  bool showDate = false,
-}) {
-  try {
-    final sent = DateTime.parse(time);
-    final now = _TimeCache.now;
-
-    if (showDate || !_isSameDay(sent, now)) {
-      if (_isYesterday(sent, now)) {
-        return 'Yesterday ${TimeOfDay.fromDateTime(sent).format(context)}';
-      }
-      return _DateFormatCache.get(
-              'dd/MM ${TimeOfDay.fromDateTime(sent).format(context)}')
-          .format(sent);
-    }
-
-    return TimeOfDay.fromDateTime(sent).format(context);
-  } catch (e) {
-    return time;
-  }
-}
-
 /// Helper method to check if two dates are the same day
 bool _isSameDay(DateTime date1, DateTime date2) {
   return date1.year == date2.year &&

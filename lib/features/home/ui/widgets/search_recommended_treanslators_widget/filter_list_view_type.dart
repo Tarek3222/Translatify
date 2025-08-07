@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:translators/features/home/logic/filter_translators_cubit/filter_translators_cubit.dart';
 import 'package:translators/features/home/ui/widgets/filter_widget_translator_item.dart';
 
@@ -15,13 +16,13 @@ class _FilterListViewTypeState extends State<FilterListViewType> {
   @override
   Widget build(BuildContext context) {
     selectedIndex = types.indexOf(widget.filterTranslatorCubit.type);
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: IntrinsicHeight(
-        child: Row(
-          children: List.generate(
-            types.length,
-            (index) => InkWell(
+    return SizedBox(
+      height: 40.h,
+      child: ListView.builder(
+          itemCount: types.length,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (_, index) {
+            return InkWell(
               onTap: () {
                 if (selectedIndex != index) {
                   widget.filterTranslatorCubit.type = types[index];
@@ -35,10 +36,8 @@ class _FilterListViewTypeState extends State<FilterListViewType> {
                 index: index,
                 selectedIndex: selectedIndex,
               ),
-            ),
-          ),
-        ),
-      ),
+            );
+          }),
     );
   }
 }

@@ -44,13 +44,13 @@ class CoverImageBackgroundBlocBuilder extends StatelessWidget {
   }
 
   Widget setupLoadingState() {
-    return Shimmer.fromColors(
-      baseColor: AppColors.lightGrey,
-      highlightColor: Colors.white,
-      child: Container(
-        height: 200.h,
-        width: double.infinity,
-        decoration: const BoxDecoration(
+    return RepaintBoundary(
+      child: Shimmer.fromColors(
+        baseColor: AppColors.lightGrey,
+        highlightColor: Colors.white,
+        child: Container(
+          height: 200.h,
+          width: double.infinity,
           color: AppColors.lightGrey,
         ),
       ),

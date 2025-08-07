@@ -18,8 +18,7 @@ class ChatBody extends StatelessWidget {
           receiverInfoModel: receiverInfoModel,
         ),
         BlocProvider(
-          create: (context) => ChatCubit(getIt<ChatsRepo>())
-            ..getSingleChat(receiverId: receiverInfoModel.userId),
+          create: (context) => ChatCubit(getIt<ChatsRepo>()),
           child: Expanded(
             child: ChatMessagesAndInputField(
               receiverInfoModel: receiverInfoModel,

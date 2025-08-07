@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:translators/core/di/depandecy_injection.dart';
 import 'package:translators/core/helpers/extensions.dart';
@@ -36,13 +37,15 @@ class DioFactory {
   }
 
   static void addDioInterceptor() {
-    dio?.interceptors.add(
-      PrettyDioLogger(
-        requestBody: true,
-        requestHeader: true,
-        responseHeader: true,
-      ),
-    );
+    if (kDebugMode) {
+      dio?.interceptors.add(
+        PrettyDioLogger(
+          requestBody: true,
+          requestHeader: true,
+          responseHeader: true,
+        ),
+      );
+    }
     dio?.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) async {

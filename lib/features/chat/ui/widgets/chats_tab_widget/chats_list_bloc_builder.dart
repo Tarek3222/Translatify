@@ -45,9 +45,7 @@ class ChatsListBlocBuilder extends StatelessWidget {
     return successState.chats.isNotEmpty
         ? RefreshIndicator(
             onRefresh: () async {
-              await context
-                  .read<ChatsListCubit>()
-                  .getChatsList(forceRefresh: true);
+              await _handleRefresh(context);
             },
             child: ChatsListView(
               chats: successState.chats,
@@ -55,9 +53,7 @@ class ChatsListBlocBuilder extends StatelessWidget {
           )
         : RefreshIndicator(
             onRefresh: () async {
-              await context
-                  .read<ChatsListCubit>()
-                  .getChatsList(forceRefresh: true);
+              await _handleRefresh(context);
             },
             child: const SingleChildScrollView(
               physics: AlwaysScrollableScrollPhysics(),
@@ -75,7 +71,7 @@ class ChatsListBlocBuilder extends StatelessWidget {
     final errorState = state as ChatsListError;
     return RefreshIndicator(
       onRefresh: () async {
-        await context.read<ChatsListCubit>().getChatsList(forceRefresh: true);
+        await _handleRefresh(context);
       },
       child:
           ListView(physics: const AlwaysScrollableScrollPhysics(), children: [
@@ -87,5 +83,18 @@ class ChatsListBlocBuilder extends StatelessWidget {
         ),
       ]),
     );
+  }
+
+  Future<void> _handleRefresh(BuildContext context) async {
+    final cubit = context.read<ChatsListCubit>();
+
+    // Clear existing data first to free memory
+    cubit.clearChatsList(); // Add this method to your cubit
+
+    // Small delay to allow garbage collection
+    await Future.delayed(const Duration(milliseconds: 100));
+
+    // Then fetch new data
+    await cubit.getChatsList(forceRefresh: true);
   }
 }

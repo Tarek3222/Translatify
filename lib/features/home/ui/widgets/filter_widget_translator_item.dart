@@ -19,6 +19,7 @@ class FilterWidgetTranslatorItem extends StatelessWidget {
   final IconData? icon;
   @override
   Widget build(BuildContext context) {
+    bool isSelected = index == selectedIndex;
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
       margin: EdgeInsetsDirectional.only(start: index == 0 ? 0 : 8.w),
@@ -27,7 +28,7 @@ class FilterWidgetTranslatorItem extends StatelessWidget {
         vertical: 8.h,
       ),
       decoration: BoxDecoration(
-        color: index == selectedIndex
+        color: isSelected
             ? AppColors.mainBlue
             : Colors.blueAccent.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12.r),
@@ -37,13 +38,13 @@ class FilterWidgetTranslatorItem extends StatelessWidget {
           if (icon != null)
             Icon(
               icon,
-              color: index == selectedIndex ? Colors.white : AppColors.mainBlue,
+              color: isSelected ? Colors.white : AppColors.mainBlue,
             ),
           if (icon != null) horizontalSpacing(5),
           Text(
             title,
             style: getSemiBoldStyle(
-              color: index == selectedIndex ? Colors.white : AppColors.mainBlue,
+              color: isSelected ? Colors.white : AppColors.mainBlue,
               fontSize: 18,
             ),
           ),

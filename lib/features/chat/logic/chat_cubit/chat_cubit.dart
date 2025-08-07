@@ -57,7 +57,13 @@ class ChatCubit extends Cubit<ChatState> {
               SendMessageError(errorModel: failure),
             ), (success) {
       messageController.clear();
-      getSingleChat(isFromSendMessage: true, receiverId: receiverId);
     });
+  }
+
+  @override
+  Future<void> close() {
+    messageController.dispose();
+    scrollController.dispose();
+    return super.close();
   }
 }

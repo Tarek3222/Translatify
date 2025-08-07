@@ -46,4 +46,11 @@ class SignInCubit extends Cubit<SignInState> {
         SharedPrefKeys.kUserDataKey, jsonEncode(userModel.toJson()));
     DioFactory.setTokenIntoHeaderAfterLogin(userModel.token.accessToken);
   }
+
+  @override
+  Future<void> close() {
+    passwordController.dispose();
+    emailController.dispose();
+    return super.close();
+  }
 }

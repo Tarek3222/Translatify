@@ -15,18 +15,19 @@ class ChangeLanguageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return ZoomIn(
       child: Container(
         padding:
             padding ?? EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.surfaceContainer,
+          color: theme.colorScheme.surfaceContainer,
           borderRadius: BorderRadius.circular(8.r),
         ),
         child: DropdownButton<String>(
           style: getMediumStyle(
             fontSize: 16,
-            color: Theme.of(context).colorScheme.secondary,
+            color: theme.colorScheme.secondary,
           ),
           icon: icon,
           value: context.locale.languageCode == 'en'
@@ -78,7 +79,7 @@ class ChangeLanguageWidget extends StatelessWidget {
           },
           underline: const SizedBox(),
           // ignore: deprecated_member_use
-          dropdownColor: Theme.of(context).colorScheme.background,
+          dropdownColor: theme.colorScheme.background,
         ),
       ),
     );

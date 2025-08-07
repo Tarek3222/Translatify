@@ -15,13 +15,14 @@ class CustomAppIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return IconButton(
       onPressed: onPressed ??
           () {
             context.pop();
           },
       style: IconButton.styleFrom(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: theme.colorScheme.background,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10).r,
           side: const BorderSide(
@@ -32,7 +33,7 @@ class CustomAppIcon extends StatelessWidget {
       ),
       icon: Icon(
         icon ?? Icons.arrow_back_ios_new_rounded,
-        color: Theme.of(context).colorScheme.secondary,
+        color: theme.colorScheme.secondary,
       ),
     );
   }

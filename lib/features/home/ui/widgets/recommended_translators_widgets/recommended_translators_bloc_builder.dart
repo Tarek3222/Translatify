@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:translators/core/helpers/spacing.dart';
+import 'package:translators/core/widgets/app_elevated_button.dart';
 import 'package:translators/features/home/logic/get_translators_list_cubit/get_translators_list_cubit.dart';
 import 'package:translators/features/home/ui/widgets/recommended_translators_widgets/recommended_translators_shimmer_loading.dart';
 import 'package:translators/features/home/ui/widgets/recommended_translators_widgets/recommended_translators_sliver_list.dart';
@@ -22,7 +24,7 @@ class RecommendedTranslatorsBlocBuilder extends StatelessWidget {
           case GetTranslatorsListLoading:
             return setupLoadingState();
           case GetTranslatorsListError:
-            return setupErrorState(state);
+            return setupErrorState(state, context);
           case GetTranslatorsListSuccess:
             return setupSuccessState(state);
           default:
@@ -48,14 +50,34 @@ class RecommendedTranslatorsBlocBuilder extends StatelessWidget {
     );
   }
 
-  Widget setupErrorState(GetTranslatorsListState state) {
+  Widget setupErrorState(GetTranslatorsListState state, BuildContext context) {
     final errorState = state as GetTranslatorsListError;
     return SliverFillRemaining(
       hasScrollBody: false,
       child: Center(
-        child: TitleTextWidet(
-          title: "Error: ${errorState.errorModel.getAllMessages()}",
-          textColor: Colors.red,
+        child: Column(
+          children: [
+            TitleTextWidet(
+              title: "Error: ${errorState.errorModel.getAllMessages()}",
+              textColor: Colors.red,
+            ),
+            verticalSpacing(10),
+            AppElevatedButton(
+              onPressed: () async {
+                final cubit = context.read<GetTranslatorsListCubit>();
+
+                // Clear existing data first to free memory
+                cubit.clearTranslatorsList(); // Add this method to your cubit
+
+                // Small delay to allow garbage collection
+                await Future.delayed(const Duration(milliseconds: 100));
+
+                // Then fetch new data
+                await cubit.getTranslatorsList(forceRefresh: true);
+              },
+              text: "Retry",
+            ),
+          ],
         ),
       ),
     );
