@@ -13,7 +13,7 @@
 
 </div>
 
-## App For Tranlsators Side: 
+## App For Translators Side: 
 <p>
     Check out the <a href="https://github.com/Tarek3222/Translators_app-2ed-">Translator-side App Repository</a>
 </p>
