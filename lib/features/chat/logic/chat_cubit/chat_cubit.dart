@@ -57,6 +57,7 @@ class ChatCubit extends Cubit<ChatState> {
               SendMessageError(errorModel: failure),
             ), (success) {
       messageController.clear();
+      emit(SendMessageSuccess());
     });
   }
 
