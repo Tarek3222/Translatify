@@ -13,9 +13,9 @@
 
 </div>
 
-## App For Tranlsators: 
+## App For Tranlsators Side: 
 <p>
-    <a href="https://github.com/Tarek3222/Translators_app-2ed-">Project Repo</a>
+    Check out the <a href="https://github.com/Tarek3222/Translators_app-2ed-">Translator-side App Repository</a>
 </p>
 
 ## 🚀 Features for tourists
@@ -236,7 +236,7 @@ lib/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/translators-hub.git
+   git clone https://github.com/Tarek3222/Translatify.git
    cd translators-hub
    ```
 
