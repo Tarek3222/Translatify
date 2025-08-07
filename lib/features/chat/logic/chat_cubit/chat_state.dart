@@ -50,3 +50,5 @@ final class SendMessageError extends ChatState {
   final ApiErrorModel errorModel;
   const SendMessageError({required this.errorModel});
 }
+
+final class SendMessageSuccess extends ChatState {}

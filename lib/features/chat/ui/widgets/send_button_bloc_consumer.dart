@@ -17,7 +17,9 @@ class SendButtonBlocConsumer extends StatelessWidget {
     var chatCubit = context.read<ChatCubit>();
     return BlocConsumer<ChatCubit, ChatState>(
       listenWhen: (previous, current) =>
-          current is SendMessageLoading || current is SendMessageError,
+          current is SendMessageLoading ||
+          current is SendMessageError ||
+          current is SendMessageSuccess,
       listener: (context, state) {
         switch (state.runtimeType) {
           case SendMessageError:

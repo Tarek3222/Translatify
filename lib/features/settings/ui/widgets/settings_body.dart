@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:translators/core/widgets/custom_app_bar.dart';
 import 'package:translators/features/settings/ui/widgets/settings_tile_tabs.dart';
@@ -7,10 +8,10 @@ class SettingsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        CustomAppBar(title: "Settings"),
-        SettingsTileTabs(),
+        CustomAppBar(title: context.tr("Settings")),
+        const SettingsTileTabs(),
       ],
     );
   }
