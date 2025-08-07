@@ -167,7 +167,7 @@
   <img src="https://raw.githubusercontent.com/Tarek3222/Translatify/refs/heads/main/assets/app_images/chat_for_translator/Screenshot_20250807_183445.png" width="200" alt="2">
 </div>
 
-###  **Translator Profile Translators View**
+###  **Translator Profile (Translators View)**
 <div align="left">
   <img src="https://raw.githubusercontent.com/Tarek3222/Translatify/refs/heads/main/assets/app_images/translator_profile_edit/Screenshot_20250807_182453.png" width="200" alt="1">
   <img src="https://raw.githubusercontent.com/Tarek3222/Translatify/refs/heads/main/assets/app_images/translator_profile_edit/Screenshot_20250807_182458.png" width="200" alt="2">
