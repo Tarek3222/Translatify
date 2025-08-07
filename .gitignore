@@ -19,6 +19,7 @@ migrate_working_dir/
 .idea/
 
 lib/core/utils/api_keys.dart
+lib/core/networking/api_constants.dart
 
 
 # The .vscode folder contains launch configuration and tasks you configure in
