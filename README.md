@@ -321,6 +321,10 @@ flutter drive --target=test_driver/app.dart
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## 📬 Contact
+
+ connect with me on [LinkedIn](https://www.linkedin.com/in/tarek-ahmed-belal-62b238368?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+
 <div align="center">
   <p>Made ❤️ by Tarek Ahmed</p>
   <p>
