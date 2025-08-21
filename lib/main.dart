@@ -15,6 +15,7 @@ import 'package:translators/core/utils/user_model.dart';
 import 'package:translators/features/settings/logic/change_theme_cubit/change_theme_cubit.dart';
 import 'package:translators/translators_app.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +26,11 @@ void main() async {
     dotenv.load(fileName: ".env"),
   ]);
   await checkIfLoggedInUser();
+   // disable landscape mode
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   Stripe.publishableKey = APiKeys.publishableKey;
   runApp(
     EasyLocalization(
